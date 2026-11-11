@@ -2,9 +2,9 @@
 # Zie SUBMIT.md. client_id invullen met de Client ID uit het Partner-dashboard
 # (dat is geen geheim). De client secret hoort NIET hier maar in .env op de server.
 
-client_id = "VUL-IN-CLIENT-ID"
-name = "TextMeFlow WhatsApp Notifications"
-handle = "textmeflow"
+client_id = "618910de1afb38ac57b977b476ad967f"
+name = "TextMeFlow Order Messages"
+handle = "textmeflow-order-messages"
 application_url = "https://textmeflow.eu/shopify"
 embedded = true
 

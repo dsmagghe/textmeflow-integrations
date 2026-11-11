@@ -1,4 +1,4 @@
-# TextMeFlow WhatsApp Notifications voor Shopify
+# TextMeFlow Order Messages voor Shopify
 
 Shopify-app die winkeliers automatisch WhatsApp-berichten laat sturen bij
 **bestelling geplaatst**, **verzonden (met track & trace)** en **geannuleerd**,

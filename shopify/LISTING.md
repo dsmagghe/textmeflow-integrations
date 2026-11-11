@@ -1,4 +1,4 @@
-# Shopify App Store listing — TextMeFlow WhatsApp Notifications
+# Shopify App Store listing — TextMeFlow Order Messages
 
 Teksten om in het Partner-dashboard (App listing) te plakken. Shopify-limieten
 staan tussen haakjes; tel na bij wijzigingen. Geen emoji, geen claims die
@@ -7,8 +7,7 @@ TextMeFlow niet waarmaakt. Productnaam begint met TextMeFlow, niet met
 
 Gemeenschappelijk voor alle talen:
 
-- **App name** (max 30): `TextMeFlow WhatsApp Notify`
-  (de volledige naam "TextMeFlow WhatsApp Notifications" is 33 tekens; in de app zelf mag hij wel)
+- **App name** (max 30): `TextMeFlow Order Messages` (25 tekens; geen "WhatsApp" in de naam: merkregel)
 - **App icon**: 1200x1200 px, TextMeFlow-logo zonder WhatsApp-logo.
 - **Categorie**: Store management > Notifications (of: Marketing and conversion > SMS marketing als Notifications niet bestaat).
 - **Pricing** (zie SUBMIT.md, billing): "Free to install. TextMeFlow plans are billed by TextMeFlow: Free (50 messages per month), paid plans on textmeflow.eu/pricing."
@@ -41,7 +40,7 @@ WhatsApp order updates from your own number, ready in minutes
 Send order, shipping and cancellation updates to customers on WhatsApp, from your own number.
 
 **Details** (max 500):
-TextMeFlow WhatsApp Notifications sends your customers a WhatsApp message when they place an order, when it ships (with the track and trace link) and when it is cancelled. Messages come from your own WhatsApp number, which you link by scanning a QR code, just like WhatsApp Web. Ready-made texts in English, Dutch, French and German follow the language of your store or customer. Switch each message on or off and edit the text with placeholders such as order number and tracking link.
+TextMeFlow Order Messages sends your customers a WhatsApp message when they place an order, when it ships (with the track and trace link) and when it is cancelled. Messages come from your own WhatsApp number, which you link by scanning a QR code, just like WhatsApp Web. Ready-made texts in English, Dutch, French and German follow the language of your store or customer. Switch each message on or off and edit the text with placeholders such as order number and tracking link.
 
 **Feature list** (max 80 each, max 5):
 - Automatic messages for new, shipped and cancelled orders
@@ -72,7 +71,7 @@ Bestelupdates via WhatsApp vanaf je eigen nummer, snel klaar
 Stuur klanten via WhatsApp updates bij bestelling, verzending en annulering, vanaf je eigen nummer.
 
 **Details** (max 500):
-TextMeFlow WhatsApp Notifications stuurt je klanten een WhatsApp-bericht wanneer ze bestellen, wanneer de bestelling verzonden is (met track-and-trace-link) en wanneer ze geannuleerd wordt. Berichten komen van je eigen WhatsApp-nummer, dat je koppelt door een QR-code te scannen, net als bij WhatsApp Web. Kant-en-klare teksten in het Nederlands, Engels, Frans en Duits volgen de taal van je winkel of klant. Zet elk bericht aan of uit en pas de tekst aan met placeholders.
+TextMeFlow Order Messages stuurt je klanten een WhatsApp-bericht wanneer ze bestellen, wanneer de bestelling verzonden is (met track-and-trace-link) en wanneer ze geannuleerd wordt. Berichten komen van je eigen WhatsApp-nummer, dat je koppelt door een QR-code te scannen, net als bij WhatsApp Web. Kant-en-klare teksten in het Nederlands, Engels, Frans en Duits volgen de taal van je winkel of klant. Zet elk bericht aan of uit en pas de tekst aan met placeholders.
 
 **Features** (max 80 per regel):
 - Automatische berichten bij nieuwe, verzonden en geannuleerde bestellingen
@@ -103,7 +102,7 @@ Suivi de commande sur WhatsApp depuis votre propre numéro
 Informez vos clients sur WhatsApp : commande, expédition et annulation, depuis votre propre numéro.
 
 **Détails** (max 500) :
-TextMeFlow WhatsApp Notifications envoie un message WhatsApp à vos clients lorsqu'ils passent commande, lorsque la commande est expédiée (avec le lien de suivi) et lorsqu'elle est annulée. Les messages partent de votre propre numéro WhatsApp, que vous liez en scannant un QR code, comme pour WhatsApp Web. Des textes prêts à l'emploi en français, anglais, néerlandais et allemand suivent la langue de la boutique ou du client. Activez chaque message et modifiez le texte.
+TextMeFlow Order Messages envoie un message WhatsApp à vos clients lorsqu'ils passent commande, lorsque la commande est expédiée (avec le lien de suivi) et lorsqu'elle est annulée. Les messages partent de votre propre numéro WhatsApp, que vous liez en scannant un QR code, comme pour WhatsApp Web. Des textes prêts à l'emploi en français, anglais, néerlandais et allemand suivent la langue de la boutique ou du client. Activez chaque message et modifiez le texte.
 
 **Fonctionnalités** (max 80 chacune) :
 - Messages automatiques pour les commandes passées, expédiées et annulées
@@ -134,7 +133,7 @@ Bestell-Updates per WhatsApp von Ihrer eigenen Nummer
 Informieren Sie Kunden per WhatsApp über Bestellung, Versand und Stornierung, von Ihrer Nummer.
 
 **Details** (max 500):
-TextMeFlow WhatsApp Notifications sendet Ihren Kunden eine WhatsApp-Nachricht, wenn sie bestellen, wenn die Bestellung versendet wird (mit Link zur Sendungsverfolgung) und wenn sie storniert wird. Die Nachrichten kommen von Ihrer eigenen WhatsApp-Nummer, die Sie per QR-Code verknüpfen, wie bei WhatsApp Web. Fertige Texte auf Deutsch, Englisch, Niederländisch und Französisch folgen der Sprache des Shops oder Kunden. Jede Nachricht ist einzeln schalt- und änderbar.
+TextMeFlow Order Messages sendet Ihren Kunden eine WhatsApp-Nachricht, wenn sie bestellen, wenn die Bestellung versendet wird (mit Link zur Sendungsverfolgung) und wenn sie storniert wird. Die Nachrichten kommen von Ihrer eigenen WhatsApp-Nummer, die Sie per QR-Code verknüpfen, wie bei WhatsApp Web. Fertige Texte auf Deutsch, Englisch, Niederländisch und Französisch folgen der Sprache des Shops oder Kunden. Jede Nachricht ist einzeln schalt- und änderbar.
 
 **Funktionen** (max 80 je Zeile):
 - Automatische Nachrichten bei neuen, versendeten und stornierten Bestellungen
