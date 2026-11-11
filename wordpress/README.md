@@ -1,6 +1,6 @@
 # TextMeFlow voor WordPress
 
-Plugin "TextMeFlow – WhatsApp notifications for WooCommerce & WordPress forms" (slug `textmeflow`, map `textmeflow/`). Contract: `docs/connect-contract.md`.
+Plugin "TextMeFlow - Order and form notifications for WooCommerce" (slug `textmeflow`, map `textmeflow/`). Contract: `docs/connect-contract.md`.
 
 ## Installatie in 3 stappen (voor de winkelier)
 

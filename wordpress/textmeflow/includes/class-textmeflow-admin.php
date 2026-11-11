@@ -107,6 +107,7 @@ class TextMeFlow_Admin {
 				'connected' => TextMeFlow_Connection::is_connected(),
 				'i18n'      => array(
 					'checking'     => __( 'Checking connection...', 'textmeflow' ),
+					/* translators: %s: the linked WhatsApp phone number, e.g. +32470123456 */
 					'connectedTo'  => __( 'WhatsApp connected with number %s', 'textmeflow' ),
 					'connectedNo'  => __( 'WhatsApp connected', 'textmeflow' ),
 					'notLinked'    => __( 'Your WhatsApp number is not linked yet.', 'textmeflow' ),

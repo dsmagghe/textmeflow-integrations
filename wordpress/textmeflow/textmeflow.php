@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       TextMeFlow – WhatsApp notifications for WooCommerce & WordPress forms
+ * Plugin Name:       TextMeFlow - Order and form notifications for WooCommerce
  * Plugin URI:        https://textmeflow.eu/integrations/wordpress
  * Description:       Send WhatsApp messages for WooCommerce orders and form submissions (Contact Form 7, WPForms, Elementor Forms, Gravity Forms) through your own WhatsApp number. Connect with one click.
  * Version:           1.0.1

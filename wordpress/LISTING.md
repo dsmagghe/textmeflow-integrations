@@ -3,10 +3,12 @@
 De Engelse tekst staat al in `textmeflow/readme.txt` (die wordt de listing). Hieronder de gelokaliseerde versies voor de website, de directory-vertalingen (translate.wordpress.org) en andere kanalen.
 
 ## Naam
-- en: TextMeFlow – WhatsApp notifications for WooCommerce & WordPress forms
-- nl: TextMeFlow – WhatsApp-meldingen voor WooCommerce en WordPress-formulieren
-- fr: TextMeFlow – Notifications WhatsApp pour WooCommerce et les formulaires WordPress
-- de: TextMeFlow – WhatsApp-Benachrichtigungen für WooCommerce und WordPress-Formulare
+wordpress.org laat het woord "WhatsApp" nergens in de pluginnaam toe (Plugin Check: trademarked_term);
+in de beschrijving mag het wel.
+- en: TextMeFlow - Order and form notifications for WooCommerce
+- nl: TextMeFlow - Bestel- en formuliermeldingen voor WooCommerce
+- fr: TextMeFlow - Notifications de commande et de formulaire pour WooCommerce
+- de: TextMeFlow - Bestell- und Formularbenachrichtigungen für WooCommerce
 
 ## Korte beschrijving (max. 150 tekens)
 - en: Send WhatsApp messages for WooCommerce orders and form submissions from your own number. Connect in one click.
