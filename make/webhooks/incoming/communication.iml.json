@@ -1,6 +1,23 @@
 {
   "url": "",
   "method": "POST",
+  "attach": {
+    "url": "/webhooks",
+    "method": "POST",
+    "body": {
+      "url": "{{webhook.url}}",
+      "event": "message.inbound"
+    },
+    "response": {
+      "data": {
+        "id": "{{body.id}}"
+      }
+    }
+  },
+  "detach": {
+    "url": "/webhooks/{{webhook.data.id}}",
+    "method": "DELETE"
+  },
   "output": {
     "type": "{{body.type}}",
     "from": "{{body.from}}",
@@ -8,6 +25,7 @@
     "to": "{{body.to}}",
     "message": "{{body.message}}",
     "file": "{{ifempty(body.file; emptystring)}}",
+    "from_me": "{{body.from_me}}",
     "event_id": "{{headers.`x-textmeflow-event-id`}}"
   }
 }

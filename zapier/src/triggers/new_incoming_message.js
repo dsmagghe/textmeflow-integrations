@@ -3,12 +3,11 @@
 const { API_BASE } = require('../common');
 
 /*
- * REST hook. Needs two endpoints the TextMeFlow API does not have yet
- * (the API today only knows ONE webhook_url per account, set in the portal):
- *   POST   /v1/webhooks        { url, event: "message.inbound" } -> { id }
- *   DELETE /v1/webhooks/{id}
- * The trigger is therefore hidden until the server supports this.
- * See README.md and SUBMIT.md.
+ * REST hook on the per-app webhook registration of the TextMeFlow API
+ * (docs/connect-contract.md section 5b):
+ *   POST   /v1/webhooks        { url, event: "message.inbound" } -> 201 { id, url, event, secret }
+ *   DELETE /v1/webhooks/{id}   -> 204
+ * Zapier gets the payload unsigned from its own side; the secret is not needed here.
  */
 const subscribe = async (z, bundle) => {
   const response = await z.request({
@@ -16,6 +15,7 @@ const subscribe = async (z, bundle) => {
     url: `${API_BASE}/webhooks`,
     body: { url: bundle.targetUrl, event: 'message.inbound' },
   });
+  // Keep only the id: the secret is not used by Zapier and must not be stored.
   return { id: response.data.id };
 };
 
@@ -29,6 +29,8 @@ const parsePayload = async (z, bundle) => {
   const p = bundle.cleanedRequest || {};
   const headers = (bundle.rawRequest && bundle.rawRequest.headers) || {};
   const id = headers['x-textmeflow-event-id'] || headers['X-TextMeFlow-Event-Id'] || `${p.from}-${Date.now()}`;
+  // Messages sent by the account itself are not "incoming".
+  if (p.from_me === true || p.from_me === 'true') return [];
   return [{ id, type: p.type, from: p.from, from_name: p.from_name, to: p.to, message: p.message, file: p.file === 'null' ? null : p.file }];
 };
 
@@ -40,13 +42,14 @@ module.exports = {
   display: {
     label: 'New Incoming Message',
     description: 'Triggers when someone replies to your linked WhatsApp number.',
-    hidden: true,
   },
   operation: {
     type: 'hook',
     performSubscribe: subscribe,
     performUnsubscribe: unsubscribe,
     perform: parsePayload,
+    // The API has no endpoint that lists inbound messages (GET /v1/messages does not exist),
+    // so the editor test step uses a fixed sample.
     performList: async () => [SAMPLE],
     sample: SAMPLE,
   },

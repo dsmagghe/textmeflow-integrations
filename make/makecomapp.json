@@ -20,7 +20,7 @@
       "incoming": {
         "label": "TextMeFlow incoming message",
         "type": "web",
-        "connection": null,
+        "connection": "textmeflow",
         "codeFiles": {
           "communication": "./webhooks/incoming/communication.iml.json",
           "params": "./webhooks/incoming/params.iml.json"
@@ -57,7 +57,7 @@
         "description": "Triggers instantly when someone replies to your linked WhatsApp number.",
         "moduleType": "instant_trigger",
         "webhook": "incoming",
-        "connection": null,
+        "connection": "textmeflow",
         "codeFiles": {
           "communication": "./modules/watch-incoming/communication.iml.json",
           "params": "./modules/watch-incoming/params.iml.json",

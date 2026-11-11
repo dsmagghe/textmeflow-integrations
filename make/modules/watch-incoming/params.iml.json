@@ -4,6 +4,6 @@
     "type": "hook",
     "label": "Webhook",
     "required": true,
-    "help": "Create the webhook, then copy its address into the TextMeFlow portal (see README)."
+    "help": "Pick or create a webhook. Make registers it with TextMeFlow automatically; nothing to paste."
   }
 ]

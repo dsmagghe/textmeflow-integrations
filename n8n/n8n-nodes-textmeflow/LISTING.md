@@ -20,12 +20,12 @@ Setup takes three steps: install, paste your API key from textmeflow.eu/admin/po
 
 **Features:** Send message; Get message status; Trigger on incoming message (HMAC-verified, duplicate-safe); number normalisation; EU hosting.
 
-**Screenshots to take:** (1) Send node filled in with a Belgian number; (2) credential dialog with the explanation; (3) Trigger node with webhook URL and setup notice; (4) a workflow: Webhook trigger, IF, Send reply; (5) the TextMeFlow portal page showing the API key (blur the key).
+**Screenshots to take:** (1) Send node filled in with a Belgian number; (2) credential dialog with the explanation; (3) Trigger node with its setup notice; (4) a workflow: Webhook trigger, IF, Send reply; (5) the TextMeFlow portal page showing the API key (blur the key).
 
 **FAQ**
 - *Where is my API key?* At textmeflow.eu/admin/portal after logging in (you get a sign-in link by email, no password).
 - *Do I need WhatsApp Business?* No. You link your own WhatsApp number by scanning a QR code.
-- *Why do I paste the trigger URL myself?* The URL is registered in the portal (textmeflow.eu/admin/webhook); there is no API for it yet.
+- *Do I have to paste a webhook URL for the trigger?* No. The trigger registers its own URL with TextMeFlow when the workflow is activated and removes it when you deactivate it.
 - *Is it free?* Yes up to 50 messages per month.
 
 **Privacy / external service:** Phone numbers and message text are sent to TextMeFlow (EU-hosted, Fades Management EOOD, Bulgaria). Privacy: https://textmeflow.eu/legal/privacy. Terms: https://textmeflow.eu/legal/terms.

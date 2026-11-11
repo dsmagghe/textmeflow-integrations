@@ -32,14 +32,9 @@ Only message people who agreed to receive WhatsApp messages from you (GDPR). Rat
 
 ## Receiving messages (TextMeFlow Trigger)
 
-TextMeFlow cannot (yet) register a webhook URL through its API, so this is a one-time copy and paste:
+Nothing to copy or paste. Add the **TextMeFlow Trigger** node, select your TextMeFlow API credential and activate the workflow (or press "Listen for test event"). The node registers its own webhook URL with TextMeFlow (`POST /v1/webhooks`) and removes it when you deactivate or delete the workflow (`DELETE /v1/webhooks/{id}`). The registration id and signing secret are kept in the node's workflow static data. The Test URL and the Production URL are registered separately.
 
-1. Add the **TextMeFlow Trigger** node and copy its **Webhook URL**. Use the *Test URL* while you press "Listen for test event", and the *Production URL* once the workflow is active.
-2. Open <https://textmeflow.eu/admin/webhook>, paste the URL and click Save.
-3. TextMeFlow now shows a **secret**. Copy it into the **Webhook Secret** field of your TextMeFlow API credential.
-4. Click "Test fire" in the portal to send a sample message to the workflow.
-
-The node verifies the `X-TextMeFlow-Signature` header (HMAC-SHA256 over the raw body) in constant time and answers 401 when it does not match or when no secret is set. Retries from TextMeFlow carry the same event id and are ignored (can be switched off). Your own sent messages are ignored by default so a reply workflow cannot trigger itself.
+The node verifies the `X-TextMeFlow-Signature` header (HMAC-SHA256 over the raw body) in constant time and with the secret issued at registration (it falls back to the optional Webhook Secret of the credential, for URLs set by hand in the portal) and answers 401 when it does not match or when no secret is known. Retries from TextMeFlow carry the same event id and are ignored (can be switched off). Your own sent messages are ignored by default so a reply workflow cannot trigger itself.
 
 Output fields: `type`, `from`, `from_name`, `to`, `file`, `message`, `from_me`, `wa_message_id`, `message_id`. See <https://textmeflow.eu/docs/webhooks>.
 
@@ -59,7 +54,7 @@ npm run dev        # starts n8n with the nodes loaded, with hot reload
 - Programmatic-style nodes, no runtime dependencies (only `crypto` from Node.js for the signature check), as required for verified community nodes.
 - `nodes/TextMeFlow/GenericFunctions.ts` holds the E.164 normalisation and the country table (EU/EEA, UK, CH, US).
 - Credential test calls `GET /v1/accounts/me`.
-- The Trigger's `webhookMethods` are deliberate no-ops: registering the URL happens in the portal.
+- The Trigger's `webhookMethods` (`checkExists`, `create`, `delete`) register and remove the URL through `/v1/webhooks`.
 
 ## License
 

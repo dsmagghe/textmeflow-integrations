@@ -12,7 +12,7 @@ Custom app definition in the layout used by the Make Apps SDK VS Code extension 
 ## Modules
 - Send a WhatsApp Message: `POST /messages` (`to`, `text`, `media_url`), returns `id`, `status`.
 - Get a Message: `GET /messages/{id}`.
-- Watch Incoming Messages (instant trigger, shared custom webhook): Make shows the webhook address; the user pastes it in the TextMeFlow portal webhook page. Works with today's API (one `webhook_url` per account, so only one scenario or one router). The payload `X-TextMeFlow-Signature` cannot be verified inside Make; treat the URL as secret. When the server gets `POST/DELETE /v1/webhooks`, switch the webhook type to `web` with `attach`/`detach` calls so Make registers it automatically.
+- Watch Incoming Messages (instant trigger, dedicated webhook of type `web`): when the scenario is activated Make calls `POST /webhooks` with its own webhook address (`attach`, body `{url, event: "message.inbound"}`; the returned `id` is kept as `webhook.data.id`) and on deactivation or deletion `DELETE /webhooks/{id}` (`detach`). The user pastes nothing. The webhook uses the TextMeFlow connection. The `X-TextMeFlow-Signature` header cannot be verified inside Make, so the secret returned by the API is not used. Unverified inside Make: the exact IML keys for `attach.response` and `{{webhook.data.id}}` may need a small correction on first import.
 
 ## Import (developer)
 1. Install the "Make Apps Editor" VS Code extension, set your Make API key/zone.

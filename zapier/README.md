@@ -16,16 +16,10 @@ Note: the one-click "Verbind met TextMeFlow" flow from `docs/connect-contract.md
 | --- | --- | --- |
 | Action | Send WhatsApp Message (`to`, `text`, `media_url`) | works against `POST /v1/messages` |
 | Search | Find Message Status | works against `GET /v1/messages/{id}`; 404 gives an empty result |
-| Trigger | New Incoming Message (REST hook) | implemented, **hidden** until the server has webhook registration |
+| Trigger | New Incoming Message (REST hook) | live; registers itself per Zap through `POST /v1/webhooks` and removes itself on `DELETE /v1/webhooks/{id}` |
 
-### Why the trigger is hidden
-The API today has one `webhook_url` per account, configured in the portal. There is no endpoint to register a webhook per Zap, and no endpoint to list inbound messages, so neither a REST hook nor polling can work. The trigger code expects:
-
-```
-POST   /v1/webhooks        { "url": "<zapier target url>", "event": "message.inbound" } -> { "id": "..." }
-DELETE /v1/webhooks/{id}
-```
-delivering the existing InboundMessage payload (`X-TextMeFlow-Event-Id` header is used for dedupe). When that exists: remove `hidden: true` in `src/triggers/new_incoming_message.js`, add a live test Zap, push a new version. Workaround for users today: "Webhooks by Zapier > Catch Hook" with its URL pasted into the TextMeFlow portal webhook page.
+### How the trigger works
+When a Zap is switched on, Zapier calls `POST /v1/webhooks` with its target URL and `event: "message.inbound"`; when the Zap is switched off or deleted it calls `DELETE /v1/webhooks/{id}`. Users paste nothing. The `X-TextMeFlow-Event-Id` header is used for dedupe. The API has no endpoint that lists inbound messages, so the "test trigger" step in the editor uses a fixed sample message (`performList`). Still to do before publishing: a live test Zap, then push a new version.
 
 ## Development
 

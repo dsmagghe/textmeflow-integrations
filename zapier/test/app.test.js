@@ -65,7 +65,7 @@ describe('TextMeFlow Zapier app', () => {
 
   test('trigger subscribes, unsubscribes and parses payload', async () => {
     const t = App.triggers.new_incoming_message.operation;
-    nock(API).post('/v1/webhooks', { url: 'https://hooks.zapier.com/x', event: 'message.inbound' }).reply(201, { id: 'wh1' });
+    nock(API).post('/v1/webhooks', { url: 'https://hooks.zapier.com/x', event: 'message.inbound' }).reply(201, { id: 'wh1', url: 'https://hooks.zapier.com/x', event: 'message.inbound', secret: 'whsec_x' });
     const sub = await appTester(t.performSubscribe, { authData, targetUrl: 'https://hooks.zapier.com/x' });
     expect(sub).toEqual({ id: 'wh1' });
 
@@ -79,5 +79,11 @@ describe('TextMeFlow Zapier app', () => {
       cleanedRequest: { type: 'text', from: '32472932208', from_name: 'Jan', to: '32499123456', message: 'Hi', file: 'null' },
     });
     expect(out[0]).toMatchObject({ id: 'evt-1', message: 'Hi', file: null });
+
+    const own = await appTester(t.perform, { authData, cleanedRequest: { from_me: true, message: 'x' } });
+    expect(own).toEqual([]);
+    const list = await appTester(t.performList, { authData });
+    expect(list[0].id).toBeTruthy();
+    expect(App.triggers.new_incoming_message.display.hidden).toBeFalsy();
   });
 });

@@ -2,12 +2,15 @@ import { createHmac, timingSafeEqual } from 'crypto';
 
 import type {
 	IDataObject,
+	IHookFunctions,
 	IWebhookFunctions,
 	IWebhookResponseData,
 	INodeType,
 	INodeTypeDescription,
 } from 'n8n-workflow';
 import { NodeConnectionTypes } from 'n8n-workflow';
+
+const API_BASE = 'https://api.textmeflow.eu/v1';
 
 const MESSAGE_TYPES = ['text', 'image', 'audio', 'video', 'document', 'location'];
 
@@ -35,7 +38,7 @@ export class TextMeFlowTrigger implements INodeType {
 		credentials: [
 			{
 				name: 'textMeFlowApi',
-				required: false,
+				required: true,
 			},
 		],
 		webhooks: [
@@ -49,7 +52,7 @@ export class TextMeFlowTrigger implements INodeType {
 		properties: [
 			{
 				displayName:
-					'<b>How to connect (one time):</b><br>1. Copy the Webhook URL above (use the Production URL once the workflow is active; use the Test URL while you press "Listen for test event").<br>2. Open <a href="https://textmeflow.eu/admin/webhook" target="_blank">textmeflow.eu/admin/webhook</a>, paste the URL, and click Save.<br>3. TextMeFlow now shows a secret. Copy it into the "Webhook Secret" field of your TextMeFlow API credential, so this node can check that messages are genuine.<br>4. Click "Test fire" in the portal to send a sample message.',
+					'Nothing to copy: when you activate the workflow (or press "Listen for test event"), this node registers its own URL with TextMeFlow and removes it again when you deactivate it. Only the API key in your TextMeFlow credential is needed.',
 				name: 'setupNotice',
 				type: 'notice',
 				default: '',
@@ -60,7 +63,7 @@ export class TextMeFlowTrigger implements INodeType {
 				type: 'boolean',
 				default: true,
 				description:
-					'Whether to check the X-TextMeFlow-Signature header with your webhook secret. Strongly recommended: without it anyone who knows the URL can start your workflow.',
+					'Whether to check the X-TextMeFlow-Signature header with the secret TextMeFlow issued when this node registered its URL. Strongly recommended: without it anyone who knows the URL can start your workflow.',
 			},
 			{
 				displayName: 'Options',
@@ -101,18 +104,71 @@ export class TextMeFlowTrigger implements INodeType {
 		],
 	};
 
-	// The webhook URL cannot be registered through the TextMeFlow API: the user
-	// pastes it in the portal (textmeflow.eu/admin/webhook). These hooks are
-	// therefore deliberate no-ops that report "already registered".
+	// The node registers its own URL through POST /v1/webhooks and removes it
+	// through DELETE /v1/webhooks/{id}. The id and the signing secret (only shown
+	// once by the API) are kept in the node's static data.
 	webhookMethods = {
 		default: {
-			async checkExists(): Promise<boolean> {
+			async checkExists(this: IHookFunctions): Promise<boolean> {
+				const staticData = this.getWorkflowStaticData('node');
+				const webhookUrl = this.getNodeWebhookUrl('default');
+				const response = (await this.helpers.httpRequestWithAuthentication.call(
+					this,
+					'textMeFlowApi',
+					{ method: 'GET', url: `${API_BASE}/webhooks`, json: true },
+				)) as { data?: Array<{ id: string; url: string }> };
+				const existing = (response.data ?? []).find((w) => w.url === webhookUrl);
+				if (existing && staticData.webhookId === existing.id && staticData.webhookSecret) {
+					return true;
+				}
+				if (existing) {
+					// Registered, but we lost its secret (shown only once): replace it.
+					await this.helpers.httpRequestWithAuthentication.call(this, 'textMeFlowApi', {
+						method: 'DELETE',
+						url: `${API_BASE}/webhooks/${encodeURIComponent(existing.id)}`,
+					});
+				}
+				delete staticData.webhookId;
+				delete staticData.webhookSecret;
+				return false;
+			},
+			async create(this: IHookFunctions): Promise<boolean> {
+				const staticData = this.getWorkflowStaticData('node');
+				const response = (await this.helpers.httpRequestWithAuthentication.call(
+					this,
+					'textMeFlowApi',
+					{
+						method: 'POST',
+						url: `${API_BASE}/webhooks`,
+						body: { url: this.getNodeWebhookUrl('default'), event: 'message.inbound' },
+						json: true,
+					},
+				)) as { id?: string; secret?: string };
+				if (!response.id || !response.secret) {
+					return false;
+				}
+				staticData.webhookId = response.id;
+				staticData.webhookSecret = response.secret;
 				return true;
 			},
-			async create(): Promise<boolean> {
-				return true;
-			},
-			async delete(): Promise<boolean> {
+			async delete(this: IHookFunctions): Promise<boolean> {
+				const staticData = this.getWorkflowStaticData('node');
+				const id = staticData.webhookId as string | undefined;
+				if (id) {
+					try {
+						await this.helpers.httpRequestWithAuthentication.call(this, 'textMeFlowApi', {
+							method: 'DELETE',
+							url: `${API_BASE}/webhooks/${encodeURIComponent(id)}`,
+						});
+					} catch (error) {
+						const status = (error as { httpCode?: string }).httpCode;
+						if (status !== '404') {
+							return false;
+						}
+					}
+				}
+				delete staticData.webhookId;
+				delete staticData.webhookSecret;
 				return true;
 			},
 		},
@@ -130,14 +186,17 @@ export class TextMeFlowTrigger implements INodeType {
 		};
 
 		if (verify) {
+			// The secret issued when this node registered its URL; fall back to a
+			// secret typed into the credential (older setups via the portal).
+			const staticSecret = this.getWorkflowStaticData('node').webhookSecret as string | undefined;
 			const credentials = await this.getCredentials<{ webhookSecret?: string }>(
 				'textMeFlowApi',
 			).catch(() => undefined);
-			const secret = credentials?.webhookSecret;
+			const secret = staticSecret || credentials?.webhookSecret;
 
 			if (!secret) {
 				// Refuse rather than silently accept unsigned traffic.
-				res.status(401).send('Webhook secret not configured in the TextMeFlow API credential');
+				res.status(401).send('No webhook secret known for this node');
 				return { noWebhookResponse: true };
 			}
 

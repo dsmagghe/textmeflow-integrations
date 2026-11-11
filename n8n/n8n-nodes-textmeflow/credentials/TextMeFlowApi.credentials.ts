@@ -41,7 +41,7 @@ export class TextMeFlowApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			description:
-				'Only needed for the TextMeFlow Trigger node. Shown once in the portal at textmeflow.eu/admin/webhook, right after you save your webhook URL. Used to verify that incoming messages really come from TextMeFlow.',
+				'Optional. The TextMeFlow Trigger registers its own URL and keeps its own secret, so leave this empty. Only fill it in if you set the trigger URL by hand in the portal (textmeflow.eu/admin/webhook); it is then used as a fallback to verify incoming messages.',
 		},
 	];
 
