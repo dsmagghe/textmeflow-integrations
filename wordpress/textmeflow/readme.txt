@@ -1,5 +1,5 @@
 === TextMeFlow - Order and form notifications for WooCommerce ===
-Contributors: textmeflow
+Contributors: fadestech
 Tags: whatsapp, woocommerce, notifications, contact form 7, order notifications
 Requires at least: 5.8
 Tested up to: 7.1
