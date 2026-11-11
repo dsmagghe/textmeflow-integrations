@@ -1,24 +1,16 @@
 import './page/textmeflow-index';
-import enGB from './snippet/en-GB.json';
-import deDE from './snippet/de-DE.json';
-import nlNL from './snippet/nl-NL.json';
-import frFR from './snippet/fr-FR.json';
 
-Shopware.Module.register('textmeflow', {
+// Snippets in ./snippet/*.json are loaded automatically by Shopware.
+
+// Shopware only registers modules named "[namespace]-[name]"; a name without a dash is silently dropped.
+Shopware.Module.register('textmeflow-settings', {
     type: 'plugin',
-    name: 'textmeflow',
+    name: 'textmeflow-settings',
     title: 'textmeflow.general.title',
     description: 'textmeflow.general.description',
     color: '#25a366',
     icon: 'regular-comments',
     routePrefixPath: 'sw/settings/textmeflow',
-
-    snippets: {
-        'en-GB': enGB,
-        'de-DE': deDE,
-        'nl-NL': nlNL,
-        'fr-FR': frFR,
-    },
 
     routes: {
         index: {
@@ -32,8 +24,9 @@ Shopware.Module.register('textmeflow', {
 
     settingsItem: {
         group: 'plugins',
-        to: 'textmeflow.index',
+        to: 'textmeflow.settings.index',
         icon: 'regular-comments',
-        label: 'textmeflow.general.title',
+        // Short label: the settings tile has little room.
+        label: 'textmeflow.general.settingsLabel',
     },
 });

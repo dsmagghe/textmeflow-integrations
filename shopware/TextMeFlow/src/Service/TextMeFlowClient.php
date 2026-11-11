@@ -14,10 +14,42 @@ class TextMeFlowClient
 {
     public const DEFAULT_BASE_URL = 'https://api.textmeflow.eu/v1';
 
+    /** Optional environment variable to point the plugin at another API (for example a local test server). */
+    public const BASE_URL_ENV = 'TEXTMEFLOW_API_URL';
+
     public function __construct(
         private readonly HttpClientInterface $http,
         private readonly string $baseUrl = self::DEFAULT_BASE_URL,
     ) {
+    }
+
+    /**
+     * Service factory: the production API unless TEXTMEFLOW_API_URL is set.
+     */
+    public static function create(HttpClientInterface $http): self
+    {
+        return new self($http, self::baseUrlFromEnvironment());
+    }
+
+    public static function baseUrlFromEnvironment(): string
+    {
+        $value = $_SERVER[self::BASE_URL_ENV] ?? $_ENV[self::BASE_URL_ENV] ?? getenv(self::BASE_URL_ENV);
+
+        return self::resolveBaseUrl(\is_string($value) ? $value : null);
+    }
+
+    /**
+     * Accepts only an absolute http(s) URL; anything else falls back to the production API.
+     */
+    public static function resolveBaseUrl(?string $value): string
+    {
+        $value = trim((string) $value);
+        $scheme = strtolower((string) parse_url($value, \PHP_URL_SCHEME));
+        if ($value === '' || !\in_array($scheme, ['http', 'https'], true) || !\is_string(parse_url($value, \PHP_URL_HOST))) {
+            return self::DEFAULT_BASE_URL;
+        }
+
+        return rtrim($value, '/');
     }
 
     /**

@@ -65,28 +65,35 @@ src/
 * All other routes need the admin ACL `system_config:read` / `system_config:update`.
 * Opt-in: a checkbox `tmfWhatsappOptin` (form attribute `confirmOrderForm`) is stored by `CartConvertedEvent` in the order custom field `tmf_whatsapp_optin`. It is only shown when the shop is connected and a customer message is on.
 
-### Build the administration assets
+### Build the administration assets and the Store ZIP
 
-Shopware plugins ship their compiled administration JS in `src/Resources/public/administration/`. These are generated, not committed here:
+Shopware plugins ship their compiled administration JS in `src/Resources/public/administration/`. These are generated (and git-ignored); the Store ZIP contains them. With [shopware-cli](https://github.com/shopware/shopware-cli) (no Shopware installation needed):
 
 ```bash
-# inside a Shopware 6.5/6.6 development installation, plugin placed in custom/plugins/TextMeFlow
-bin/console plugin:refresh && bin/console plugin:install --activate TextMeFlow
-bin/build-administration.sh          # or: shopware-cli extension build custom/plugins/TextMeFlow
-bin/console assets:install
+cd integrations/shopware
+shopware-cli extension build TextMeFlow                      # only the admin assets
+shopware-cli extension package TextMeFlow --release --disable-git \
+    --filename TextMeFlow-1.0.0.zip --output-directory dist  # builds the assets and the Store ZIP
+shopware-cli extension validate dist/TextMeFlow-1.0.0.zip    # Store checks (add --check-against lowest for 6.5.8)
 ```
+
+`.shopware-extension.yml` keeps `SUBMIT.md` and `LISTING.md` (internal notes) out of the ZIP. `tests/`, `vendor/` and `var/` are left out by shopware-cli.
+
+### Pointing the plugin at a test server
+
+Set `TEXTMEFLOW_API_URL` (for example `http://127.0.0.1:8099/v1` in the shop's `.env.local`) to send all API calls to another server instead of `https://api.textmeflow.eu/v1`. `integrations/shopware/dev/mock-api.php` is a small stand-in (`php -S 127.0.0.1:8099 dev/mock-api.php`): it accepts the connect code `mockcode123`, serves a QR code and logs every request to `requests.jsonl` next to it. The connect button itself always opens `https://textmeflow.eu/connect`; in a test, replace that host with the mock (see `dev/screenshots.py`, step `admin-qr`).
 
 ### Tests
 
-The unit tests cover the Shopware-independent logic (phone normalisation, message building, default texts, API client with a mocked HTTP client, token encryption). They run without a Shopware installation:
+The unit tests cover the Shopware-independent logic (phone normalisation, message building, default texts, API client with a mocked HTTP client, token encryption) plus static checks on `config.xml` (validated against a copy of Shopware's `config.xsd` in `tests/Fixtures/`) and the admin module registration. They run without a Shopware installation:
 
 ```bash
 composer require --dev phpunit/phpunit symfony/http-client --ignore-platform-reqs   # or use a scratch project
 vendor/bin/phpunit
 ```
 
-Also checked: `php -l` on all PHP, `composer validate`, `config.xml` against Shopware's `config.xsd`, JSON snippets, and PHPStan level 6 against shopware/core + storefront 6.6.
+`shopware-cli extension validate` runs PHPStan, ESLint, Stylelint and the Store checks against Shopware 6.6 (highest) and 6.5.8 (lowest); both pass with only two warnings (`services.xml`/`routes.xml` are deprecated in favour of YAML, kept for 6.5 compatibility).
 
-### Not covered by automatic tests
+### Tested in a real Shopware 6.6.10.31 (11/11/2026)
 
-Anything that needs a running Shopware (checkout form, state-machine events, queue worker, admin module UI) was written against the 6.6 source but still needs a manual test run in a real installation. See `SUBMIT.md` for the pre-submission test list.
+Installed from the Store ZIP (`plugin:zip-import`), against the mock API: install/activate, admin module (no JS errors), connect callback, QR pairing and polling, test message, plugin configuration saved per sales channel, checkout checkbox (not pre-checked), order placed / payment received / shipped with tracking link via the queue worker, no customer message without the checkbox, owner new-order message, disconnect, uninstall without "keep user data" (token revoked at the API, config and custom field removed). Not tested: Shopware 6.5 at runtime (only PHPStan against 6.5.8), the real textmeflow.eu approval screen, a real WhatsApp delivery.

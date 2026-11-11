@@ -16,6 +16,7 @@
         <service id="TextMeFlow\Service\MessageBuilder"/>
 
         <service id="TextMeFlow\Service\TextMeFlowClient">
+            <factory class="TextMeFlow\Service\TextMeFlowClient" method="create"/>
             <argument type="service" id="http_client"/>
         </service>
 

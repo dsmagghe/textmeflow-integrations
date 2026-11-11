@@ -41,10 +41,10 @@
             "fr-FR": "TextMeFlow - Messages WhatsApp pour les commandes"
         },
         "description": {
-            "en-GB": "Connect your shop to TextMeFlow in one click and send order updates to your customers on WhatsApp, only with their consent.",
-            "de-DE": "Verbinden Sie Ihren Shop mit einem Klick mit TextMeFlow und senden Sie Ihren Kunden Bestellupdates per WhatsApp, nur mit deren Einwilligung.",
-            "nl-NL": "Koppel uw winkel met één klik aan TextMeFlow en stuur uw klanten bestelupdates via WhatsApp, enkel met hun toestemming.",
-            "fr-FR": "Connectez votre boutique à TextMeFlow en un clic et envoyez des mises à jour de commande par WhatsApp, uniquement avec le consentement du client."
+            "en-GB": "Connect your shop to TextMeFlow in one click and send order updates to your customers on WhatsApp, only with their consent. EU-hosted, free for up to 50 messages a month.",
+            "de-DE": "Verbinden Sie Ihren Shop mit einem Klick mit TextMeFlow und senden Sie Kunden Bestellupdates per WhatsApp, nur mit deren Einwilligung. In der EU gehostet.",
+            "nl-NL": "Koppel uw winkel met één klik aan TextMeFlow en stuur uw klanten bestelupdates via WhatsApp, enkel met hun toestemming. Gehost in de EU, gratis tot 50 berichten per maand.",
+            "fr-FR": "Connectez votre boutique à TextMeFlow en un clic et envoyez vos mises à jour de commande par WhatsApp, uniquement avec le consentement du client. Hébergé dans l'UE."
         },
         "manufacturerLink": {
             "en-GB": "https://textmeflow.eu",

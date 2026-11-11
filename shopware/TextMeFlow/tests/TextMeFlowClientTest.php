@@ -134,4 +134,33 @@ final class TextMeFlowClientTest extends TestCase
 
         self::assertSame('https://api.textmeflow.eu/v1/accounts/me/pair/a%2Fb%20c', $url);
     }
+
+    public function testBaseUrlDefaultsToProduction(): void
+    {
+        self::assertSame(TextMeFlowClient::DEFAULT_BASE_URL, TextMeFlowClient::resolveBaseUrl(null));
+        self::assertSame(TextMeFlowClient::DEFAULT_BASE_URL, TextMeFlowClient::resolveBaseUrl(''));
+        self::assertSame(TextMeFlowClient::DEFAULT_BASE_URL, TextMeFlowClient::resolveBaseUrl('ftp://x.example/v1'));
+        self::assertSame(TextMeFlowClient::DEFAULT_BASE_URL, TextMeFlowClient::resolveBaseUrl('not a url'));
+    }
+
+    public function testBaseUrlFromEnvironmentIsUsedByTheFactory(): void
+    {
+        self::assertSame('http://127.0.0.1:8099/v1', TextMeFlowClient::resolveBaseUrl(' http://127.0.0.1:8099/v1/ '));
+
+        $url = null;
+        $http = new MockHttpClient(function (string $method, string $requestUrl) use (&$url): MockResponse {
+            $url = $requestUrl;
+
+            return new MockResponse('', ['http_code' => 204]);
+        });
+
+        $_SERVER[TextMeFlowClient::BASE_URL_ENV] = 'https://staging.textmeflow.test/v1';
+        try {
+            TextMeFlowClient::create($http)->revoke('t');
+        } finally {
+            unset($_SERVER[TextMeFlowClient::BASE_URL_ENV]);
+        }
+
+        self::assertSame('https://staging.textmeflow.test/v1/connect/token', $url);
+    }
 }

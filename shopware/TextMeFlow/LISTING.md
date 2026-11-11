@@ -188,14 +188,16 @@ Die Einrichtung dauert wenige Minuten, und Sie kopieren nie einen API-Schlüssel
 
 ---
 
-## Screenshots to make (1 per line, in this order)
+## Images (ready in `integrations/shopware/store-assets/`)
 
-1. Plugin screen before connecting: the big "Connect with TextMeFlow" button.
-2. The approval screen on textmeflow.eu ("... wants to send WhatsApp messages via your TextMeFlow account").
-3. Plugin screen with the QR code.
-4. Plugin screen after pairing: "WhatsApp connected with number +32..." and the test message field.
-5. Plugin configuration: messages to customers (switches and texts).
-6. Checkout confirm page with the not-pre-checked WhatsApp checkbox.
-7. A WhatsApp chat on a phone showing a shipping update (use a test number).
+Store rules (docs.shopware.com > Adding pictures and icons): pictures 1920x1080 (16:9, max 4000x2250), PNG or JPEG, max 1 MB, no transparency; icon 112x112, full-bleed square, no transparency. English screenshots are required for the English listing.
 
-Take them in the language of the target listing (en first). Store icon: `src/Resources/config/plugin.png` (40x40, generic speech bubble, no third-party logo).
+1. `preview-1920x1080.png` - preview image (upload first, mark as preview).
+2. `01-connect-button.png` - plugin screen before connecting: the "Connect with TextMeFlow" button.
+3. `02-link-whatsapp-qr.png` - plugin screen with the QR code.
+4. `03-connected-test-message.png` - "WhatsApp connected with number ..." and the test message field.
+5. `04-message-settings.png` - plugin configuration: messages to customers (switches and texts).
+6. `05-checkout-opt-in.png` - checkout confirm page with the not-pre-checked WhatsApp checkbox.
+7. `icon-112x112.png` - Store listing icon.
+
+Made in a local Shopware 6.6.10.31 against a mock API (demo account shop@example.com, demo QR code). Retake with `integrations/shopware/dev/screenshots.py` + `dev/store-assets.py`. Still missing (optional): the approval screen on textmeflow.eu and a WhatsApp chat on a phone with a shipping update. The plugin icon in the ZIP is `src/Resources/config/plugin.png` (256x256, generic speech bubble, no third-party logo).

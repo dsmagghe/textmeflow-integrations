@@ -5,16 +5,16 @@
         <title lang="de-DE">Nachrichten an Ihre Kunden</title>
         <title lang="nl-NL">Berichten aan uw klanten</title>
         <title lang="fr-FR">Messages à vos clients</title>
-        <subtitle>Only sent to customers who tick the WhatsApp checkbox at checkout.</subtitle>
-        <subtitle lang="de-DE">Werden nur an Kunden gesendet, die beim Bestellen das WhatsApp-Kästchen anhaken.</subtitle>
-        <subtitle lang="nl-NL">Enkel verstuurd naar klanten die in de checkout het WhatsApp-vakje aanvinken.</subtitle>
-        <subtitle lang="fr-FR">Envoyés uniquement aux clients qui cochent la case WhatsApp lors de la commande.</subtitle>
         <input-field type="bool">
             <name>enableOrderPlaced</name>
             <label>Send: Order placed</label>
             <label lang="de-DE">Senden: Bestellung aufgegeben</label>
             <label lang="nl-NL">Versturen: Bestelling geplaatst</label>
             <label lang="fr-FR">Envoyer : Commande passée</label>
+            <helpText>Only sent to customers who tick the WhatsApp checkbox at checkout.</helpText>
+            <helpText lang="de-DE">Wird nur an Kunden gesendet, die beim Bestellen das WhatsApp-Kästchen anhaken.</helpText>
+            <helpText lang="nl-NL">Enkel verstuurd naar klanten die in de checkout het WhatsApp-vakje aanvinken.</helpText>
+            <helpText lang="fr-FR">Envoyé uniquement aux clients qui cochent la case WhatsApp lors de la commande.</helpText>
             <defaultValue>true</defaultValue>
         </input-field>
         <input-field type="textarea">

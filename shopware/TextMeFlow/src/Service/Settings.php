@@ -77,6 +77,16 @@ class Settings
         return \is_string($value) && trim($value) !== '' ? trim($value) : null;
     }
 
+    /**
+     * The shop name from Settings > Basic information (can differ per sales channel).
+     */
+    public function getShopName(?string $salesChannelId): ?string
+    {
+        $value = $this->systemConfig->get('core.basicInformation.shopName', $salesChannelId);
+
+        return \is_string($value) && trim($value) !== '' ? trim($value) : null;
+    }
+
     public function getDefaultCountry(?string $salesChannelId): ?string
     {
         $value = $this->systemConfig->get(self::CONFIG_DOMAIN . 'defaultCountry', $salesChannelId);

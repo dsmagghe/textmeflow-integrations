@@ -8,12 +8,17 @@ use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\ContainsFilter;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\Plugin;
 use Shopware\Core\Framework\Plugin\Context\InstallContext;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 use Shopware\Core\Framework\Uuid\Uuid;
 use Shopware\Core\System\CustomField\CustomFieldTypes;
-use TextMeFlow\Service\ConnectionService;
+use Shopware\Core\System\SystemConfig\SystemConfigEntity;
+use Symfony\Component\HttpClient\HttpClient;
+use TextMeFlow\Service\SecretBox;
+use TextMeFlow\Service\Settings;
+use TextMeFlow\Service\TextMeFlowClient;
 
 /**
  * TextMeFlow for Shopware 6: WhatsApp order updates through the TextMeFlow API.
@@ -67,18 +72,40 @@ class TextMeFlow extends Plugin
             return;
         }
 
+        $context = $uninstallContext->getContext();
+
         // Invalidate the token at TextMeFlow while it is still in the database (best effort).
         try {
-            /** @var ConnectionService $connection */
-            $connection = $this->container->get(ConnectionService::class);
-            $connection->disconnect();
+            $this->revokeToken($context);
         } catch (\Throwable) {
             // Uninstalling must not fail because the API is unreachable.
         }
 
-        $context = $uninstallContext->getContext();
         $this->removeCustomFields($context);
         $this->removeSystemConfig($context);
+    }
+
+    /**
+     * Shopware deactivates the plugin before calling uninstall(): the container no longer holds
+     * the plugin's services and SystemConfigService hides the config of inactive plugins. So the
+     * token row is read straight from the repository and the client is built by hand.
+     */
+    private function revokeToken(Context $context): void
+    {
+        /** @var EntityRepository<EntityCollection<SystemConfigEntity>> $repository */
+        $repository = $this->container->get('system_config.repository');
+        $criteria = (new Criteria())->addFilter(new EqualsFilter('configurationKey', Settings::INTERNAL_DOMAIN . 'token'));
+        $row = $repository->search($criteria, $context)->first();
+        $stored = $row instanceof SystemConfigEntity ? $row->getConfigurationValue() : null;
+        if (!\is_string($stored) || $stored === '') {
+            return;
+        }
+
+        $secret = $_SERVER['APP_SECRET'] ?? $_ENV['APP_SECRET'] ?? getenv('APP_SECRET');
+        $token = (new SecretBox(\is_string($secret) ? $secret : ''))->decrypt($stored);
+        if ($token !== null) {
+            TextMeFlowClient::create(HttpClient::create())->revoke($token);
+        }
     }
 
     private function removeCustomFields(Context $context): void

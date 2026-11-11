@@ -2,6 +2,7 @@
     "textmeflow": {
         "general": {
             "title": "TextMeFlow - WhatsApp",
+            "settingsLabel": "TextMeFlow",
             "description": "Envoyez des messages WhatsApp pour les commandes via TextMeFlow.",
             "cancel": "Annuler"
         },

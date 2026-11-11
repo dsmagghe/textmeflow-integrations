@@ -7,6 +7,7 @@ use Shopware\Core\Checkout\Order\OrderEntity;
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use Shopware\Core\System\Language\LanguageEntity;
 use TextMeFlow\EventType;
 
 /**
@@ -53,7 +54,10 @@ class OrderMessageFactory
         }
 
         $salesChannelId = $order->getSalesChannelId();
-        $locale = $order->getLanguage()?->getLocale()?->getCode() ?? DefaultTexts::FALLBACK_LOCALE;
+        // Typed as non-null in 6.5 and nullable in 6.6; the association can be missing either way.
+        /** @var LanguageEntity|null $language */
+        $language = $order->getLanguage();
+        $locale = $language?->getLocale()?->getCode() ?? DefaultTexts::FALLBACK_LOCALE;
 
         if ($event->isForOwner()) {
             $rawNumber = $this->settings->getOwnerPhone($salesChannelId);
@@ -141,7 +145,9 @@ class OrderMessageFactory
                 $order->getCurrency()?->getIsoCode() ?? '',
                 $locale
             ),
-            'shop_name' => $salesChannel?->getTranslation('name') ?? $salesChannel?->getName(),
+            // The shop name from the basic settings; the sales channel name is often just "Storefront".
+            'shop_name' => $this->settings->getShopName($order->getSalesChannelId())
+                ?? $salesChannel?->getTranslation('name') ?? $salesChannel?->getName(),
             'tracking_url' => $trackingUrl,
             'tracking_code' => $trackingCode,
         ];

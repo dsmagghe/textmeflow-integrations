@@ -3,6 +3,7 @@
 namespace TextMeFlow\Message;
 
 use Psr\Log\LoggerInterface;
+use Shopware\Core\Framework\Api\Context\SystemSource;
 use Shopware\Core\Framework\Context;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use TextMeFlow\EventType;
@@ -33,7 +34,8 @@ final class SendMessageHandler
             return;
         }
 
-        $context = Context::createDefaultContext();
+        // Queue worker: no request context to pass down, so act as the system (same as a CLI context).
+        $context = new Context(new SystemSource());
         $plan = $this->factory->create($message->orderId, $event, $context);
         if (!$plan->shouldSend()) {
             // Skipping is normal (no consent, no phone number, already sent): not an error.

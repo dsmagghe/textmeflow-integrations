@@ -1,0 +1,9 @@
+# shopware-cli settings for the Store ZIP (extension package / validate).
+build:
+  zip:
+    pack:
+      excludes:
+        paths:
+          # Internal notes for the Store submission; not part of the plugin.
+          - SUBMIT.md
+          - LISTING.md
