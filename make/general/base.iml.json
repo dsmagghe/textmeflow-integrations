@@ -1,0 +1,16 @@
+{
+  "baseUrl": "https://api.textmeflow.eu/v1",
+  "headers": {
+    "Authorization": "Bearer {{connection.apiKey}}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "log": {
+    "sanitize": ["request.headers.authorization"]
+  },
+  "response": {
+    "error": {
+      "message": "[{{statusCode}}] {{ifempty(body.error, 'TextMeFlow request failed')}}"
+    }
+  }
+}

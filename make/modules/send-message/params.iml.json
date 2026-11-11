@@ -1,0 +1,23 @@
+[
+  {
+    "name": "to",
+    "type": "text",
+    "label": "Phone number",
+    "required": true,
+    "help": "With country code, for example +32470123456. Only message people who agreed to receive WhatsApp messages from you."
+  },
+  {
+    "name": "text",
+    "type": "text",
+    "label": "Message",
+    "required": true,
+    "multiline": true
+  },
+  {
+    "name": "media_url",
+    "type": "url",
+    "label": "Image or file URL",
+    "required": false,
+    "help": "Optional. A public https link to an image or file."
+  }
+]

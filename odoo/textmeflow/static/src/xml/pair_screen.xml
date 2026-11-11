@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="textmeflow.PairScreen">
+        <div class="o_textmeflow_pair p-4 text-center">
+            <h3 class="mb-3">Link WhatsApp</h3>
+
+            <t t-if="state.status === 'connected'">
+                <p class="fs-4 text-success"><i class="fa fa-check-circle"/> WhatsApp linked</p>
+                <p>You can close this window.</p>
+            </t>
+            <t t-elif="state.status === 'expired'">
+                <p>The code expired.</p>
+                <button class="btn btn-primary" t-on-click="onNewCode">New code</button>
+            </t>
+            <t t-elif="state.status === 'error'">
+                <t t-if="state.error === 'device_limit_reached'">
+                    <p>Your plan has reached its limit of linked numbers.</p>
+                    <a class="btn btn-primary" t-att-href="state.upgradeUrl" target="_blank" rel="noopener">Upgrade your plan</a>
+                </t>
+                <t t-elif="state.error === 'not_connected'">
+                    <p>Connect with TextMeFlow first.</p>
+                </t>
+                <t t-else="">
+                    <p>TextMeFlow could not be reached.</p>
+                    <button class="btn btn-primary" t-on-click="onNewCode">Try again</button>
+                </t>
+            </t>
+            <t t-else="">
+                <ol class="text-start d-inline-block mb-3">
+                    <li>Open WhatsApp on your phone.</li>
+                    <li>Go to Settings, then Linked devices.</li>
+                    <li>Tap Link a device and scan this code.</li>
+                </ol>
+                <div>
+                    <img t-if="state.qr" t-att-src="state.qr" alt="QR code" width="260" height="260" class="border p-2 bg-white"/>
+                    <p t-else="" class="text-muted">Preparing the code...</p>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

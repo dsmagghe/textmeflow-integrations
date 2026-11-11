@@ -1,0 +1,4 @@
+[
+  { "name": "id", "type": "text", "label": "Message ID" },
+  { "name": "status", "type": "text", "label": "Status" }
+]

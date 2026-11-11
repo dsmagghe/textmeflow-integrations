@@ -1,0 +1,61 @@
+{
+    "textmeflow": {
+        "general": {
+            "title": "TextMeFlow - WhatsApp",
+            "description": "Envoyez des messages WhatsApp pour les commandes via TextMeFlow.",
+            "cancel": "Annuler"
+        },
+        "connect": {
+            "title": "Connexion à TextMeFlow",
+            "intro": "Envoyez à vos clients des mises à jour de commande sur WhatsApp. Cliquez sur le bouton, connectez-vous ou créez un compte TextMeFlow gratuit, puis autorisez la connexion. Vous revenez ici automatiquement.",
+            "button": "Se connecter à TextMeFlow",
+            "privacy": "Les numéros de téléphone et les textes des messages sont transmis à TextMeFlow (hébergé dans l'UE, Fades Management EOOD, Bulgarie) pour être livrés.",
+            "privacyLink": "Politique de confidentialité",
+            "tokenInvalid": "La connexion a été supprimée dans votre compte TextMeFlow. Veuillez vous reconnecter."
+        },
+        "pair": {
+            "title": "Associer WhatsApp",
+            "instructions": "Ouvrez WhatsApp sur votre téléphone, allez dans Paramètres, puis Appareils connectés, touchez Connecter un appareil et scannez ce code.",
+            "deviceLimit": "Votre formule n'a pas de place pour un autre numéro WhatsApp.",
+            "upgrade": "Changer de formule",
+            "error": "Le code n'a pas pu être chargé. Veuillez réessayer.",
+            "qrAlt": "QR code pour associer WhatsApp",
+            "waiting": "Préparation du code...",
+            "expired": "Le code a expiré.",
+            "newCode": "Nouveau code"
+        },
+        "status": {
+            "title": "Connecté",
+            "whatsappConnected": "WhatsApp connecté avec le numéro",
+            "account": "Compte TextMeFlow : {email}"
+        },
+        "test": {
+            "title": "Message de test",
+            "label": "Votre numéro WhatsApp",
+            "placeholder": "+32470123456",
+            "button": "Envoyez-moi un message de test"
+        },
+        "messages": {
+            "title": "Messages",
+            "description": "Choisissez les messages envoyés et modifiez les textes. Les clients ne reçoivent des messages que s'ils cochent la case WhatsApp lors de la commande.",
+            "button": "Modifier les messages"
+        },
+        "disconnect": {
+            "title": "Déconnexion",
+            "description": "Arrêter l'envoi de messages et supprimer la connexion de cette boutique.",
+            "button": "Déconnecter",
+            "confirm": "Plus aucun message ne sera envoyé. Voulez-vous déconnecter cette boutique de TextMeFlow ?"
+        },
+        "notice": {
+            "connected": "Connecté à TextMeFlow.",
+            "denied": "La connexion a été annulée.",
+            "failed": "La connexion n'a pas abouti. Veuillez réessayer.",
+            "statusFailed": "Le statut n'a pas pu être chargé.",
+            "httpsRequired": "Pour se connecter, cette boutique doit être accessible en https.",
+            "testSent": "Message de test envoyé.",
+            "invalidNumber": "Ce numéro de téléphone n'est pas valide. Indiquez l'indicatif du pays, par exemple +32470123456.",
+            "testFailed": "Le message de test n'a pas pu être envoyé.",
+            "disconnected": "Déconnecté de TextMeFlow."
+        }
+    }
+}

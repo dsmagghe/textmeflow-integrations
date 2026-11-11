@@ -1,0 +1,61 @@
+{
+    "textmeflow": {
+        "general": {
+            "title": "TextMeFlow - WhatsApp",
+            "description": "Verstuur WhatsApp-berichten bij bestellingen via TextMeFlow.",
+            "cancel": "Annuleren"
+        },
+        "connect": {
+            "title": "Verbinden met TextMeFlow",
+            "intro": "Stuur uw klanten updates over hun bestelling via WhatsApp. Klik op de knop, meld u aan of maak een gratis TextMeFlow-account en keur de koppeling goed. U komt automatisch hier terug.",
+            "button": "Verbind met TextMeFlow",
+            "privacy": "Telefoonnummers en berichtteksten worden naar TextMeFlow (gehost in de EU, Fades Management EOOD, Bulgarije) gestuurd om de berichten te bezorgen.",
+            "privacyLink": "Privacybeleid",
+            "tokenInvalid": "De koppeling is verwijderd in uw TextMeFlow-account. Verbind opnieuw."
+        },
+        "pair": {
+            "title": "WhatsApp koppelen",
+            "instructions": "Open WhatsApp op uw telefoon, ga naar Instellingen, dan Gekoppelde apparaten, tik op Een apparaat koppelen en scan deze code.",
+            "deviceLimit": "Uw abonnement heeft geen plaats voor nog een WhatsApp-nummer.",
+            "upgrade": "Abonnement uitbreiden",
+            "error": "De code kon niet geladen worden. Probeer het opnieuw.",
+            "qrAlt": "QR-code om WhatsApp te koppelen",
+            "waiting": "Code wordt voorbereid...",
+            "expired": "De code is verlopen.",
+            "newCode": "Nieuwe code"
+        },
+        "status": {
+            "title": "Verbonden",
+            "whatsappConnected": "WhatsApp verbonden met nummer",
+            "account": "TextMeFlow-account: {email}"
+        },
+        "test": {
+            "title": "Testbericht",
+            "label": "Uw WhatsApp-nummer",
+            "placeholder": "+32470123456",
+            "button": "Stuur mij een testbericht"
+        },
+        "messages": {
+            "title": "Berichten",
+            "description": "Kies welke berichten verstuurd worden en pas de teksten aan. Klanten ontvangen enkel berichten als ze in de checkout het WhatsApp-vakje aanvinken.",
+            "button": "Berichten aanpassen"
+        },
+        "disconnect": {
+            "title": "Verbinding verbreken",
+            "description": "Stop met berichten versturen en verwijder de koppeling van deze winkel.",
+            "button": "Verbreken",
+            "confirm": "Er worden geen berichten meer verstuurd. Wilt u deze winkel loskoppelen van TextMeFlow?"
+        },
+        "notice": {
+            "connected": "Verbonden met TextMeFlow.",
+            "denied": "De koppeling is geannuleerd.",
+            "failed": "Verbinden is niet gelukt. Probeer het opnieuw.",
+            "statusFailed": "De status kon niet geladen worden.",
+            "httpsRequired": "Om te verbinden moet deze winkel bereikbaar zijn via https.",
+            "testSent": "Testbericht verstuurd.",
+            "invalidNumber": "Dit telefoonnummer is niet geldig. Geef de landcode mee, bijvoorbeeld +32470123456.",
+            "testFailed": "Het testbericht kon niet verstuurd worden.",
+            "disconnected": "Losgekoppeld van TextMeFlow."
+        }
+    }
+}

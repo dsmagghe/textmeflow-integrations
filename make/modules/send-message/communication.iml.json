@@ -1,0 +1,15 @@
+{
+  "url": "/messages",
+  "method": "POST",
+  "body": {
+    "to": "{{parameters.to}}",
+    "text": "{{parameters.text}}",
+    "media_url": "{{ifempty(parameters.media_url; emptystring)}}"
+  },
+  "response": {
+    "output": {
+      "id": "{{body.message_id}}",
+      "status": "{{body.status}}"
+    }
+  }
+}

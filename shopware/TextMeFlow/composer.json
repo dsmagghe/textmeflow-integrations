@@ -1,0 +1,65 @@
+{
+    "name": "textmeflow/shopware-textmeflow",
+    "description": "Send WhatsApp order updates from Shopware 6 through TextMeFlow (EU-hosted WhatsApp messaging API).",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "keywords": ["shopware", "whatsapp", "notifications", "textmeflow"],
+    "homepage": "https://textmeflow.eu",
+    "authors": [
+        {
+            "name": "Fades Management EOOD",
+            "homepage": "https://textmeflow.eu"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "shopware/core": "~6.5.8 || ~6.6.0",
+        "shopware/administration": "~6.5.8 || ~6.6.0",
+        "shopware/storefront": "~6.5.8 || ~6.6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5 || ^11.0",
+        "symfony/http-client": "^6.4 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TextMeFlow\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TextMeFlow\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "TextMeFlow\\TextMeFlow",
+        "label": {
+            "en-GB": "TextMeFlow - WhatsApp order updates",
+            "de-DE": "TextMeFlow - WhatsApp-Bestellbenachrichtigungen",
+            "nl-NL": "TextMeFlow - WhatsApp-berichten bij bestellingen",
+            "fr-FR": "TextMeFlow - Messages WhatsApp pour les commandes"
+        },
+        "description": {
+            "en-GB": "Connect your shop to TextMeFlow in one click and send order updates to your customers on WhatsApp, only with their consent.",
+            "de-DE": "Verbinden Sie Ihren Shop mit einem Klick mit TextMeFlow und senden Sie Ihren Kunden Bestellupdates per WhatsApp, nur mit deren Einwilligung.",
+            "nl-NL": "Koppel uw winkel met één klik aan TextMeFlow en stuur uw klanten bestelupdates via WhatsApp, enkel met hun toestemming.",
+            "fr-FR": "Connectez votre boutique à TextMeFlow en un clic et envoyez des mises à jour de commande par WhatsApp, uniquement avec le consentement du client."
+        },
+        "manufacturerLink": {
+            "en-GB": "https://textmeflow.eu",
+            "de-DE": "https://textmeflow.eu",
+            "nl-NL": "https://textmeflow.eu",
+            "fr-FR": "https://textmeflow.eu"
+        },
+        "supportLink": {
+            "en-GB": "https://textmeflow.eu",
+            "de-DE": "https://textmeflow.eu",
+            "nl-NL": "https://textmeflow.eu",
+            "fr-FR": "https://textmeflow.eu"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

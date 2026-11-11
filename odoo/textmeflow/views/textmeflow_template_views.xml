@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="textmeflow_template_view_tree" model="ir.ui.view">
+        <field name="name">textmeflow.template.tree</field>
+        <field name="model">textmeflow.template</field>
+        <field name="arch" type="xml">
+            <tree string="Message templates">
+                <field name="event"/>
+                <field name="lang"/>
+                <field name="body"/>
+                <field name="active" column_invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="textmeflow_template_view_form" model="ir.ui.view">
+        <field name="name">textmeflow.template.form</field>
+        <field name="model">textmeflow.template</field>
+        <field name="arch" type="xml">
+            <form string="Message template">
+                <sheet>
+                    <group>
+                        <field name="event"/>
+                        <field name="lang"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="body" nolabel="1" colspan="2" placeholder="Hi {first_name}, ..."/>
+                    </group>
+                    <div class="text-muted">
+                        Placeholders: {first_name}, {name}, {order_number}, {order_total}, {invoice_number}, {invoice_total}, {due_date}, {shop_name}, {portal_url}, {tracking_url}
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_textmeflow_template" model="ir.actions.act_window">
+        <field name="name">Message templates</field>
+        <field name="res_model">textmeflow.template</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="Modules.Textmeflow.Admin" source-language="en-US" target-language="de-DE" datatype="plaintext">
+    <body>
+      <trans-unit id="31b052d3f40b0905b2a293fc276f3cfa">
+        <source>TextMeFlow - WhatsApp order updates</source>
+        <target>TextMeFlow - WhatsApp-Nachrichten zu Bestellungen</target>
+      </trans-unit>
+      <trans-unit id="cab1a902237f4a49a9459b4dbc396439">
+        <source>Send your customers order updates on WhatsApp, from your own number. Connect in one click.</source>
+        <target>Senden Sie Ihren Kunden Bestellupdates per WhatsApp, von Ihrer eigenen Nummer. Verbinden mit einem Klick.</target>
+      </trans-unit>
+      <trans-unit id="15b8a98f24a57fc44b68714df963587f">
+        <source>Are you sure? The connection with TextMeFlow will be removed.</source>
+        <target>Sind Sie sicher? Die Verbindung mit TextMeFlow wird entfernt.</target>
+      </trans-unit>
+      <trans-unit id="da747ccc5acf7243b571f506e75ce100">
+        <source>The connection has been removed.</source>
+        <target>Die Verbindung wurde entfernt.</target>
+      </trans-unit>
+      <trans-unit id="f677a4ac1434354d534179804676b72e">
+        <source>Connected to TextMeFlow. Now scan the QR code with WhatsApp.</source>
+        <target>Mit TextMeFlow verbunden. Scannen Sie jetzt den QR-Code mit WhatsApp.</target>
+      </trans-unit>
+      <trans-unit id="f514978cf19bc6c5ddd20f0efff2ec33">
+        <source>The connection was not completed. Please try again.</source>
+        <target>Die Verbindung wurde nicht abgeschlossen. Bitte versuchen Sie es erneut.</target>
+      </trans-unit>
+      <trans-unit id="fb266a7ed418ca14f35b3c1094dffd07">
+        <source>Please enter a valid mobile number.</source>
+        <target>Bitte geben Sie eine gültige Handynummer ein.</target>
+      </trans-unit>
+      <trans-unit id="10f61d576e804a87d679eeb215776f65">
+        <source>Enter your own mobile number to receive new-order messages.</source>
+        <target>Geben Sie Ihre eigene Handynummer ein, um Nachrichten zu neuen Bestellungen zu erhalten.</target>
+      </trans-unit>
+      <trans-unit id="9a7e58ee13cb727cb7c4acc68f4cafe5">
+        <source>Settings saved.</source>
+        <target>Einstellungen gespeichert.</target>
+      </trans-unit>
+      <trans-unit id="8725743ac83d2261655a0a25b82441b4">
+        <source>Send your customers order updates on WhatsApp, from your own number. Setting up takes about two minutes.</source>
+        <target>Senden Sie Ihren Kunden Bestellupdates per WhatsApp, von Ihrer eigenen Nummer. Die Einrichtung dauert etwa zwei Minuten.</target>
+      </trans-unit>
+      <trans-unit id="37f0a5a88d778d931342e0968eb9e504">
+        <source>Click the button below and sign in or create your free TextMeFlow account.</source>
+        <target>Klicken Sie auf die Schaltfläche unten und melden Sie sich an oder erstellen Sie Ihr kostenloses TextMeFlow-Konto.</target>
+      </trans-unit>
+      <trans-unit id="c2ee9c3176616ace248cf7a113f8445d">
+        <source>Allow the connection and you return here automatically.</source>
+        <target>Erlauben Sie die Verbindung und Sie kehren automatisch hierher zurück.</target>
+      </trans-unit>
+      <trans-unit id="ef16e8ff217d79122488a5c985794cca">
+        <source>Scan the QR code with WhatsApp. Done.</source>
+        <target>Scannen Sie den QR-Code mit WhatsApp. Fertig.</target>
+      </trans-unit>
+      <trans-unit id="cf3860a946b78488373cbb50ef28aea3">
+        <source>Connect with TextMeFlow</source>
+        <target>Mit TextMeFlow verbinden</target>
+      </trans-unit>
+      <trans-unit id="1d3d1145f48ecc613fd125eca780187d">
+        <source>When you connect, the phone number and message text of the messages you send are processed by TextMeFlow (EU-hosted, Fades Management EOOD, Bulgaria).</source>
+        <target>Nach dem Verbinden werden die Telefonnummer und der Text der gesendeten Nachrichten von TextMeFlow verarbeitet (EU-gehostet, Fades Management EOOD, Bulgarien).</target>
+      </trans-unit>
+      <trans-unit id="56c34c6410dd45c5cec44149ad0ce037">
+        <source>Privacy policy</source>
+        <target>Datenschutzerklärung</target>
+      </trans-unit>
+      <trans-unit id="6f1bf85c9ebb3c7fa26251e1e335e032">
+        <source>Terms</source>
+        <target>Bedingungen</target>
+      </trans-unit>
+      <trans-unit id="f4963baec548c31c78c8d7217da22df0">
+        <source>WhatsApp connection</source>
+        <target>WhatsApp-Verbindung</target>
+      </trans-unit>
+      <trans-unit id="44e6108ff458cea05eca82b296ef617f">
+        <source>Checking...</source>
+        <target>Wird geprüft...</target>
+      </trans-unit>
+      <trans-unit id="414d7b4fc2585acbc6577ce7cf1b0011">
+        <source>QR code to link WhatsApp</source>
+        <target>QR-Code zum Verknuepfen von WhatsApp</target>
+      </trans-unit>
+      <trans-unit id="5d24e361d3da6824ecda5af6b7d1dce2">
+        <source>Upgrade your plan</source>
+        <target>Tarif upgraden</target>
+      </trans-unit>
+      <trans-unit id="f1ab56dad3c69f1cfd47f4826a2bcb90">
+        <source>Show QR code</source>
+        <target>QR-Code anzeigen</target>
+      </trans-unit>
+      <trans-unit id="41de6d6cfb8953c021bbe4ba0701c8a1">
+        <source>Messages</source>
+        <target>Nachrichten</target>
+      </trans-unit>
+      <trans-unit id="027ef0f2f76deecb4e4f31ee781d6471">
+        <source>Customers only receive a message when they ticked the WhatsApp box when ordering. Leave a text empty to use the ready-made text in the language of the customer. You can use these placeholders:</source>
+        <target>Kunden erhalten nur dann eine Nachricht, wenn sie bei der Bestellung das WhatsApp-Kästchen angekreuzt haben. Lassen Sie einen Text leer, um den fertigen Text in der Sprache des Kunden zu verwenden. Sie können diese Platzhalter verwenden:</target>
+      </trans-unit>
+      <trans-unit id="57297718fdb439175177cf6b196172d1">
+        <source>Order status</source>
+        <target>Bestellstatus</target>
+      </trans-unit>
+      <trans-unit id="cc5fd9b9f1cad59fcff97a1f21f34304">
+        <source>Send a message</source>
+        <target>Nachricht senden</target>
+      </trans-unit>
+      <trans-unit id="90022e20087ac2d7a15e6d48556609ef">
+        <source>Own text (optional)</source>
+        <target>Eigener Text (optional)</target>
+      </trans-unit>
+      <trans-unit id="eb6f65bc4c2603aa16fd401b16d1ad08">
+        <source>Your own mobile number</source>
+        <target>Ihre eigene Handynummer</target>
+      </trans-unit>
+      <trans-unit id="39dd0bd2a8900b5fbe613d985bcbbb1d">
+        <source>Used for the test message and, if you tick the box below, for new-order messages to you.</source>
+        <target>Wird für die Testnachricht und, wenn Sie das Kästchen unten ankreuzen, für Nachrichten zu neuen Bestellungen verwendet.</target>
+      </trans-unit>
+      <trans-unit id="ebe724e1b08135d66145b3619f609069">
+        <source>Send me a WhatsApp message for every new order</source>
+        <target>Senden Sie mir bei jeder neuen Bestellung eine WhatsApp-Nachricht</target>
+      </trans-unit>
+      <trans-unit id="c9cc8cce247e49bae79f15173ce97354">
+        <source>Save</source>
+        <target>Speichern</target>
+      </trans-unit>
+      <trans-unit id="e1122084842d5d043a4df488ad1166c3">
+        <source>Send me a test message</source>
+        <target>Testnachricht an mich senden</target>
+      </trans-unit>
+      <trans-unit id="8631ddb931b3d15c58a665b6fcc4d9ac">
+        <source>Remove the connection with TextMeFlow?</source>
+        <target>Die Verbindung mit TextMeFlow entfernen?</target>
+      </trans-unit>
+      <trans-unit id="42ae25231906c83927831e0ef7c317ac">
+        <source>Disconnect</source>
+        <target>Verbindung trennen</target>
+      </trans-unit>
+      <trans-unit id="a19383a0733601ad7d6170ddab8d38cd">
+        <source>No more messages will be sent until you connect again.</source>
+        <target>Es werden keine Nachrichten mehr gesendet, bis Sie erneut verbinden.</target>
+      </trans-unit>
+      <trans-unit id="2c2809d30570147032911fa194f08041">
+        <source>Connected with WhatsApp number</source>
+        <target>Verbunden mit WhatsApp-Nummer</target>
+      </trans-unit>
+      <trans-unit id="ab47176306568493810ed13f94e7f5d7">
+        <source>Your WhatsApp is not linked yet.</source>
+        <target>Ihr WhatsApp ist noch nicht verknüpft.</target>
+      </trans-unit>
+      <trans-unit id="a92a5e26063301d443824b395eb77ea8">
+        <source>Open WhatsApp on your phone, go to Settings &gt; Linked devices &gt; Link a device and scan this code.</source>
+        <target>Öffnen Sie WhatsApp auf Ihrem Telefon, gehen Sie zu Einstellungen &gt; Verknüpfte Geräte &gt; Gerät verknüpfen und scannen Sie diesen Code.</target>
+      </trans-unit>
+      <trans-unit id="4b18f6c1fed86ac32102317e978a7fa4">
+        <source>New code</source>
+        <target>Neuer Code</target>
+      </trans-unit>
+      <trans-unit id="0437802d2c0a3bc09ece33f58b4d00df">
+        <source>Waiting for the scan...</source>
+        <target>Warten auf den Scan...</target>
+      </trans-unit>
+      <trans-unit id="8cc3e89bf4a2d9d2059c0671657e1ded">
+        <source>WhatsApp connected</source>
+        <target>WhatsApp verbunden</target>
+      </trans-unit>
+      <trans-unit id="8eb52419c381c774901cc6dc71c5c1c1">
+        <source>The code expired.</source>
+        <target>Der Code ist abgelaufen.</target>
+      </trans-unit>
+      <trans-unit id="4e1835d6cc22c42bfd9bd5755b85e581">
+        <source>Your plan allows no more linked numbers. Upgrade your plan to add another number.</source>
+        <target>Ihr Tarif erlaubt keine weiteren verknüpften Nummern. Upgraden Sie Ihren Tarif, um eine Nummer hinzuzufügen.</target>
+      </trans-unit>
+      <trans-unit id="e9f36d65b0491f99ef8f0ce2c11bf998">
+        <source>Something went wrong. Please try again.</source>
+        <target>Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.</target>
+      </trans-unit>
+      <trans-unit id="69c75bd7a2bd7c2700eac7b8847396a8">
+        <source>Test message sent. Check your WhatsApp.</source>
+        <target>Testnachricht gesendet. Prüfen Sie Ihr WhatsApp.</target>
+      </trans-unit>
+      <trans-unit id="2f684250ca18c74050cba7d364cfe431">
+        <source>Please enter a valid mobile number first.</source>
+        <target>Bitte geben Sie zuerst eine gültige Handynummer ein.</target>
+      </trans-unit>
+      <trans-unit id="ec4f59f8ab0c8afc81c6c9443e1e4d79">
+        <source>The test message could not be sent. Is your WhatsApp linked?</source>
+        <target>Die Testnachricht konnte nicht gesendet werden. Ist Ihr WhatsApp verknüpft?</target>
+      </trans-unit>
+      <trans-unit id="5adc758236a640bbfd6ce3950078c0ba">
+        <source>You have used all messages of your plan this month.</source>
+        <target>Sie haben alle Nachrichten Ihres Tarifs für diesen Monat verbraucht.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

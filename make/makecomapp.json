@@ -1,0 +1,70 @@
+{
+  "fileVersion": 1,
+  "generalCodeFiles": {
+    "base": "./general/base.iml.json",
+    "groups": "./general/groups.json",
+    "readme": "./general/readme.md"
+  },
+  "components": {
+    "connection": {
+      "textmeflow": {
+        "label": "TextMeFlow",
+        "type": "basic",
+        "codeFiles": {
+          "communication": "./connections/textmeflow/communication.iml.json",
+          "params": "./connections/textmeflow/params.iml.json"
+        }
+      }
+    },
+    "webhook": {
+      "incoming": {
+        "label": "TextMeFlow incoming message",
+        "type": "web",
+        "connection": null,
+        "codeFiles": {
+          "communication": "./webhooks/incoming/communication.iml.json",
+          "params": "./webhooks/incoming/params.iml.json"
+        }
+      }
+    },
+    "module": {
+      "sendMessage": {
+        "label": "Send a WhatsApp Message",
+        "description": "Sends a WhatsApp message from your linked number.",
+        "moduleType": "action",
+        "actionCrud": "create",
+        "connection": "textmeflow",
+        "codeFiles": {
+          "communication": "./modules/send-message/communication.iml.json",
+          "params": "./modules/send-message/params.iml.json",
+          "interface": "./modules/send-message/interface.iml.json"
+        }
+      },
+      "getMessage": {
+        "label": "Get a Message",
+        "description": "Gets the delivery status of a message by its ID.",
+        "moduleType": "action",
+        "actionCrud": "read",
+        "connection": "textmeflow",
+        "codeFiles": {
+          "communication": "./modules/get-message/communication.iml.json",
+          "params": "./modules/get-message/params.iml.json",
+          "interface": "./modules/get-message/interface.iml.json"
+        }
+      },
+      "watchIncoming": {
+        "label": "Watch Incoming Messages",
+        "description": "Triggers instantly when someone replies to your linked WhatsApp number.",
+        "moduleType": "instant_trigger",
+        "webhook": "incoming",
+        "connection": null,
+        "codeFiles": {
+          "communication": "./modules/watch-incoming/communication.iml.json",
+          "params": "./modules/watch-incoming/params.iml.json",
+          "interface": "./modules/watch-incoming/interface.iml.json"
+        }
+      }
+    }
+  },
+  "origins": []
+}

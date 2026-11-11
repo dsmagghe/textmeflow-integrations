@@ -1,0 +1,390 @@
+# TextMeFlow
+# Copyright (C) 2026 TextMeFlow
+# This file is distributed under the GPLv2 or later.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TextMeFlow 1.0.0\n"
+"Report-Msgid-Bugs-To: support@textmeflow.eu\n"
+"POT-Creation-Date: 2026-11-11 18:25+0100\n"
+"PO-Revision-Date: 2026-11-11 12:00+0000\n"
+"Last-Translator: TextMeFlow\n"
+"Language-Team: TextMeFlow\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-textmeflow-admin.php:53
+#: includes/class-textmeflow-admin.php:54
+#: includes/class-textmeflow-admin.php:439
+msgid "TextMeFlow"
+msgstr "TextMeFlow"
+
+#: includes/class-textmeflow-admin.php:70
+msgid "Settings"
+msgstr "Instellingen"
+
+#: includes/class-textmeflow-admin.php:109
+#: includes/class-textmeflow-admin.php:501
+msgid "Checking connection..."
+msgstr "Verbinding controleren..."
+
+#: includes/class-textmeflow-admin.php:110
+#, php-format
+msgid "WhatsApp connected with number %s"
+msgstr "WhatsApp verbonden met nummer %s"
+
+#: includes/class-textmeflow-admin.php:111
+msgid "WhatsApp connected"
+msgstr "WhatsApp verbonden"
+
+#: includes/class-textmeflow-admin.php:112
+msgid "Your WhatsApp number is not linked yet."
+msgstr "Je WhatsApp-nummer is nog niet gekoppeld."
+
+#: includes/class-textmeflow-admin.php:113
+msgid "Preparing your code..."
+msgstr "Je code wordt voorbereid..."
+
+#: includes/class-textmeflow-admin.php:114
+msgid "Scan this code with WhatsApp."
+msgstr "Scan deze code met WhatsApp."
+
+#: includes/class-textmeflow-admin.php:115
+msgid "The code expired."
+msgstr "De code is verlopen."
+
+#: includes/class-textmeflow-admin.php:116
+#: includes/class-textmeflow-admin.php:508
+msgid "Get a new code"
+msgstr "Nieuwe code opvragen"
+
+#: includes/class-textmeflow-admin.php:117
+#: includes/class-textmeflow-admin.php:509
+msgid "Upgrade your plan"
+msgstr "Upgrade je abonnement"
+
+#: includes/class-textmeflow-admin.php:118
+#: includes/class-textmeflow-admin.php:292
+#: includes/class-textmeflow-admin.php:362
+msgid "Something went wrong. Please try again."
+msgstr "Er ging iets mis. Probeer het opnieuw."
+
+#: includes/class-textmeflow-admin.php:119
+msgid "Sending..."
+msgstr "Versturen..."
+
+#: includes/class-textmeflow-admin.php:120
+msgid "Test message sent. Check your WhatsApp."
+msgstr "Testbericht verstuurd. Kijk in je WhatsApp."
+
+#: includes/class-textmeflow-admin.php:135
+#: includes/class-textmeflow-admin.php:162
+#: includes/class-textmeflow-admin.php:210
+#: includes/class-textmeflow-admin.php:242
+msgid "You do not have permission to do this."
+msgstr "Je hebt hiervoor geen toestemming."
+
+#: includes/class-textmeflow-admin.php:201
+msgid "Connected to TextMeFlow."
+msgstr "Verbonden met TextMeFlow."
+
+#: includes/class-textmeflow-admin.php:218
+#: includes/class-textmeflow-admin.php:414
+msgid "Disconnected from TextMeFlow."
+msgstr "Verbinding met TextMeFlow verbroken."
+
+#: includes/class-textmeflow-admin.php:248
+msgid "Not connected to TextMeFlow."
+msgstr "Niet verbonden met TextMeFlow."
+
+#: includes/class-textmeflow-admin.php:262
+msgid "Could not reach TextMeFlow. Please try again."
+msgstr "TextMeFlow is niet bereikbaar. Probeer het opnieuw."
+
+#: includes/class-textmeflow-admin.php:273
+msgid ""
+"The connection with TextMeFlow is no longer valid. Please disconnect and "
+"connect again."
+msgstr "De verbinding met TextMeFlow is niet meer geldig. Verbreek de verbinding en verbind opnieuw."
+
+#: includes/class-textmeflow-admin.php:281
+msgid "Your plan allows no more linked WhatsApp numbers."
+msgstr "Je abonnement laat geen extra gekoppelde WhatsApp-nummers meer toe."
+
+#: includes/class-textmeflow-admin.php:287
+msgid "Your message quota is used up or you are sending too fast."
+msgstr "Je berichtenquotum is op of je verstuurt te snel."
+
+#: includes/class-textmeflow-admin.php:290
+msgid "That phone number is not valid."
+msgstr "Dat telefoonnummer is niet geldig."
+
+#: includes/class-textmeflow-admin.php:379
+msgid "Enter your own WhatsApp number first, including the country if you can."
+msgstr "Vul eerst je eigen WhatsApp-nummer in, bij voorkeur met landcode."
+
+#: includes/class-textmeflow-admin.php:387
+msgid "Test message sent."
+msgstr "Testbericht verstuurd."
+
+#: includes/class-textmeflow-admin.php:413
+msgid "Connected to TextMeFlow. Now link your WhatsApp number below."
+msgstr "Verbonden met TextMeFlow. Koppel hieronder nu je WhatsApp-nummer."
+
+#: includes/class-textmeflow-admin.php:415
+msgid "The connection was not approved. You can try again whenever you like."
+msgstr "De verbinding werd niet goedgekeurd. Je kan het altijd opnieuw proberen."
+
+#: includes/class-textmeflow-admin.php:416
+msgid "Connecting did not work. Please try again."
+msgstr "Verbinden is niet gelukt. Probeer het opnieuw."
+
+#: includes/class-textmeflow-admin.php:417
+msgid "The connection request expired. Please try again."
+msgstr "De verbindingsaanvraag is verlopen. Probeer het opnieuw."
+
+#: includes/class-textmeflow-admin.php:468
+msgid "Send WhatsApp messages from your own number"
+msgstr "Verstuur WhatsApp-berichten vanaf je eigen nummer"
+
+#: includes/class-textmeflow-admin.php:470
+msgid "Click the button below and log in or create a free TextMeFlow account."
+msgstr "Klik op de knop hieronder en log in of maak een gratis TextMeFlow-account aan."
+
+#: includes/class-textmeflow-admin.php:471
+msgid "Approve the connection. You come back here automatically."
+msgstr "Keur de verbinding goed. Je komt automatisch hier terug."
+
+#: includes/class-textmeflow-admin.php:472
+msgid "Scan the code with WhatsApp. Done."
+msgstr "Scan de code met WhatsApp. Klaar."
+
+#: includes/class-textmeflow-admin.php:477
+msgid "Connect to TextMeFlow"
+msgstr "Verbind met TextMeFlow"
+
+#. translators: 1: link to privacy policy, 2: link to terms
+#: includes/class-textmeflow-admin.php:483
+#, php-format
+msgid ""
+"Phone numbers and message texts are sent to TextMeFlow (hosted in the EU) "
+"only to deliver your messages. See the %1$s and the %2$s."
+msgstr "Telefoonnummers en berichtteksten gaan enkel naar TextMeFlow (gehost in de EU) om je berichten te bezorgen. Zie de %1$s en de %2$s."
+
+#: includes/class-textmeflow-admin.php:484
+msgid "privacy policy"
+msgstr "privacyverklaring"
+
+#: includes/class-textmeflow-admin.php:485
+msgid "terms"
+msgstr "voorwaarden"
+
+#: includes/class-textmeflow-admin.php:500
+msgid "Connection"
+msgstr "Verbinding"
+
+#: includes/class-textmeflow-admin.php:504
+msgid ""
+"Open WhatsApp on your phone, go to Settings, then Linked devices, then Link "
+"a device, and scan this code."
+msgstr "Open WhatsApp op je telefoon, ga naar Instellingen, dan Gekoppelde apparaten, dan Een apparaat koppelen, en scan deze code."
+
+#: includes/class-textmeflow-admin.php:505
+msgid "QR code to link WhatsApp"
+msgstr "QR-code om WhatsApp te koppelen"
+
+#. translators: %s: TextMeFlow account e-mail
+#: includes/class-textmeflow-admin.php:517
+#, php-format
+msgid "TextMeFlow account: %s"
+msgstr "TextMeFlow-account: %s"
+
+#: includes/class-textmeflow-admin.php:521
+msgid "Open your TextMeFlow account"
+msgstr "Open je TextMeFlow-account"
+
+#: includes/class-textmeflow-admin.php:527
+msgid "Disconnect"
+msgstr "Verbinding verbreken"
+
+#: includes/class-textmeflow-admin.php:541
+msgid "Your number"
+msgstr "Jouw nummer"
+
+#: includes/class-textmeflow-admin.php:544
+msgid "Your WhatsApp number"
+msgstr "Je WhatsApp-nummer"
+
+#: includes/class-textmeflow-admin.php:547
+msgid "Send me a test message"
+msgstr "Stuur mij een testbericht"
+
+#: includes/class-textmeflow-admin.php:549
+msgid "Alerts about new orders and form submissions go to this number."
+msgstr "Meldingen over nieuwe bestellingen en formulierinzendingen gaan naar dit nummer."
+
+#: includes/class-textmeflow-admin.php:553
+msgid "Country for numbers without country code"
+msgstr "Land voor nummers zonder landcode"
+
+#: includes/class-textmeflow-admin.php:556
+msgid "Automatic (shop country or site language)"
+msgstr "Automatisch (land van de winkel of sitetaal)"
+
+#: includes/class-textmeflow-admin.php:574
+msgid "WooCommerce orders"
+msgstr "WooCommerce-bestellingen"
+
+#: includes/class-textmeflow-admin.php:577
+msgid ""
+"WooCommerce is not active on this site. Install and activate it to send "
+"order messages."
+msgstr "WooCommerce is niet actief op deze site. Installeer en activeer het om bestelberichten te versturen."
+
+#: includes/class-textmeflow-admin.php:584
+msgid "Processing (order received / paid)"
+msgstr "In behandeling (bestelling ontvangen / betaald)"
+
+#: includes/class-textmeflow-admin.php:585
+msgid "Completed"
+msgstr "Voltooid"
+
+#: includes/class-textmeflow-admin.php:586
+msgid "On hold"
+msgstr "In de wacht"
+
+#: includes/class-textmeflow-admin.php:587
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+#: includes/class-textmeflow-admin.php:588
+msgid "Refunded"
+msgstr "Terugbetaald"
+
+#: includes/class-textmeflow-admin.php:589
+msgid "Failed payment"
+msgstr "Mislukte betaling"
+
+#: includes/class-textmeflow-admin.php:594
+msgid "Customer permission"
+msgstr "Toestemming van de klant"
+
+#: includes/class-textmeflow-admin.php:598
+msgid ""
+"Ask at checkout with a checkbox (recommended). Messages are only sent to "
+"customers who tick it."
+msgstr "Vraag het bij het afrekenen met een vinkje (aanbevolen). Berichten gaan enkel naar klanten die het aanvinken."
+
+#: includes/class-textmeflow-admin.php:602
+msgid ""
+"I already have my customers' permission to message them on WhatsApp (no "
+"checkbox)."
+msgstr "Ik heb al de toestemming van mijn klanten om hen via WhatsApp te berichten (geen vinkje)."
+
+#: includes/class-textmeflow-admin.php:606
+msgid "Checkbox text"
+msgstr "Tekst bij het vinkje"
+
+#: includes/class-textmeflow-admin.php:610
+msgid "Messages to your customers"
+msgstr "Berichten naar je klanten"
+
+#: includes/class-textmeflow-admin.php:622
+msgid "Alert to yourself"
+msgstr "Melding aan jezelf"
+
+#: includes/class-textmeflow-admin.php:626
+msgid "Message me for every new order (uses your number above)"
+msgstr "Stuur mij een bericht bij elke nieuwe bestelling (gebruikt je nummer hierboven)"
+
+#: includes/class-textmeflow-admin.php:643
+msgid "Forms"
+msgstr "Formulieren"
+
+#: includes/class-textmeflow-admin.php:648
+msgid "Form plugin"
+msgstr "Formulierplugin"
+
+#: includes/class-textmeflow-admin.php:649
+msgid "Alert me about new submissions"
+msgstr "Waarschuw mij bij nieuwe inzendingen"
+
+#: includes/class-textmeflow-admin.php:650
+msgid "Confirm to the visitor"
+msgstr "Bevestiging aan de bezoeker"
+
+#: includes/class-textmeflow-admin.php:659
+msgid "Not active on this site"
+msgstr "Niet actief op deze site"
+
+#: includes/class-textmeflow-admin.php:669
+msgid ""
+"A confirmation is only sent when the form has a phone field and a checkbox "
+"for WhatsApp permission. Give that checkbox a name or label that contains "
+"\"whatsapp\" (for example \"whatsapp-consent\"). Without that ticked "
+"checkbox, nothing is sent to the visitor."
+msgstr "Een bevestiging wordt enkel verstuurd als het formulier een telefoonveld en een vinkje voor WhatsApp-toestemming heeft. Geef dat vinkje een naam of label met \"whatsapp\" (bijvoorbeeld \"whatsapp-consent\"). Zonder aangevinkt vinkje gaat er niets naar de bezoeker."
+
+#: includes/class-textmeflow-admin.php:674
+msgid "Alert to you"
+msgstr "Melding aan jou"
+
+#: includes/class-textmeflow-admin.php:678
+msgid "Confirmation to the visitor"
+msgstr "Bevestiging aan de bezoeker"
+
+#: includes/class-textmeflow-admin.php:691
+msgid "You can use these placeholders:"
+msgstr "Je kan deze tijdelijke aanduidingen gebruiken:"
+
+#: includes/class-textmeflow-admin.php:705
+msgid "Recent activity"
+msgstr "Recente activiteit"
+
+#: includes/class-textmeflow-admin.php:707
+msgid "Nothing yet."
+msgstr "Nog niets."
+
+#. translators: %s: masked phone number
+#: includes/class-textmeflow-sender.php:68
+#, php-format
+msgid "WhatsApp message queued for %s."
+msgstr "WhatsApp-bericht in de wachtrij voor %s."
+
+#: includes/class-textmeflow-sender.php:85
+msgid "the connection with TextMeFlow is no longer valid. Please reconnect."
+msgstr "de verbinding met TextMeFlow is niet meer geldig. Verbind opnieuw."
+
+#: includes/class-textmeflow-sender.php:87
+msgid "the phone number is not valid."
+msgstr "het telefoonnummer is niet geldig."
+
+#: includes/class-textmeflow-sender.php:89
+msgid "the monthly message quota is used up."
+msgstr "het maandelijkse berichtenquotum is op."
+
+#. translators: 1: masked phone number, 2: reason
+#: includes/class-textmeflow-sender.php:106
+#, php-format
+msgid "WhatsApp message to %1$s was not sent: %2$s"
+msgstr "WhatsApp-bericht naar %1$s is niet verstuurd: %2$s"
+
+#: includes/class-textmeflow-woocommerce.php:151
+msgid "WhatsApp updates:"
+msgstr "WhatsApp-updates:"
+
+#: includes/class-textmeflow-woocommerce.php:152
+msgid "Yes"
+msgstr "Ja"
+
+#: includes/class-textmeflow-woocommerce.php:152
+msgid "No"
+msgstr "Nee"
+
+#: includes/class-textmeflow-woocommerce.php:211
+msgid "No WhatsApp message sent: no valid phone number on this order."
+msgstr "Geen WhatsApp-bericht verstuurd: geen geldig telefoonnummer bij deze bestelling."
+

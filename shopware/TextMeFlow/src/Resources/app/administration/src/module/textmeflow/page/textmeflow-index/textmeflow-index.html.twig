@@ -1,0 +1,140 @@
+{% block textmeflow_index %}
+    <sw-page class="textmeflow-index">
+        {% block textmeflow_index_header %}
+            <template #smart-bar-header>
+                <h2>{{ $tc('textmeflow.general.title') }}</h2>
+            </template>
+        {% endblock %}
+
+        <template #content>
+            <sw-card-view>
+                <sw-loader v-if="isLoading"></sw-loader>
+
+                {% block textmeflow_index_not_connected %}
+                    <sw-card
+                        v-if="!isLoading && !status.connected"
+                        :title="$tc('textmeflow.connect.title')"
+                        position-identifier="textmeflow-connect"
+                    >
+                        <sw-alert v-if="status.tokenInvalid" variant="warning" :closable="false">
+                            {{ $tc('textmeflow.connect.tokenInvalid') }}
+                        </sw-alert>
+                        <p class="textmeflow-index__intro">{{ $tc('textmeflow.connect.intro') }}</p>
+                        <sw-button
+                            variant="primary"
+                            size="large"
+                            :is-loading="isConnecting"
+                            :disabled="isConnecting"
+                            @click="onConnect"
+                        >
+                            {{ $tc('textmeflow.connect.button') }}
+                        </sw-button>
+                        <p class="textmeflow-index__privacy">
+                            {{ $tc('textmeflow.connect.privacy') }}
+                            <a href="https://textmeflow.eu/legal/privacy" target="_blank" rel="noopener noreferrer">{{ $tc('textmeflow.connect.privacyLink') }}</a>
+                        </p>
+                    </sw-card>
+                {% endblock %}
+
+                {% block textmeflow_index_qr %}
+                    <sw-card
+                        v-if="!isLoading && status.connected && !isWhatsappConnected"
+                        :title="$tc('textmeflow.pair.title')"
+                        position-identifier="textmeflow-pair"
+                    >
+                        <p>{{ $tc('textmeflow.pair.instructions') }}</p>
+
+                        <sw-alert v-if="deviceLimit" variant="warning" :closable="false">
+                            {{ $tc('textmeflow.pair.deviceLimit') }}
+                            <a :href="pricingUrl" target="_blank" rel="noopener noreferrer">{{ $tc('textmeflow.pair.upgrade') }}</a>
+                        </sw-alert>
+                        <sw-alert v-else-if="pairError || status.apiError" variant="error" :closable="false">
+                            {{ $tc('textmeflow.pair.error') }}
+                        </sw-alert>
+
+                        <div v-if="pair.qr" class="textmeflow-index__qr">
+                            <img :src="pair.qr" :alt="$tc('textmeflow.pair.qrAlt')" width="260" height="260">
+                        </div>
+                        <p v-else-if="pair.id && !pairExpiredFinally" class="textmeflow-index__waiting">
+                            {{ $tc('textmeflow.pair.waiting') }}
+                        </p>
+
+                        <template v-if="pairExpiredFinally || deviceLimit || pairError || status.apiError">
+                            <p v-if="pairExpiredFinally">{{ $tc('textmeflow.pair.expired') }}</p>
+                            <sw-button @click="onNewCode">{{ $tc('textmeflow.pair.newCode') }}</sw-button>
+                        </template>
+                    </sw-card>
+                {% endblock %}
+
+                {% block textmeflow_index_connected %}
+                    <sw-card
+                        v-if="!isLoading && isWhatsappConnected"
+                        :title="$tc('textmeflow.status.title')"
+                        position-identifier="textmeflow-status"
+                    >
+                        <sw-alert variant="success" :closable="false">
+                            {{ $tc('textmeflow.status.whatsappConnected') }}
+                            <strong v-if="status.phone">{{ status.phone }}</strong>
+                        </sw-alert>
+                        <p v-if="status.email">{{ $tc('textmeflow.status.account', 0, { email: status.email }) }}</p>
+
+                        <h4 class="textmeflow-index__heading">{{ $tc('textmeflow.test.title') }}</h4>
+                        <sw-text-field
+                            v-model:value="testPhone"
+                            :label="$tc('textmeflow.test.label')"
+                            :placeholder="$tc('textmeflow.test.placeholder')"
+                        ></sw-text-field>
+                        <sw-button
+                            :is-loading="isSendingTest"
+                            :disabled="isSendingTest || testPhone.trim() === ''"
+                            @click="onSendTest"
+                        >
+                            {{ $tc('textmeflow.test.button') }}
+                        </sw-button>
+                    </sw-card>
+                {% endblock %}
+
+                {% block textmeflow_index_messages %}
+                    <sw-card
+                        v-if="!isLoading && status.connected"
+                        :title="$tc('textmeflow.messages.title')"
+                        position-identifier="textmeflow-messages"
+                    >
+                        <p>{{ $tc('textmeflow.messages.description') }}</p>
+                        <sw-button @click="openMessageSettings">{{ $tc('textmeflow.messages.button') }}</sw-button>
+                    </sw-card>
+                {% endblock %}
+
+                {% block textmeflow_index_disconnect %}
+                    <sw-card
+                        v-if="!isLoading && status.connected"
+                        :title="$tc('textmeflow.disconnect.title')"
+                        position-identifier="textmeflow-disconnect"
+                    >
+                        <p>{{ $tc('textmeflow.disconnect.description') }}</p>
+                        <sw-button variant="danger" @click="showDisconnectConfirm = true">
+                            {{ $tc('textmeflow.disconnect.button') }}
+                        </sw-button>
+
+                        <sw-modal
+                            v-if="showDisconnectConfirm"
+                            :title="$tc('textmeflow.disconnect.title')"
+                            variant="small"
+                            @modal-close="showDisconnectConfirm = false"
+                        >
+                            <p>{{ $tc('textmeflow.disconnect.confirm') }}</p>
+                            <template #modal-footer>
+                                <sw-button size="small" @click="showDisconnectConfirm = false">
+                                    {{ $tc('textmeflow.general.cancel') }}
+                                </sw-button>
+                                <sw-button size="small" variant="danger" @click="onDisconnect">
+                                    {{ $tc('textmeflow.disconnect.button') }}
+                                </sw-button>
+                            </template>
+                        </sw-modal>
+                    </sw-card>
+                {% endblock %}
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}

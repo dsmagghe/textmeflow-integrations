@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="Modules.Textmeflow.Shop" source-language="en-US" target-language="de-DE" datatype="plaintext">
+    <body>
+      <trans-unit id="0af32564342452a6a18784ced3adf2e9">
+        <source>Send me my order updates via WhatsApp (via TextMeFlow). You can withdraw this at any time.</source>
+        <target>Senden Sie mir Updates zu meiner Bestellung per WhatsApp (über TextMeFlow). Sie können dies jederzeit widerrufen.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

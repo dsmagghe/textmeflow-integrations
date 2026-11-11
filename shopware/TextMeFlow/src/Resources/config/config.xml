@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Messages to your customers</title>
+        <title lang="de-DE">Nachrichten an Ihre Kunden</title>
+        <title lang="nl-NL">Berichten aan uw klanten</title>
+        <title lang="fr-FR">Messages à vos clients</title>
+        <subtitle>Only sent to customers who tick the WhatsApp checkbox at checkout.</subtitle>
+        <subtitle lang="de-DE">Werden nur an Kunden gesendet, die beim Bestellen das WhatsApp-Kästchen anhaken.</subtitle>
+        <subtitle lang="nl-NL">Enkel verstuurd naar klanten die in de checkout het WhatsApp-vakje aanvinken.</subtitle>
+        <subtitle lang="fr-FR">Envoyés uniquement aux clients qui cochent la case WhatsApp lors de la commande.</subtitle>
+        <input-field type="bool">
+            <name>enableOrderPlaced</name>
+            <label>Send: Order placed</label>
+            <label lang="de-DE">Senden: Bestellung aufgegeben</label>
+            <label lang="nl-NL">Versturen: Bestelling geplaatst</label>
+            <label lang="fr-FR">Envoyer : Commande passée</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+        <input-field type="textarea">
+            <name>textOrderPlaced</name>
+            <label>Text: Order placed</label>
+            <label lang="de-DE">Text: Bestellung aufgegeben</label>
+            <label lang="nl-NL">Tekst: Bestelling geplaatst</label>
+            <label lang="fr-FR">Texte : Commande passée</label>
+            <helpText>Leave empty to use the ready-made text in the customer's language. Placeholders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="de-DE">Leer lassen, um den vorgefertigten Text in der Sprache des Kunden zu verwenden. Platzhalter: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="nl-NL">Laat leeg om de kant-en-klare tekst in de taal van de klant te gebruiken. Plaatshouders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="fr-FR">Laissez vide pour utiliser le texte prêt à l'emploi dans la langue du client. Variables : {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>enableOrderPaid</name>
+            <label>Send: Payment received</label>
+            <label lang="de-DE">Senden: Zahlung eingegangen</label>
+            <label lang="nl-NL">Versturen: Betaling ontvangen</label>
+            <label lang="fr-FR">Envoyer : Paiement reçu</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+        <input-field type="textarea">
+            <name>textOrderPaid</name>
+            <label>Text: Payment received</label>
+            <label lang="de-DE">Text: Zahlung eingegangen</label>
+            <label lang="nl-NL">Tekst: Betaling ontvangen</label>
+            <label lang="fr-FR">Texte : Paiement reçu</label>
+            <helpText>Leave empty to use the ready-made text in the customer's language. Placeholders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="de-DE">Leer lassen, um den vorgefertigten Text in der Sprache des Kunden zu verwenden. Platzhalter: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="nl-NL">Laat leeg om de kant-en-klare tekst in de taal van de klant te gebruiken. Plaatshouders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="fr-FR">Laissez vide pour utiliser le texte prêt à l'emploi dans la langue du client. Variables : {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>enableOrderInProgress</name>
+            <label>Send: Order in progress</label>
+            <label lang="de-DE">Senden: Bestellung in Bearbeitung</label>
+            <label lang="nl-NL">Versturen: Bestelling in behandeling</label>
+            <label lang="fr-FR">Envoyer : Commande en cours de traitement</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+        <input-field type="textarea">
+            <name>textOrderInProgress</name>
+            <label>Text: Order in progress</label>
+            <label lang="de-DE">Text: Bestellung in Bearbeitung</label>
+            <label lang="nl-NL">Tekst: Bestelling in behandeling</label>
+            <label lang="fr-FR">Texte : Commande en cours de traitement</label>
+            <helpText>Leave empty to use the ready-made text in the customer's language. Placeholders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="de-DE">Leer lassen, um den vorgefertigten Text in der Sprache des Kunden zu verwenden. Platzhalter: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="nl-NL">Laat leeg om de kant-en-klare tekst in de taal van de klant te gebruiken. Plaatshouders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="fr-FR">Laissez vide pour utiliser le texte prêt à l'emploi dans la langue du client. Variables : {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>enableOrderShipped</name>
+            <label>Send: Order shipped</label>
+            <label lang="de-DE">Senden: Bestellung versendet</label>
+            <label lang="nl-NL">Versturen: Bestelling verzonden</label>
+            <label lang="fr-FR">Envoyer : Commande expédiée</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+        <input-field type="textarea">
+            <name>textOrderShipped</name>
+            <label>Text: Order shipped</label>
+            <label lang="de-DE">Text: Bestellung versendet</label>
+            <label lang="nl-NL">Tekst: Bestelling verzonden</label>
+            <label lang="fr-FR">Texte : Commande expédiée</label>
+            <helpText>Leave empty to use the ready-made text in the customer's language. Placeholders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="de-DE">Leer lassen, um den vorgefertigten Text in der Sprache des Kunden zu verwenden. Platzhalter: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="nl-NL">Laat leeg om de kant-en-klare tekst in de taal van de klant te gebruiken. Plaatshouders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="fr-FR">Laissez vide pour utiliser le texte prêt à l'emploi dans la langue du client. Variables : {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>enableOrderCompleted</name>
+            <label>Send: Order completed</label>
+            <label lang="de-DE">Senden: Bestellung abgeschlossen</label>
+            <label lang="nl-NL">Versturen: Bestelling afgerond</label>
+            <label lang="fr-FR">Envoyer : Commande terminée</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+        <input-field type="textarea">
+            <name>textOrderCompleted</name>
+            <label>Text: Order completed</label>
+            <label lang="de-DE">Text: Bestellung abgeschlossen</label>
+            <label lang="nl-NL">Tekst: Bestelling afgerond</label>
+            <label lang="fr-FR">Texte : Commande terminée</label>
+            <helpText>Leave empty to use the ready-made text in the customer's language. Placeholders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="de-DE">Leer lassen, um den vorgefertigten Text in der Sprache des Kunden zu verwenden. Platzhalter: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="nl-NL">Laat leeg om de kant-en-klare tekst in de taal van de klant te gebruiken. Plaatshouders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="fr-FR">Laissez vide pour utiliser le texte prêt à l'emploi dans la langue du client. Variables : {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>enableOrderCancelled</name>
+            <label>Send: Order cancelled</label>
+            <label lang="de-DE">Senden: Bestellung storniert</label>
+            <label lang="nl-NL">Versturen: Bestelling geannuleerd</label>
+            <label lang="fr-FR">Envoyer : Commande annulée</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+        <input-field type="textarea">
+            <name>textOrderCancelled</name>
+            <label>Text: Order cancelled</label>
+            <label lang="de-DE">Text: Bestellung storniert</label>
+            <label lang="nl-NL">Tekst: Bestelling geannuleerd</label>
+            <label lang="fr-FR">Texte : Commande annulée</label>
+            <helpText>Leave empty to use the ready-made text in the customer's language. Placeholders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="de-DE">Leer lassen, um den vorgefertigten Text in der Sprache des Kunden zu verwenden. Platzhalter: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="nl-NL">Laat leeg om de kant-en-klare tekst in de taal van de klant te gebruiken. Plaatshouders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="fr-FR">Laissez vide pour utiliser le texte prêt à l'emploi dans la langue du client. Variables : {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+        </input-field>
+    </card>
+    <card>
+        <title>Message to you</title>
+        <title lang="de-DE">Nachricht an Sie</title>
+        <title lang="nl-NL">Bericht aan u</title>
+        <title lang="fr-FR">Message pour vous</title>
+        <input-field type="text">
+            <name>ownerPhone</name>
+            <label>Your WhatsApp number</label>
+            <label lang="de-DE">Ihre WhatsApp-Nummer</label>
+            <label lang="nl-NL">Uw WhatsApp-nummer</label>
+            <label lang="fr-FR">Votre numéro WhatsApp</label>
+            <helpText>Receives a message for every new order. Leave empty to switch off. Include the country code, for example +32470123456.</helpText>
+            <helpText lang="de-DE">Erhält bei jeder neuen Bestellung eine Nachricht. Leer lassen zum Ausschalten. Mit Ländervorwahl, zum Beispiel +49151234567.</helpText>
+            <helpText lang="nl-NL">Ontvangt een bericht bij elke nieuwe bestelling. Laat leeg om uit te zetten. Met landcode, bijvoorbeeld +32470123456.</helpText>
+            <helpText lang="fr-FR">Reçoit un message pour chaque nouvelle commande. Laissez vide pour désactiver. Avec l'indicatif du pays, par exemple +32470123456.</helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>enableOwnerNewOrder</name>
+            <label>Send: new order to you</label>
+            <label lang="de-DE">Senden: neue Bestellung an Sie</label>
+            <label lang="nl-NL">Versturen: nieuwe bestelling naar u</label>
+            <label lang="fr-FR">Envoyer : nouvelle commande pour vous</label>
+            <defaultValue>false</defaultValue>
+        </input-field>
+        <input-field type="textarea">
+            <name>textOwnerNewOrder</name>
+            <label>Text: new order to you</label>
+            <label lang="de-DE">Text: neue Bestellung an Sie</label>
+            <label lang="nl-NL">Tekst: nieuwe bestelling naar u</label>
+            <label lang="fr-FR">Texte : nouvelle commande pour vous</label>
+            <helpText>Leave empty to use the ready-made text in the customer's language. Placeholders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="de-DE">Leer lassen, um den vorgefertigten Text in der Sprache des Kunden zu verwenden. Platzhalter: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="nl-NL">Laat leeg om de kant-en-klare tekst in de taal van de klant te gebruiken. Plaatshouders: {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+            <helpText lang="fr-FR">Laissez vide pour utiliser le texte prêt à l'emploi dans la langue du client. Variables : {first_name} {last_name} {order_number} {order_total} {shop_name} {tracking_url}</helpText>
+        </input-field>
+    </card>
+    <card>
+        <title>Phone numbers</title>
+        <title lang="de-DE">Telefonnummern</title>
+        <title lang="nl-NL">Telefoonnummers</title>
+        <title lang="fr-FR">Numéros de téléphone</title>
+        <input-field type="text">
+            <name>defaultCountry</name>
+            <label>Country for numbers without country code</label>
+            <label lang="de-DE">Land für Nummern ohne Ländervorwahl</label>
+            <label lang="nl-NL">Land voor nummers zonder landcode</label>
+            <label lang="fr-FR">Pays pour les numéros sans indicatif</label>
+            <helpText>Two-letter country code, for example BE, NL, DE, FR. Only used for your own number; customers' numbers use their address country.</helpText>
+            <helpText lang="de-DE">Zweistelliger Ländercode, zum Beispiel DE, AT, CH. Gilt nur für Ihre eigene Nummer; bei Kunden wird das Land der Adresse verwendet.</helpText>
+            <helpText lang="nl-NL">Landcode van twee letters, bijvoorbeeld BE, NL, DE, FR. Enkel voor uw eigen nummer; voor klanten geldt het land van hun adres.</helpText>
+            <helpText lang="fr-FR">Code pays à deux lettres, par exemple BE, FR, DE. Uniquement pour votre propre numéro ; pour les clients, le pays de leur adresse est utilisé.</helpText>
+        </input-field>
+    </card>
+</config>

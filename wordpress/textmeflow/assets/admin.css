@@ -1,0 +1,28 @@
+.textmeflow-wrap .tmf-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 4px 20px 16px;
+	margin: 16px 0;
+	max-width: 900px;
+}
+.textmeflow-wrap .tmf-hero { padding-bottom: 24px; }
+.textmeflow-wrap .tmf-steps { font-size: 14px; line-height: 1.8; }
+.textmeflow-wrap .tmf-status { font-size: 15px; font-weight: 600; }
+.textmeflow-wrap .tmf-status-ok { color: #1a7f37; }
+.textmeflow-wrap .tmf-status-ok::before { content: "\2713\00a0"; }
+.textmeflow-wrap .tmf-status-error { color: #b32d2e; }
+.textmeflow-wrap #tmf-qr-img { display: block; border: 1px solid #dcdcde; padding: 8px; background: #fff; }
+.textmeflow-wrap #tmf-qr-img[hidden],
+.textmeflow-wrap #tmf-qr[hidden] { display: none; }
+.textmeflow-wrap .tmf-message { margin: 0 0 14px; }
+.textmeflow-wrap .tmf-message textarea { margin-top: 4px; }
+.textmeflow-wrap #tmf-test-result { margin-left: 8px; }
+.textmeflow-wrap .tmf-ok { color: #1a7f37; }
+.textmeflow-wrap .tmf-error { color: #b32d2e; }
+.textmeflow-wrap .tmf-forms-table th,
+.textmeflow-wrap .tmf-forms-table td { vertical-align: middle; }
+.textmeflow-wrap .tmf-log { margin: 0; }
+.textmeflow-wrap .tmf-log li { padding: 4px 0; border-bottom: 1px solid #f0f0f1; }
+.textmeflow-wrap .tmf-log time { color: #646970; margin-right: 8px; }
+.textmeflow-wrap .tmf-log-error { color: #b32d2e; }

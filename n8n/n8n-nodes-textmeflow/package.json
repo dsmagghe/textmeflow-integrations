@@ -1,0 +1,55 @@
+{
+	"name": "n8n-nodes-textmeflow",
+	"version": "0.1.0",
+	"description": "n8n community nodes for TextMeFlow: send WhatsApp messages from your own number and trigger workflows on incoming WhatsApp messages. EU-hosted.",
+	"license": "MIT",
+	"homepage": "https://textmeflow.eu/docs/integrations",
+	"keywords": [
+		"n8n-community-node-package",
+		"textmeflow",
+		"whatsapp",
+		"messaging"
+	],
+	"author": {
+		"name": "Fades Management EOOD (TextMeFlow)",
+		"email": "info@fades.tech"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dsmagghe/textmeflow-integrations.git",
+		"directory": "n8n/n8n-nodes-textmeflow"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/TextMeFlowApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/TextMeFlow/TextMeFlow.node.js",
+			"dist/nodes/TextMeFlowTrigger/TextMeFlowTrigger.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "*",
+		"eslint": "9.32.0",
+		"prettier": "3.6.2",
+		"release-it": "^21.1.0",
+		"typescript": "5.9.2"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}

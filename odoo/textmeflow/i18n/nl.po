@@ -1,0 +1,833 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* textmeflow
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-11 17:32+0000\n"
+"PO-Revision-Date: 2026-11-11 17:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.view_partner_form_textmeflow
+msgid "<span class=\"o_stat_text\">Send via WhatsApp</span>"
+msgstr "<span class=\"o_stat_text\">Verstuur via WhatsApp</span>"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__active
+msgid "Active"
+msgstr "Actief"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__allowed_template_ids
+msgid "Allowed Template"
+msgstr "Toegestane sjablonen"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__attempts
+msgid "Attempts"
+msgstr "Pogingen"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Automatic messages"
+msgstr "Automatische berichten"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/controllers/main.py:0
+#, python-format
+msgid "Back to Odoo"
+msgstr "Terug naar Odoo"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_send_wizard_view_form
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Check status"
+msgstr "Status controleren"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__company_id
+msgid "Company"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Connect with TextMeFlow"
+msgstr "Verbinden met TextMeFlow"
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "Connect with TextMeFlow first."
+msgstr "Verbind eerst met TextMeFlow."
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Connection"
+msgstr "Verbinding"
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__create_uid
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__create_uid
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__create_date
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__create_date
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_res_config_settings__textmeflow_auto_delivery
+msgid "Delivery shipped"
+msgstr "Levering verzonden"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__event__delivery_done
+msgid "Delivery shipped (automatic)"
+msgstr "Levering verzonden (automatisch)"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__lang__de
+msgid "Deutsch"
+msgstr ""
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Discard"
+msgstr "Verwerpen"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Disconnect"
+msgstr "Verbreken"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid ""
+"Disconnect TextMeFlow? No more WhatsApp messages will be sent from Odoo."
+msgstr "TextMeFlow verbreken? Er worden dan geen WhatsApp-berichten meer verstuurd vanuit Odoo."
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__display_name
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__display_name
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__res_id
+msgid "Document ID"
+msgstr "Document-ID"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__res_model
+msgid "Document model"
+msgstr "Documentmodel"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__lang__en
+msgid "English"
+msgstr ""
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/wizards/textmeflow_send_wizard.py:0
+#, python-format
+msgid "Enter a valid phone number, for example +32 470 12 34 56."
+msgstr "Geef een geldig telefoonnummer in, bijvoorbeeld +32 470 12 34 56."
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__error
+msgid "Error"
+msgstr "Fout"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__event
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__event
+msgid "Event"
+msgstr "Gebeurtenis"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_message__state__failed
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_message_view_search
+msgid "Failed"
+msgstr "Mislukt"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__lang__fr
+msgid "Français"
+msgstr "Frans"
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "Go to Settings, then Linked devices."
+msgstr "Ga naar Instellingen en dan Gekoppelde apparaten."
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_template_view_form
+msgid "Hi {first_name}, ..."
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__id
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__id
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__id
+msgid "ID"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__event__invoice
+msgid "Invoice link"
+msgstr "Factuurlink"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_res_config_settings__textmeflow_auto_invoice
+msgid "Invoice posted"
+msgstr "Factuur geboekt"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__event__invoice_posted
+msgid "Invoice posted (automatic)"
+msgstr "Factuur geboekt (automatisch)"
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__lang
+msgid "Language"
+msgstr "Taal"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__write_uid
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__write_uid
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__write_date
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__write_date
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: textmeflow
+#. odoo-javascript
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "Link WhatsApp"
+msgstr "WhatsApp koppelen"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Link WhatsApp (QR code)"
+msgstr "WhatsApp koppelen (QR-code)"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "Link WhatsApp first."
+msgstr "Koppel eerst WhatsApp."
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__body
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__body
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__body
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_message_view_form
+msgid "Message"
+msgstr "Bericht"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_template_view_form
+msgid "Message template"
+msgstr "Berichtsjabloon"
+
+#. module: textmeflow
+#: model:ir.actions.act_window,name:textmeflow.action_textmeflow_template
+#: model:ir.ui.menu,name:textmeflow.menu_textmeflow_templates
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_template_view_tree
+msgid "Message templates"
+msgstr "Berichtsjablonen"
+
+#. module: textmeflow
+#: model:ir.model.fields,help:textmeflow.field_res_config_settings__textmeflow_auto_delivery
+msgid ""
+"Message the customer when a delivery is done. Only customers who agreed to "
+"WhatsApp messages."
+msgstr "Stuur de klant een bericht wanneer een levering klaar is. Enkel klanten die WhatsApp-berichten toestaan."
+
+#. module: textmeflow
+#: model:ir.model.fields,help:textmeflow.field_res_config_settings__textmeflow_auto_order
+msgid ""
+"Message the customer when a quotation is confirmed. Only customers who "
+"agreed to WhatsApp messages."
+msgstr "Stuur de klant een bericht wanneer een offerte bevestigd wordt. Enkel klanten die WhatsApp-berichten toestaan."
+
+#. module: textmeflow
+#: model:ir.model.fields,help:textmeflow.field_res_config_settings__textmeflow_auto_invoice
+msgid ""
+"Message the customer when an invoice is posted. Only customers who agreed to"
+" WhatsApp messages."
+msgstr "Stuur de klant een bericht wanneer een factuur geboekt wordt. Enkel klanten die WhatsApp-berichten toestaan."
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__event__manual
+msgid "Message to a contact"
+msgstr "Bericht aan een contact"
+
+#. module: textmeflow
+#: model:ir.actions.act_window,name:textmeflow.action_textmeflow_message
+#: model:ir.ui.menu,name:textmeflow.menu_textmeflow_messages
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_message_view_tree
+msgid "Messages"
+msgstr "Berichten"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_template__name
+msgid "Name"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__lang__nl
+msgid "Nederlands"
+msgstr ""
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "New code"
+msgstr "Nieuwe code"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "No WhatsApp number is linked yet. Press 'Link WhatsApp'."
+msgstr "Er is nog geen WhatsApp-nummer gekoppeld. Druk op 'WhatsApp koppelen'."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/textmeflow_message.py:0
+#, python-format
+msgid "No valid phone number for this contact."
+msgstr "Geen geldig telefoonnummer voor dit contact."
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Not linked yet"
+msgstr "Nog niet gekoppeld"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "Only administrators can change the TextMeFlow connection."
+msgstr "Enkel beheerders kunnen de TextMeFlow-verbinding wijzigen."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "Only administrators can link WhatsApp."
+msgstr "Enkel beheerders kunnen WhatsApp koppelen."
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid ""
+"Only sent to contacts who agreed to WhatsApp messages (tick 'WhatsApp "
+"messages allowed' on the contact). Texts can be edited under TextMeFlow &gt;"
+" Message templates."
+msgstr "Enkel verstuurd naar contacten die WhatsApp-berichten toestaan (vink 'WhatsApp-berichten toegestaan' aan op het contact). De teksten kun je aanpassen onder TextMeFlow &gt; Berichtsjablonen."
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "Open WhatsApp on your phone."
+msgstr "Open WhatsApp op je telefoon."
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_res_config_settings__textmeflow_auto_order
+msgid "Order confirmed"
+msgstr "Bestelling bevestigd"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__event__order_confirmed
+msgid "Order confirmed (automatic)"
+msgstr "Bestelling bevestigd (automatisch)"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__phone
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__phone
+msgid "Phone number"
+msgstr "Telefoonnummer"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_template_view_form
+msgid ""
+"Placeholders: {first_name}, {name}, {order_number}, {order_total}, "
+"{invoice_number}, {invoice_total}, {due_date}, {shop_name}, {portal_url}, "
+"{tracking_url}"
+msgstr "Placeholders: {first_name}, {name}, {order_number}, {order_total}, {invoice_number}, {invoice_total}, {due_date}, {shop_name}, {portal_url}, {tracking_url}"
+
+#. module: textmeflow
+#: model:ir.model.fields,help:textmeflow.field_textmeflow_template__body
+msgid ""
+"Placeholders: {first_name}, {name}, {order_number}, {order_total}, "
+"{invoice_number}, {invoice_total}, {due_date}, {shop_name}, {portal_url}, "
+"{tracking_url}."
+msgstr ""
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "Preparing the code..."
+msgstr "De code wordt voorbereid..."
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Privacy"
+msgstr "Privacy"
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "QR code"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_message__state__pending
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_message_view_search
+msgid "Queued"
+msgstr "In wachtrij"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_template__event__order
+msgid "Quotation / order link"
+msgstr "Link naar offerte / bestelling"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__partner_id
+msgid "Recipient"
+msgstr "Ontvanger"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/textmeflow_message.py:0
+#, python-format
+msgid "Rejected by TextMeFlow."
+msgstr "Geweigerd door TextMeFlow."
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__res_id
+msgid "Res"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__res_model
+msgid "Res Model"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Save"
+msgstr "Opslaan"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_send_wizard_view_form
+msgid "Send"
+msgstr "Versturen"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid ""
+"Send WhatsApp messages to your customers from your own number. Connecting "
+"takes three clicks: approve on textmeflow.eu, scan the QR code with "
+"WhatsApp, done."
+msgstr "Stuur WhatsApp-berichten naar je klanten vanaf je eigen nummer. Koppelen kan in drie klikken: keur goed op textmeflow.eu, scan de QR-code met WhatsApp, klaar."
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_textmeflow_send_wizard
+msgid "Send a WhatsApp message"
+msgstr "Een WhatsApp-bericht versturen"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Send me a test message"
+msgstr "Stuur mij een testbericht"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/wizards/textmeflow_send_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_send_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:textmeflow.view_move_form_textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.view_order_form_textmeflow
+#, python-format
+msgid "Send via WhatsApp"
+msgstr "Verstuur via WhatsApp"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_message__state__sent
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_message_view_search
+msgid "Sent"
+msgstr "Verstuurd"
+
+#. module: textmeflow
+#: model:ir.actions.act_window,name:textmeflow.action_textmeflow_settings
+#: model:ir.ui.menu,name:textmeflow.menu_textmeflow_settings
+msgid "Settings"
+msgstr "Instellingen"
+
+#. module: textmeflow
+#: model:ir.model.fields.selection,name:textmeflow.selection__textmeflow_message__state__skipped
+msgid "Skipped"
+msgstr "Overgeslagen"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__state
+msgid "State"
+msgstr "Status"
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "Tap Link a device and scan this code."
+msgstr "Tik op Koppel een apparaat en scan deze code."
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__template_id
+msgid "Template"
+msgstr "Sjabloon"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "Terms"
+msgstr "Voorwaarden"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "Test message from TextMeFlow in Odoo. Everything works."
+msgstr "Testbericht van TextMeFlow in Odoo. Alles werkt."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "Test message sent to %s."
+msgstr "Testbericht verstuurd naar %s."
+
+#. module: textmeflow
+#: model:ir.ui.menu,name:textmeflow.menu_textmeflow_root
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "TextMeFlow"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_textmeflow_api
+msgid "TextMeFlow API client"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_message__remote_id
+msgid "TextMeFlow ID"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_textmeflow_pair
+msgid "TextMeFlow QR pairing"
+msgstr ""
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "TextMeFlow account"
+msgstr "TextMeFlow-account"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "TextMeFlow could not be reached or refused the connection."
+msgstr "TextMeFlow is niet bereikbaar of weigerde de verbinding."
+
+#. module: textmeflow
+#. odoo-javascript
+#. odoo-python
+#: code:addons/textmeflow/models/textmeflow_message.py:0
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "TextMeFlow could not be reached."
+msgstr "TextMeFlow is niet bereikbaar."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/controllers/main.py:0
+#, python-format
+msgid "TextMeFlow did not accept the code. Please try again from Settings."
+msgstr "TextMeFlow aanvaardde de code niet. Probeer opnieuw via Instellingen."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/wizards/textmeflow_send_wizard.py:0
+#, python-format
+msgid ""
+"TextMeFlow is not connected yet. Go to Settings > TextMeFlow and press "
+"'Connect'."
+msgstr "TextMeFlow is nog niet verbonden. Ga naar Instellingen > TextMeFlow en druk op 'Verbinden'."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/textmeflow_message.py:0
+#, python-format
+msgid "TextMeFlow refused the connection. Reconnect in Settings."
+msgstr "TextMeFlow weigerde de verbinding. Verbind opnieuw via Instellingen."
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_textmeflow_mixin
+msgid "TextMeFlow send button"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.actions.server,name:textmeflow.ir_cron_send_pending_ir_actions_server
+msgid "TextMeFlow: send queued WhatsApp messages"
+msgstr "TextMeFlow: wachtende WhatsApp-berichten versturen"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_res_config_settings__textmeflow_account_email
+msgid "Textmeflow Account Email"
+msgstr "TextMeFlow-accountmail"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_res_config_settings__textmeflow_connected
+msgid "Textmeflow Connected"
+msgstr ""
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_res_config_settings__textmeflow_phone
+msgid "Textmeflow Phone"
+msgstr ""
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "The code expired."
+msgstr "De code is verlopen."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/wizards/textmeflow_send_wizard.py:0
+#, python-format
+msgid "The message is empty."
+msgstr "Het bericht is leeg."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/wizards/textmeflow_send_wizard.py:0
+#, python-format
+msgid "The message is queued and will be sent in a moment."
+msgstr "Het bericht staat in de wachtrij en wordt zo meteen verstuurd."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "The test message could not be sent (%s)."
+msgstr "Het testbericht kon niet verstuurd worden (%s)."
+
+#. module: textmeflow
+#: model:ir.model.constraint,message:textmeflow.constraint_textmeflow_template_event_lang_uniq
+msgid "There is already a template for this event and language."
+msgstr "Er bestaat al een sjabloon voor deze gebeurtenis en taal."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/controllers/main.py:0
+#, python-format
+msgid ""
+"This connection request expired or is not valid. Please try again from "
+"Settings."
+msgstr "Deze verbindingsaanvraag is verlopen of ongeldig. Probeer opnieuw via Instellingen."
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_send_wizard_view_form
+msgid ""
+"This contact has not agreed to WhatsApp messages yet. Ask for consent first,"
+" then tick the box above."
+msgstr "Dit contact heeft nog niet ingestemd met WhatsApp-berichten. Vraag eerst toestemming en vink dan het vakje hierboven aan."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/wizards/textmeflow_send_wizard.py:0
+#, python-format
+msgid ""
+"This contact has not agreed to receive WhatsApp messages. Ask for consent "
+"and tick the box."
+msgstr "Dit contact heeft niet ingestemd met WhatsApp-berichten. Vraag toestemming en vink het vakje aan."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/wizards/textmeflow_send_wizard.py:0
+#, python-format
+msgid "This document has no customer to message."
+msgstr "Dit document heeft geen klant om een bericht naar te sturen."
+
+#. module: textmeflow
+#: model:ir.model.fields,help:textmeflow.field_res_partner__textmeflow_optin
+#: model:ir.model.fields,help:textmeflow.field_res_users__textmeflow_optin
+msgid ""
+"Tick only when this person agreed to receive WhatsApp messages. Without this"
+" consent no automatic message is sent."
+msgstr "Vink enkel aan wanneer deze persoon heeft ingestemd met WhatsApp-berichten. Zonder toestemming wordt geen automatisch bericht verstuurd."
+
+#. module: textmeflow
+#: model:ir.model.fields,help:textmeflow.field_textmeflow_send_wizard__optin
+msgid "Tick this only when the contact agreed to receive WhatsApp messages."
+msgstr "Vink dit enkel aan wanneer het contact heeft ingestemd met WhatsApp-berichten."
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_message_view_form
+#, python-format
+msgid "Try again"
+msgstr "Opnieuw proberen"
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "Upgrade your plan"
+msgstr "Upgrade je abonnement"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_res_partner__textmeflow_optin_date
+#: model:ir.model.fields,field_description:textmeflow.field_res_users__textmeflow_optin_date
+msgid "WhatsApp consent given on"
+msgstr "WhatsApp-toestemming gegeven op"
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid "WhatsApp is linked."
+msgstr "WhatsApp is gekoppeld."
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "WhatsApp linked"
+msgstr "WhatsApp gekoppeld"
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_textmeflow_message
+msgid "WhatsApp message (TextMeFlow)"
+msgstr "WhatsApp-bericht (TextMeFlow)"
+
+#. module: textmeflow
+#: model:ir.model,name:textmeflow.model_textmeflow_template
+msgid "WhatsApp message template"
+msgstr "WhatsApp-berichtsjabloon"
+
+#. module: textmeflow
+#: model:ir.model.fields,field_description:textmeflow.field_res_partner__textmeflow_optin
+#: model:ir.model.fields,field_description:textmeflow.field_res_users__textmeflow_optin
+#: model:ir.model.fields,field_description:textmeflow.field_textmeflow_send_wizard__optin
+msgid "WhatsApp messages allowed"
+msgstr "WhatsApp-berichten toegestaan"
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid "WhatsApp number"
+msgstr "WhatsApp-nummer"
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "You can close this window."
+msgstr "Je kunt dit venster sluiten."
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_settings_view
+msgid ""
+"You will be sent to textmeflow.eu to create an account or log in. Phone "
+"numbers and message texts are sent to TextMeFlow (EU-hosted)."
+msgstr "Je wordt doorgestuurd naar textmeflow.eu om een account aan te maken of in te loggen. Telefoonnummers en berichtteksten worden naar TextMeFlow (EU-gehost) gestuurd."
+
+#. module: textmeflow
+#. odoo-python
+#: code:addons/textmeflow/models/res_config_settings.py:0
+#, python-format
+msgid ""
+"Your Odoo address must start with https:// to connect. Check System "
+"Parameters > web.base.url."
+msgstr "Je Odoo-adres moet met https:// beginnen om te verbinden. Controleer Systeemparameters > web.base.url."
+
+#. module: textmeflow
+#: model_terms:ir.ui.view,arch_db:textmeflow.textmeflow_send_wizard_view_form
+msgid "Your message"
+msgstr "Je bericht"
+
+#. module: textmeflow
+#. odoo-javascript
+#: code:addons/textmeflow/static/src/xml/pair_screen.xml:0
+#, python-format
+msgid "Your plan has reached its limit of linked numbers."
+msgstr "Je abonnement heeft de limiet van gekoppelde nummers bereikt."

@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
+
+{# WhatsApp opt-in: not pre-checked, only shown when the shop is connected to TextMeFlow. #}
+{% block page_checkout_confirm_tos %}
+    {{ parent() }}
+
+    {% if page.extensions.textmeflowOptIn and page.extensions.textmeflowOptIn.show %}
+        <div class="form-check mb-3 tmf-whatsapp-optin">
+            <input type="checkbox"
+                   class="form-check-input"
+                   id="tmfWhatsappOptin"
+                   name="tmfWhatsappOptin"
+                   value="1"
+                   form="confirmOrderForm">
+            <label class="form-check-label" for="tmfWhatsappOptin">
+                {{ 'textmeflow.checkout.optIn'|trans }}
+            </label>
+        </div>
+    {% endif %}
+{% endblock %}

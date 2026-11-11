@@ -1,0 +1,61 @@
+{
+    "textmeflow": {
+        "general": {
+            "title": "TextMeFlow - WhatsApp",
+            "description": "WhatsApp-Bestellbenachrichtigungen über TextMeFlow senden.",
+            "cancel": "Abbrechen"
+        },
+        "connect": {
+            "title": "Mit TextMeFlow verbinden",
+            "intro": "Senden Sie Ihren Kunden Bestellupdates per WhatsApp. Klicken Sie auf den Button, melden Sie sich an oder erstellen Sie ein kostenloses TextMeFlow-Konto und bestätigen Sie die Verbindung. Sie kommen automatisch hierher zurück.",
+            "button": "Mit TextMeFlow verbinden",
+            "privacy": "Telefonnummern und Nachrichtentexte werden zur Zustellung an TextMeFlow (EU-gehostet, Fades Management EOOD, Bulgarien) übermittelt.",
+            "privacyLink": "Datenschutzerklärung",
+            "tokenInvalid": "Die Verbindung wurde in Ihrem TextMeFlow-Konto entfernt. Bitte verbinden Sie erneut."
+        },
+        "pair": {
+            "title": "WhatsApp koppeln",
+            "instructions": "Öffnen Sie WhatsApp auf Ihrem Handy, gehen Sie zu Einstellungen, dann Verknüpfte Geräte, tippen Sie auf Gerät hinzufügen und scannen Sie diesen Code.",
+            "deviceLimit": "Ihr Tarif hat keinen Platz für eine weitere WhatsApp-Nummer.",
+            "upgrade": "Tarif erweitern",
+            "error": "Der Code konnte nicht geladen werden. Bitte versuchen Sie es erneut.",
+            "qrAlt": "QR-Code zum Koppeln von WhatsApp",
+            "waiting": "Code wird vorbereitet...",
+            "expired": "Der Code ist abgelaufen.",
+            "newCode": "Neuer Code"
+        },
+        "status": {
+            "title": "Verbunden",
+            "whatsappConnected": "WhatsApp verbunden mit Nummer",
+            "account": "TextMeFlow-Konto: {email}"
+        },
+        "test": {
+            "title": "Testnachricht",
+            "label": "Ihre WhatsApp-Nummer",
+            "placeholder": "+49151234567",
+            "button": "Testnachricht an mich senden"
+        },
+        "messages": {
+            "title": "Nachrichten",
+            "description": "Wählen Sie, welche Nachrichten gesendet werden, und bearbeiten Sie die Texte. Kunden erhalten Nachrichten nur, wenn sie beim Bestellen das WhatsApp-Kästchen anhaken.",
+            "button": "Nachrichten bearbeiten"
+        },
+        "disconnect": {
+            "title": "Verbindung trennen",
+            "description": "Keine Nachrichten mehr senden und die Verbindung dieses Shops entfernen.",
+            "button": "Trennen",
+            "confirm": "Es werden keine Nachrichten mehr gesendet. Möchten Sie diesen Shop von TextMeFlow trennen?"
+        },
+        "notice": {
+            "connected": "Mit TextMeFlow verbunden.",
+            "denied": "Die Verbindung wurde abgebrochen.",
+            "failed": "Das Verbinden hat nicht geklappt. Bitte versuchen Sie es erneut.",
+            "statusFailed": "Der Status konnte nicht geladen werden.",
+            "httpsRequired": "Zum Verbinden muss dieser Shop über https erreichbar sein.",
+            "testSent": "Testnachricht gesendet.",
+            "invalidNumber": "Diese Telefonnummer ist ungültig. Bitte mit Ländervorwahl angeben, zum Beispiel +49151234567.",
+            "testFailed": "Die Testnachricht konnte nicht gesendet werden.",
+            "disconnected": "Von TextMeFlow getrennt."
+        }
+    }
+}

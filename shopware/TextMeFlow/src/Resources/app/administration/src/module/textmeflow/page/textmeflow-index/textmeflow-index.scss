@@ -1,0 +1,27 @@
+.textmeflow-index {
+    .textmeflow-index__intro,
+    .textmeflow-index__privacy,
+    .textmeflow-index__waiting {
+        margin-bottom: 16px;
+    }
+
+    .textmeflow-index__privacy {
+        margin-top: 16px;
+        font-size: 13px;
+    }
+
+    .textmeflow-index__heading {
+        margin: 24px 0 12px;
+    }
+
+    .textmeflow-index__qr {
+        margin: 16px 0;
+
+        img {
+            display: block;
+            border: 1px solid #d1d9e0;
+            padding: 8px;
+            background: #fff;
+        }
+    }
+}

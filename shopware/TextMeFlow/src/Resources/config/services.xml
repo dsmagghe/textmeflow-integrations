@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="TextMeFlow\Service\SecretBox">
+            <argument>%env(APP_SECRET)%</argument>
+        </service>
+
+        <service id="TextMeFlow\Service\Settings">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="TextMeFlow\Service\SecretBox"/>
+        </service>
+
+        <service id="TextMeFlow\Service\PhoneNormalizer"/>
+        <service id="TextMeFlow\Service\MessageBuilder"/>
+
+        <service id="TextMeFlow\Service\TextMeFlowClient">
+            <argument type="service" id="http_client"/>
+        </service>
+
+        <service id="TextMeFlow\Service\ConnectionService" public="true">
+            <argument type="service" id="TextMeFlow\Service\Settings"/>
+            <argument type="service" id="TextMeFlow\Service\TextMeFlowClient"/>
+            <argument type="service" id="TextMeFlow\Service\PhoneNormalizer"/>
+        </service>
+
+        <service id="TextMeFlow\Service\OrderMessageFactory">
+            <argument type="service" id="order.repository"/>
+            <argument type="service" id="TextMeFlow\Service\Settings"/>
+            <argument type="service" id="TextMeFlow\Service\MessageBuilder"/>
+            <argument type="service" id="TextMeFlow\Service\PhoneNormalizer"/>
+        </service>
+
+        <service id="TextMeFlow\Message\SendMessageHandler">
+            <argument type="service" id="TextMeFlow\Service\OrderMessageFactory"/>
+            <argument type="service" id="TextMeFlow\Service\TextMeFlowClient"/>
+            <argument type="service" id="TextMeFlow\Service\Settings"/>
+            <argument type="service" id="logger"/>
+            <tag name="messenger.message_handler"/>
+        </service>
+
+        <service id="TextMeFlow\Subscriber\OrderEventSubscriber">
+            <argument type="service" id="TextMeFlow\Service\Settings"/>
+            <argument type="service" id="messenger.default_bus"/>
+            <argument type="service" id="logger"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="TextMeFlow\Subscriber\CheckoutOptInSubscriber">
+            <argument type="service" id="TextMeFlow\Service\Settings"/>
+            <argument type="service" id="request_stack"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="TextMeFlow\Controller\ConnectController" public="true">
+            <argument type="service" id="TextMeFlow\Service\ConnectionService"/>
+            <argument type="service" id="TextMeFlow\Service\Settings"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="router"/>
+            <tag name="controller.service_arguments"/>
+        </service>
+    </services>
+</container>

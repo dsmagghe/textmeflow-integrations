@@ -1,0 +1,13 @@
+{
+  "url": "",
+  "method": "POST",
+  "output": {
+    "type": "{{body.type}}",
+    "from": "{{body.from}}",
+    "from_name": "{{body.from_name}}",
+    "to": "{{body.to}}",
+    "message": "{{body.message}}",
+    "file": "{{ifempty(body.file; emptystring)}}",
+    "event_id": "{{headers.`x-textmeflow-event-id`}}"
+  }
+}

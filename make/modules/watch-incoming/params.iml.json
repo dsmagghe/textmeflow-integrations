@@ -1,0 +1,9 @@
+[
+  {
+    "name": "__IMTHOOK__",
+    "type": "hook",
+    "label": "Webhook",
+    "required": true,
+    "help": "Create the webhook, then copy its address into the TextMeFlow portal (see README)."
+  }
+]

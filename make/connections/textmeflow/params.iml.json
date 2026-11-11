@@ -1,0 +1,9 @@
+[
+  {
+    "name": "apiKey",
+    "type": "password",
+    "label": "API key",
+    "required": true,
+    "help": "Log in at textmeflow.eu, open the portal and copy your API key. Link your WhatsApp number there first."
+  }
+]

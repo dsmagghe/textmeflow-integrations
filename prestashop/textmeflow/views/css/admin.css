@@ -1,0 +1,21 @@
+/**
+ * Copyright (c) Fades Management EOOD (TextMeFlow)
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * https://opensource.org/licenses/AFL-3.0
+ *
+ * @author    TextMeFlow <support@textmeflow.eu>
+ * @copyright Fades Management EOOD
+ * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
+ */
+.tmf .tmf-lead { font-size: 15px; }
+.tmf .tmf-steps { margin: 12px 0 20px 18px; }
+.tmf .tmf-steps li { margin-bottom: 4px; }
+.tmf .tmf-privacy { margin-top: 16px; }
+.tmf .tmf-status { font-size: 15px; }
+.tmf .tmf-status.is-ok { color: #1d7a3a; font-weight: 600; }
+.tmf .tmf-pair img { display: block; border: 1px solid #ddd; padding: 6px; background: #fff; }
+.tmf .tmf-table textarea { min-width: 260px; }
+.tmf .tmf-test-msg { margin-left: 12px; }

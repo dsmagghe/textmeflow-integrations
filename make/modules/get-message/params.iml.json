@@ -1,0 +1,9 @@
+[
+  {
+    "name": "message_id",
+    "type": "text",
+    "label": "Message ID",
+    "required": true,
+    "help": "The ID returned by Send a WhatsApp Message."
+  }
+]

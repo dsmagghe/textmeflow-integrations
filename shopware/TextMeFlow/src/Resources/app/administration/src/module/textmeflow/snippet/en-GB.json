@@ -1,0 +1,61 @@
+{
+    "textmeflow": {
+        "general": {
+            "title": "TextMeFlow - WhatsApp",
+            "description": "Send WhatsApp order updates through TextMeFlow.",
+            "cancel": "Cancel"
+        },
+        "connect": {
+            "title": "Connect to TextMeFlow",
+            "intro": "Send your customers order updates on WhatsApp. Click the button, sign in or create a free TextMeFlow account, and approve the connection. You will return here automatically.",
+            "button": "Connect with TextMeFlow",
+            "privacy": "Phone numbers and message texts are sent to TextMeFlow (EU-hosted, Fades Management EOOD, Bulgaria) to deliver the messages.",
+            "privacyLink": "Privacy policy",
+            "tokenInvalid": "The connection was removed in your TextMeFlow account. Please connect again."
+        },
+        "pair": {
+            "title": "Link your WhatsApp",
+            "instructions": "Open WhatsApp on your phone, go to Settings, then Linked devices, tap Link a device and scan this code.",
+            "deviceLimit": "Your plan has no room for another WhatsApp number.",
+            "upgrade": "Upgrade your plan",
+            "error": "The code could not be loaded. Please try again.",
+            "qrAlt": "QR code to link WhatsApp",
+            "waiting": "Preparing the code...",
+            "expired": "The code expired.",
+            "newCode": "New code"
+        },
+        "status": {
+            "title": "Connected",
+            "whatsappConnected": "WhatsApp connected with number",
+            "account": "TextMeFlow account: {email}"
+        },
+        "test": {
+            "title": "Test message",
+            "label": "Your WhatsApp number",
+            "placeholder": "+32470123456",
+            "button": "Send me a test message"
+        },
+        "messages": {
+            "title": "Messages",
+            "description": "Choose which messages are sent and edit the texts. Customers only receive messages when they tick the WhatsApp checkbox at checkout.",
+            "button": "Edit messages"
+        },
+        "disconnect": {
+            "title": "Disconnect",
+            "description": "Stop sending messages and remove the connection from this shop.",
+            "button": "Disconnect",
+            "confirm": "Messages will no longer be sent. Do you want to disconnect this shop from TextMeFlow?"
+        },
+        "notice": {
+            "connected": "Connected with TextMeFlow.",
+            "denied": "The connection was cancelled.",
+            "failed": "Connecting did not work. Please try again.",
+            "statusFailed": "The status could not be loaded.",
+            "httpsRequired": "Connecting requires this shop to be reachable over https.",
+            "testSent": "Test message sent.",
+            "invalidNumber": "This phone number is not valid. Include the country code, for example +32470123456.",
+            "testFailed": "The test message could not be sent.",
+            "disconnected": "Disconnected from TextMeFlow."
+        }
+    }
+}

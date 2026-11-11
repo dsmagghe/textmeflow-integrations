@@ -1,0 +1,14 @@
+{
+  "url": "/messages/{{encodeURL(parameters.message_id)}}",
+  "method": "GET",
+  "response": {
+    "output": {
+      "id": "{{ifempty(body.id; body.message_id)}}",
+      "status": "{{body.status}}",
+      "to": "{{body.to}}",
+      "text": "{{body.text}}",
+      "created_at": "{{body.created_at}}",
+      "sent_at": "{{body.sent_at}}"
+    }
+  }
+}

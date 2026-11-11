@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>textmeflow</name>
+    <displayName><![CDATA[TextMeFlow - WhatsApp order updates]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[Send your customers order updates on WhatsApp, from your own number. Connect in one click.]]></description>
+    <author><![CDATA[TextMeFlow]]></author>
+    <tab><![CDATA[emailing]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+    <limited_countries></limited_countries>
+</module>

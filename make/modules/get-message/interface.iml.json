@@ -1,0 +1,8 @@
+[
+  { "name": "id", "type": "text", "label": "Message ID" },
+  { "name": "status", "type": "text", "label": "Status" },
+  { "name": "to", "type": "text", "label": "Phone number" },
+  { "name": "text", "type": "text", "label": "Message" },
+  { "name": "created_at", "type": "date", "label": "Created at" },
+  { "name": "sent_at", "type": "date", "label": "Sent at" }
+]

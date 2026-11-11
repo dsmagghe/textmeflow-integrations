@@ -1,0 +1,9 @@
+[
+  { "name": "event_id", "type": "text", "label": "Event ID" },
+  { "name": "type", "type": "text", "label": "Type" },
+  { "name": "from", "type": "text", "label": "From (phone number)" },
+  { "name": "from_name", "type": "text", "label": "From (name)" },
+  { "name": "to", "type": "text", "label": "To (your number)" },
+  { "name": "message", "type": "text", "label": "Message" },
+  { "name": "file", "type": "text", "label": "File URL" }
+]

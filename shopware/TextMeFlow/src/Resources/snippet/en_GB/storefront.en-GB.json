@@ -1,0 +1,7 @@
+{
+    "textmeflow": {
+        "checkout": {
+            "optIn": "Send me updates about this order on WhatsApp (optional)"
+        }
+    }
+}

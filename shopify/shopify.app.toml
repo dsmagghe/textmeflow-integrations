@@ -1,0 +1,37 @@
+# App-configuratie voor Shopify CLI (`shopify app deploy`).
+# Zie SUBMIT.md. client_id invullen met de Client ID uit het Partner-dashboard
+# (dat is geen geheim). De client secret hoort NIET hier maar in .env op de server.
+
+client_id = "VUL-IN-CLIENT-ID"
+name = "TextMeFlow WhatsApp Notifications"
+handle = "textmeflow"
+application_url = "https://textmeflow.eu/shopify"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = false
+
+[access_scopes]
+# Managed install: Shopify vraagt deze rechten bij de installatie.
+# Moet overeenkomen met SHOPIFY_SCOPES in .env.
+scopes = "read_orders,read_locales"
+use_legacy_install_flow = false
+
+[auth]
+# Niet gebruikt door managed install + token exchange, maar Shopify vereist minstens één URL.
+redirect_urls = ["https://textmeflow.eu/shopify"]
+
+[webhooks]
+api_version = "2026-10"
+
+  # Verplichte privacy-webhooks (App Store-eis).
+  [[webhooks.subscriptions]]
+  compliance_topics = ["customers/data_request", "customers/redact", "shop/redact"]
+  uri = "https://textmeflow.eu/shopify/webhooks"
+
+  [[webhooks.subscriptions]]
+  topics = ["app/uninstalled", "orders/create", "orders/fulfilled", "orders/cancelled"]
+  uri = "https://textmeflow.eu/shopify/webhooks"
+
+[pos]
+embedded = false
