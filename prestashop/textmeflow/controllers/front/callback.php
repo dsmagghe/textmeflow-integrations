@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) Fades Management EOOD (TextMeFlow)
  *
@@ -7,7 +8,7 @@
  * This source file is subject to the Academic Free License (AFL 3.0)
  * https://opensource.org/licenses/AFL-3.0
  *
- * @author    TextMeFlow <support@textmeflow.eu>
+ * @author    TextMeFlow <info@fades.tech>
  * @copyright Fades Management EOOD
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  */
@@ -29,9 +30,10 @@ class TextMeFlowCallbackModuleFrontController extends ModuleFrontController
 
     public function postProcess()
     {
-        $adminUrl = (string) Configuration::get('TMF_ADMIN_URL');
-        $expected = (string) Configuration::get('TMF_STATE');
-        $ts = (int) Configuration::get('TMF_STATE_TS');
+        $adminUrl = (string) Configuration::get('TEXTMEFLOW_ADMIN_URL');
+        $returnUrl = (string) Configuration::get('TEXTMEFLOW_RETURN_URL');
+        $expected = (string) Configuration::get('TEXTMEFLOW_STATE');
+        $ts = (int) Configuration::get('TEXTMEFLOW_STATE_TS');
         $state = (string) Tools::getValue('state');
         $code = (string) Tools::getValue('code');
         $valid = $expected !== '' && $adminUrl !== '' && $state !== '' && hash_equals($expected, $state) && (time() - $ts) < 900;
@@ -40,17 +42,21 @@ class TextMeFlowCallbackModuleFrontController extends ModuleFrontController
             Tools::redirect(__PS_BASE_URI__);
         }
         // The state is single use once it has matched, whatever the outcome.
-        Configuration::deleteByName('TMF_STATE');
-        Configuration::deleteByName('TMF_STATE_TS');
-        Configuration::deleteByName('TMF_ADMIN_URL');
+        Configuration::deleteByName('TEXTMEFLOW_STATE');
+        Configuration::deleteByName('TEXTMEFLOW_STATE_TS');
+        Configuration::deleteByName('TEXTMEFLOW_ADMIN_URL');
+        Configuration::deleteByName('TEXTMEFLOW_RETURN_URL');
+        if ($returnUrl === '') {
+            $returnUrl = $this->context->link->getModuleLink('textmeflow', 'callback', [], true);
+        }
 
         $ok = false;
         if ($code !== '' && preg_match('/^[A-Za-z0-9_.\-]{8,200}$/', $code) && !Tools::getValue('error')) {
             $client = new TextMeFlowClient();
-            $result = $client->exchangeCode($code, $this->context->link->getModuleLink('textmeflow', 'callback', array(), true));
+            $result = $client->exchangeCode($code, $returnUrl);
             if ($result['ok'] && !empty($result['data']['token']) && is_string($result['data']['token'])) {
                 TextMeFlowClient::storeToken($result['data']['token']);
-                Configuration::updateValue('TMF_ACCOUNT', isset($result['data']['account_email']) ? Tools::substr(strip_tags((string) $result['data']['account_email']), 0, 190) : '');
+                Configuration::updateValue('TEXTMEFLOW_ACCOUNT', isset($result['data']['account_email']) ? Tools::substr(strip_tags((string) $result['data']['account_email']), 0, 190) : '');
                 $ok = true;
             } else {
                 PrestaShopLogger::addLog('TextMeFlow: code exchange failed (' . TextMeFlowService::errorCode($result) . ')', 3);

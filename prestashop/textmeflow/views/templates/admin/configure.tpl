@@ -6,7 +6,7 @@
  * This source file is subject to the Academic Free License (AFL 3.0)
  * https://opensource.org/licenses/AFL-3.0
  *
- * @author    TextMeFlow <support@textmeflow.eu>
+ * @author    TextMeFlow <info@fades.tech>
  * @copyright Fades Management EOOD
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  *}
@@ -46,6 +46,18 @@
       <div class="panel-heading">{l s='Messages' d='Modules.Textmeflow.Admin'}</div>
       <p class="help-block">{l s='Customers only receive a message when they ticked the WhatsApp box when ordering. Leave a text empty to use the ready-made text in the language of the customer. You can use these placeholders:' d='Modules.Textmeflow.Admin'}
         <code>{foreach from=$tmf_placeholders item=ph name=phl}{$ph|escape:'html':'UTF-8'}{if !$smarty.foreach.phl.last} {/if}{/foreach}</code></p>
+      <div class="form-group tmf-own-number">
+        <label for="tmf_merchant_phone">{l s='Your own mobile number' d='Modules.Textmeflow.Admin'}</label>
+        <div class="input-group">
+          <input type="text" id="tmf_merchant_phone" name="tmf_merchant_phone" class="form-control" value="{$tmf_merchant_phone|escape:'html':'UTF-8'}" placeholder="+32 470 12 34 56" maxlength="25">
+          <span class="input-group-btn"><button type="button" id="tmf-test-btn" class="btn btn-default">{l s='Send me a test message' d='Modules.Textmeflow.Admin'}</button></span>
+        </div>
+        <span id="tmf-test-msg" class="tmf-test-msg" role="status"></span>
+        <p class="help-block">{l s='Used for the test message and, if you tick the box below, for new-order messages to you.' d='Modules.Textmeflow.Admin'}</p>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="tmf_notify" value="1" {if $tmf_notify}checked{/if}> {l s='Send me a WhatsApp message for every new order' d='Modules.Textmeflow.Admin'}</label>
+      </div>
       <table class="table tmf-table">
         <thead><tr>
           <th>{l s='Order status' d='Modules.Textmeflow.Admin'}</th>
@@ -63,18 +75,8 @@
         </tbody>
       </table>
 
-      <div class="form-group">
-        <label for="tmf_merchant_phone">{l s='Your own mobile number' d='Modules.Textmeflow.Admin'}</label>
-        <input type="text" id="tmf_merchant_phone" name="tmf_merchant_phone" class="form-control" value="{$tmf_merchant_phone|escape:'html':'UTF-8'}" placeholder="+32 470 12 34 56" maxlength="25">
-        <p class="help-block">{l s='Used for the test message and, if you tick the box below, for new-order messages to you.' d='Modules.Textmeflow.Admin'}</p>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="tmf_notify" value="1" {if $tmf_notify}checked{/if}> {l s='Send me a WhatsApp message for every new order' d='Modules.Textmeflow.Admin'}</label>
-      </div>
       <div class="panel-footer">
         <button type="submit" name="tmf_save" value="1" class="btn btn-primary pull-right">{l s='Save' d='Modules.Textmeflow.Admin'}</button>
-        <button type="button" id="tmf-test-btn" class="btn btn-default">{l s='Send me a test message' d='Modules.Textmeflow.Admin'}</button>
-        <span id="tmf-test-msg" class="tmf-test-msg" role="status"></span>
       </div>
     </form>
 

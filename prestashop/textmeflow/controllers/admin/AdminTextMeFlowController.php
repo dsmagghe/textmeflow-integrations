@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) Fades Management EOOD (TextMeFlow)
  *
@@ -7,7 +8,7 @@
  * This source file is subject to the Academic Free License (AFL 3.0)
  * https://opensource.org/licenses/AFL-3.0
  *
- * @author    TextMeFlow <support@textmeflow.eu>
+ * @author    TextMeFlow <info@fades.tech>
  * @copyright Fades Management EOOD
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  */
@@ -36,7 +37,7 @@ class AdminTextMeFlowController extends ModuleAdminController
         }
         $module = Module::getInstanceByName('textmeflow');
         if (!$module || !Module::getPermissionStatic((int) $module->id, 'configure')) {
-            $this->respond(array('ok' => false, 'error' => 'forbidden'), 403);
+            $this->respond(['ok' => false, 'error' => 'forbidden'], 403);
         }
     }
 
@@ -47,27 +48,27 @@ class AdminTextMeFlowController extends ModuleAdminController
     {
         $client = TextMeFlowClient::fromConfiguration();
         if (!$client) {
-            $this->respond(array('ok' => true, 'connected' => false, 'linked' => false));
+            $this->respond(['ok' => true, 'connected' => false, 'linked' => false]);
         }
         $result = $client->me();
         if (!$result['ok']) {
-            $this->respond(array('ok' => false, 'error' => TextMeFlowService::errorCode($result)));
+            $this->respond(['ok' => false, 'error' => TextMeFlowService::errorCode($result)]);
         }
         $number = '';
-        foreach ((array) (isset($result['data']['wa_sessions']) ? $result['data']['wa_sessions'] : array()) as $session) {
+        foreach ((array) (isset($result['data']['wa_sessions']) ? $result['data']['wa_sessions'] : []) as $session) {
             if (isset($session['status']) && $session['status'] === 'connected') {
                 $number = isset($session['phone_number']) ? (string) $session['phone_number'] : '';
                 $number = $number !== '' ? $number : '-';
                 break;
             }
         }
-        $this->respond(array(
+        $this->respond([
             'ok' => true,
             'connected' => true,
             'linked' => $number !== '',
             'number' => $number === '-' ? '' : $number,
             'email' => isset($result['data']['email']) ? (string) $result['data']['email'] : '',
-        ));
+        ]);
     }
 
     /**
@@ -77,12 +78,12 @@ class AdminTextMeFlowController extends ModuleAdminController
     {
         $client = TextMeFlowClient::fromConfiguration();
         if (!$client) {
-            $this->respond(array('ok' => false, 'error' => 'not_connected'));
+            $this->respond(['ok' => false, 'error' => 'not_connected']);
         }
         $result = $client->startPair((string) Configuration::get('PS_SHOP_NAME'));
         if (!$result['ok']) {
-            $limit = in_array($result['status'], array(402, 409), true);
-            $this->respond(array('ok' => false, 'error' => $limit ? 'device_limit_reached' : TextMeFlowService::errorCode($result)));
+            $limit = in_array($result['status'], [402, 409], true);
+            $this->respond(['ok' => false, 'error' => $limit ? 'device_limit_reached' : TextMeFlowService::errorCode($result)]);
         }
         $this->respond($this->pairPayload($result['data']));
     }
@@ -94,15 +95,15 @@ class AdminTextMeFlowController extends ModuleAdminController
     {
         $pairId = (string) Tools::getValue('pair_id');
         if (!preg_match('/^[A-Za-z0-9_\-]{1,64}$/', $pairId)) {
-            $this->respond(array('ok' => false, 'error' => 'invalid_request'));
+            $this->respond(['ok' => false, 'error' => 'invalid_request']);
         }
         $client = TextMeFlowClient::fromConfiguration();
         if (!$client) {
-            $this->respond(array('ok' => false, 'error' => 'not_connected'));
+            $this->respond(['ok' => false, 'error' => 'not_connected']);
         }
         $result = $client->pairStatus($pairId);
         if (!$result['ok']) {
-            $this->respond(array('ok' => false, 'error' => TextMeFlowService::errorCode($result)));
+            $this->respond(['ok' => false, 'error' => TextMeFlowService::errorCode($result)]);
         }
         $payload = $this->pairPayload($result['data']);
         $payload['pair_id'] = $pairId;
@@ -115,7 +116,7 @@ class AdminTextMeFlowController extends ModuleAdminController
     public function ajaxProcessTest()
     {
         $result = TextMeFlowService::sendTest((string) Tools::getValue('phone'));
-        $this->respond(array('ok' => $result['ok'], 'error' => $result['ok'] ? '' : $result['message']));
+        $this->respond(['ok' => $result['ok'], 'error' => $result['ok'] ? '' : $result['message']]);
     }
 
     /**
@@ -130,17 +131,17 @@ class AdminTextMeFlowController extends ModuleAdminController
             $qr = '';
         }
 
-        return array(
+        return [
             'ok' => true,
             'pair_id' => isset($data['pair_id']) ? preg_replace('/[^A-Za-z0-9_\-]/', '', (string) $data['pair_id']) : '',
             'status' => isset($data['status']) ? preg_replace('/[^a-z_]/', '', (string) $data['status']) : 'pending',
             'qr' => $qr,
-        );
+        ];
     }
 
     /**
      * @param array $payload
-     * @param int   $status
+     * @param int $status
      */
     private function respond(array $payload, $status = 200)
     {

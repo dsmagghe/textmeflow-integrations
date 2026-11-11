@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) Fades Management EOOD (TextMeFlow)
  *
@@ -7,7 +8,7 @@
  * This source file is subject to the Academic Free License (AFL 3.0)
  * https://opensource.org/licenses/AFL-3.0
  *
- * @author    TextMeFlow <support@textmeflow.eu>
+ * @author    TextMeFlow <info@fades.tech>
  * @copyright Fades Management EOOD
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  */

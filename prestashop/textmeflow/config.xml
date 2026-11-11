@@ -6,6 +6,7 @@
     <description><![CDATA[Send your customers order updates on WhatsApp, from your own number. Connect in one click.]]></description>
     <author><![CDATA[TextMeFlow]]></author>
     <tab><![CDATA[emailing]]></tab>
+    <confirmUninstall><![CDATA[Are you sure? The connection with TextMeFlow will be removed.]]></confirmUninstall>
     <is_configurable>1</is_configurable>
     <need_instance>0</need_instance>
     <limited_countries></limited_countries>

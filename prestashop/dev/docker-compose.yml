@@ -1,0 +1,37 @@
+# Local test shop for the TextMeFlow module. See ../README.md, "Lokaal testen".
+#   docker-compose -p tmfps up -d            (PrestaShop 8 on http://localhost:8088)
+#   PS_IMAGE=prestashop/prestashop:9 PS_PORT=8089 docker-compose -p tmfps9 up -d   (PrestaShop 9)
+# The module folder is mounted; set MODULE_SRC=<empty dir> to test an upload of the zip instead.
+# The mock API (mock-api.php) runs inside the shop container on port 8099
+# (docker exec -d <shop> php -S 0.0.0.0:8099 /mock/mock-api.php); the module talks to it
+# via TEXTMEFLOW_API_URL, the browser via TEXTMEFLOW_SITE_URL.
+services:
+  db:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: prestashop
+  shop:
+    image: ${PS_IMAGE:-prestashop/prestashop:8}
+    depends_on: [db]
+    ports:
+      - "${PS_PORT:-8088}:80"
+      - "8099:8099"
+    environment:
+      DB_SERVER: db
+      DB_NAME: prestashop
+      DB_PASSWD: admin
+      PS_INSTALL_AUTO: "1"
+      PS_DOMAIN: localhost:${PS_PORT:-8088}
+      PS_FOLDER_ADMIN: admin-dev
+      PS_FOLDER_INSTALL: install-dev
+      PS_LANGUAGE: en
+      PS_COUNTRY: BE
+      PS_DEV_MODE: "0"
+      ADMIN_MAIL: demo@prestashop.com
+      ADMIN_PASSWD: prestashop_demo
+      TEXTMEFLOW_API_URL: http://127.0.0.1:8099/v1
+      TEXTMEFLOW_SITE_URL: http://localhost:8099
+    volumes:
+      - ${MODULE_SRC:-../textmeflow}:/var/www/html/modules/textmeflow
+      - ./:/mock

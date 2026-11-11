@@ -30,14 +30,7 @@ Customers only receive messages if they tick an opt-in box ("Send me my order up
 - Errors in the PrestaShop log and as a private note on the order; a failing message never blocks a checkout
 - Back office in English, Dutch, French and German
 
-**Screenshots (to take)**
-1. Configuration page before connecting (button "Connect with TextMeFlow")
-2. TextMeFlow approval screen (textmeflow.eu)
-3. QR code in the back office
-4. Connected state with WhatsApp number
-5. Message table (status, switch, own text)
-6. Opt-in checkbox on the registration form
-7. Private order note "WhatsApp message sent"
+**Screenshots**: see "Afbeeldingen voor Addons" at the bottom of this file.
 
 **FAQ**
 - *Do I need a WhatsApp Business account?* No. You link your own WhatsApp number by scanning a QR code, like WhatsApp Web.
@@ -83,7 +76,7 @@ Klanten krijgen enkel berichten als ze bij het registreren of bestellen het vakj
 **Privacy en externe dienst**
 Deze module stuurt het telefoonnummer van de ontvanger en de berichttekst naar TextMeFlow (gehost in de EU, Fades Management EOOD, Bulgarije) om het WhatsApp-bericht te bezorgen. Er wordt niets verstuurd voor je verbindt. Zie https://textmeflow.eu/legal/privacy en https://textmeflow.eu/legal/terms. Je blijft zelf verantwoordelijk voor de toestemming van je klanten; de module biedt het toestemmingsvakje.
 
-## Francais
+## Français
 
 **Description courte**
 Envoyez des mises à jour de commande à vos clients sur WhatsApp, depuis votre propre numéro. Connexion en un clic.
@@ -95,27 +88,27 @@ La mise en place prend environ deux minutes : cliquez sur "Se connecter à TextM
 
 Des messages prêts à l'emploi (français, néerlandais, anglais et allemand) sont activés pour paiement reçu, expédié et livré. Vous pouvez activer ou désactiver chaque statut, modifier le texte et utiliser des variables comme {first_name}, {order_number}, {order_total}, {shop_name} et {tracking_url}.
 
-Les clients ne reçoivent des messages que s'ils cochent la case de consentement ("Envoyez-moi les mises à jour de ma commande par WhatsApp") à l'inscription ou à la commande. La case n'est jamais cochée par défaut et peut etre retiree dans "Mon compte". Vous pouvez aussi recevoir vous-meme un message WhatsApp pour chaque nouvelle commande.
+Les clients ne reçoivent des messages que s'ils cochent la case de consentement ("Envoyez-moi les mises à jour de ma commande par WhatsApp") à l'inscription ou à la commande. La case n'est jamais cochée par défaut et peut être retirée dans "Mon compte". Vous pouvez aussi recevoir vous-même un message WhatsApp pour chaque nouvelle commande.
 
 **Fonctions**
 - Connexion en un clic et code QR dans votre back-office
 - Messages lors des changements de statut, par statut, texte modifiable
 - Case de consentement à l'inscription et au paiement (RGPD)
 - Message optionnel au commerçant pour chaque nouvelle commande
-- Numeros convertis au format international selon le pays de l'adresse
-- Message de test et deconnexion en un clic
-- Erreurs dans le journal PrestaShop et en note privee sur la commande ; un message échoué ne bloque jamais une commande
+- Numéros convertis au format international selon le pays de l'adresse
+- Message de test et déconnexion en un clic
+- Erreurs dans le journal PrestaShop et en note privée sur la commande ; un message échoué ne bloque jamais une commande
 - Back-office en français, néerlandais, anglais et allemand
 
 **FAQ**
 - *Faut-il WhatsApp Business ?* Non. Vous liez votre propre numéro WhatsApp via un code QR, comme WhatsApp Web.
-- *Combien ça coute ?* Le module est gratuit. TextMeFlow est gratuit jusqu'à 50 messages par mois ; au-dela, un abonnement TextMeFlow payant est nécessaire.
+- *Combien ça coûte ?* Le module est gratuit. TextMeFlow est gratuit jusqu'à 50 messages par mois ; au-delà, un abonnement TextMeFlow payant est nécessaire.
 - *Quels clients reçoivent des messages ?* Uniquement ceux qui ont coché la case WhatsApp.
 - *Cela ralentit-il le paiement ?* Non, les messages partent après l'affichage de la page.
-- *Comment arreter ?* Cliquez sur "Déconnecter" ou désinstallez le module ; la connexion est révoquée.
+- *Comment arrêter ?* Cliquez sur "Déconnecter" ou désinstallez le module ; la connexion est révoquée.
 
 **Confidentialité et service externe**
-Ce module envoie le numéro de téléphone du destinataire et le texte du message a TextMeFlow (hébergé dans l'UE, Fades Management EOOD, Bulgarie) pour livrer le message WhatsApp. Rien n'est envoyé avant que vous vous connectiez. Voir https://textmeflow.eu/legal/privacy et https://textmeflow.eu/legal/terms. Vous restez responsable du consentement de vos clients ; le module fournit la case a cocher.
+Ce module envoie le numéro de téléphone du destinataire et le texte du message à TextMeFlow (hébergé dans l'UE, Fades Management EOOD, Bulgarie) pour livrer le message WhatsApp. Rien n'est envoyé avant que vous vous connectiez. Voir https://textmeflow.eu/legal/privacy et https://textmeflow.eu/legal/terms. Vous restez responsable du consentement de vos clients ; le module fournit la case à cocher.
 
 ## Deutsch
 
@@ -150,3 +143,33 @@ Kunden erhalten nur Nachrichten, wenn sie bei der Registrierung oder Bestellung 
 
 **Datenschutz und externer Dienst**
 Dieses Modul sendet die Telefonnummer des Empfängers und den Nachrichtentext an TextMeFlow (EU-gehostet, Fades Management EOOD, Bulgarien), um die WhatsApp-Nachricht zuzustellen. Vor dem Verbinden wird nichts gesendet. Siehe https://textmeflow.eu/legal/privacy und https://textmeflow.eu/legal/terms. Sie bleiben selbst für die Einwilligung Ihrer Kunden verantwortlich; das Modul stellt das Kästchen bereit.
+
+## Afbeeldingen voor Addons
+
+Alles staat in `integrations/prestashop/store-assets/`, gemaakt in een echte PrestaShop 8.2.9
+met de module geïnstalleerd uit `dist/textmeflow.zip` en een nagebootste TextMeFlow-API
+(`dev/e2e.py`). Formaat 1920x1500 PNG (Addons vraagt minstens 1000x1000 px per screenshot,
+minstens 3 per taal; geen contactgegevens of watermerken in beeld).
+
+**Logo / producticoon**: `logo-256x256.png` (huidige eis van Addons: exact 256x256),
+`logo-128x128.png` en `logo-57x57.png` (oudere formulieren). Eigen neutraal icoon (groene
+spreekballon met pijl), geen WhatsApp-logo. In de module zelf: `textmeflow/logo.png` (32x32).
+
+**Volgorde (Engels, hoofdset):**
+
+1. `01-connect-button.png` - configuratiepagina voor het verbinden, knop "Connect with TextMeFlow"
+2. `02-qr-pairing.png` - QR-code om WhatsApp te koppelen, in het beheer
+3. `03-connected-test-message.png` - verbonden met WhatsApp-nummer, testbericht verstuurd
+4. `04-message-settings.png` - eigen gsm-nummer, testknop, melding bij nieuwe bestelling, begin van de statustabel
+5. `05-order-status-texts.png` - per orderstatus aan/uit en eigen tekst met placeholders
+6. `06-checkout-opt-in.png` - opt-in vinkje in de checkout (stap persoonsgegevens, gast)
+7. `07-registration-opt-in.png` - opt-in vinkje bij het registreren
+8. `08-order-message-note.png` - bestelling met de privénotities "WhatsApp message ... sent to ..."
+
+**Vertaalde sets (3 per taal)** in `store-assets/fr/`, `store-assets/nl/`, `store-assets/de/`:
+`01-connect-button.png`, `02-connected-test-message.png`, `03-registration-opt-in.png`.
+(De namen van de orderstatussen en het menu van de demowinkel blijven daar Engels: de
+taalpakketten vertalen de bestaande demogegevens niet. De module-teksten zijn wel vertaald.)
+
+**Changelog (veld in het formulier)**
+- 1.0.0: First release. One-click connection with TextMeFlow, QR code pairing in the back office, WhatsApp messages per order status with editable texts, opt-in checkbox at registration and checkout, new-order message to the shop owner, test message, disconnect.

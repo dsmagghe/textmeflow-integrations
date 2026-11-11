@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) Fades Management EOOD (TextMeFlow)
  *
@@ -7,7 +8,7 @@
  * This source file is subject to the Academic Free License (AFL 3.0)
  * https://opensource.org/licenses/AFL-3.0
  *
- * @author    TextMeFlow <support@textmeflow.eu>
+ * @author    TextMeFlow <info@fades.tech>
  * @copyright Fades Management EOOD
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  */
@@ -20,8 +21,8 @@ if (!defined('_PS_VERSION_')) {
  */
 class TextMeFlowService
 {
-    /** @var array<int,array{to:string,text:string,id_order:int,label:string}> */
-    private static $queue = array();
+    /** @var array<int,array{to:string,text:string,id_order:int,label:string,status:string}> */
+    private static $queue = [];
 
     /** @var bool */
     private static $shutdownRegistered = false;
@@ -41,9 +42,9 @@ class TextMeFlowService
      */
     public static function getStatusConfig()
     {
-        $raw = json_decode((string) Configuration::get('TMF_STATUS_CFG'), true);
+        $raw = json_decode((string) Configuration::get('TEXTMEFLOW_STATUS_CFG'), true);
 
-        return is_array($raw) ? $raw : array();
+        return is_array($raw) ? $raw : [];
     }
 
     /**
@@ -61,7 +62,7 @@ class TextMeFlowService
     /**
      * Record (or withdraw) the WhatsApp consent of a customer.
      *
-     * @param int  $idCustomer
+     * @param int $idCustomer
      * @param bool $optin
      */
     public static function setOptIn($idCustomer, $optin)
@@ -73,10 +74,18 @@ class TextMeFlowService
     }
 
     /**
+     * @param int $idCustomer
+     */
+    public static function deleteOptIn($idCustomer)
+    {
+        Db::getInstance()->delete('textmeflow_optin', '`id_customer` = ' . (int) $idCustomer);
+    }
+
+    /**
      * Message to the customer after an order status change.
      *
      * @param Order $order
-     * @param int   $idOrderState new status
+     * @param int $idOrderState new status
      */
     public static function handleStatusChange(Order $order, $idOrderState)
     {
@@ -113,7 +122,7 @@ class TextMeFlowService
 
             return;
         }
-        self::enqueue($to, $text, (int) $order->id, 'status');
+        self::enqueue($to, $text, (int) $order->id, 'status', (string) $state->name);
     }
 
     /**
@@ -123,10 +132,10 @@ class TextMeFlowService
      */
     public static function handleNewOrder(Order $order)
     {
-        if (!self::isConnected() || !(int) Configuration::get('TMF_MERCHANT_NOTIFY')) {
+        if (!self::isConnected() || !(int) Configuration::get('TEXTMEFLOW_MERCHANT_NOTIFY')) {
             return;
         }
-        $number = TextMeFlowPhone::toE164((string) Configuration::get('TMF_MERCHANT_PHONE'), self::getShopCountryIso());
+        $number = TextMeFlowPhone::toE164((string) Configuration::get('TEXTMEFLOW_MERCHANT_PHONE'), self::getShopCountryIso());
         if ($number === null) {
             return;
         }
@@ -150,25 +159,25 @@ class TextMeFlowService
     {
         $client = TextMeFlowClient::fromConfiguration();
         if (!$client) {
-            return array('ok' => false, 'message' => 'not_connected');
+            return ['ok' => false, 'message' => 'not_connected'];
         }
         $to = TextMeFlowPhone::toE164($rawNumber, self::getShopCountryIso());
         if ($to === null) {
-            return array('ok' => false, 'message' => 'invalid_number');
+            return ['ok' => false, 'message' => 'invalid_number'];
         }
         $iso = self::getLangIso((int) Context::getContext()->language->id);
         $text = TextMeFlowTemplates::render(
             TextMeFlowTemplates::getDefault('test', $iso),
-            array('{shop_name}' => (string) Configuration::get('PS_SHOP_NAME'))
+            ['{shop_name}' => (string) Configuration::get('PS_SHOP_NAME')]
         );
         $result = $client->sendMessage($to, $text);
         if (!$result['ok']) {
             PrestaShopLogger::addLog('TextMeFlow: test message failed (HTTP ' . $result['status'] . ')', 3);
 
-            return array('ok' => false, 'message' => self::errorCode($result));
+            return ['ok' => false, 'message' => self::errorCode($result)];
         }
 
-        return array('ok' => true, 'message' => 'sent');
+        return ['ok' => true, 'message' => 'sent'];
     }
 
     /**
@@ -177,15 +186,16 @@ class TextMeFlowService
      *
      * @param string $to
      * @param string $text
-     * @param int    $idOrder
+     * @param int $idOrder
      * @param string $label
+     * @param string $statusName order status, shown in the private order note
      */
-    private static function enqueue($to, $text, $idOrder, $label)
+    private static function enqueue($to, $text, $idOrder, $label, $statusName = '')
     {
-        self::$queue[] = array('to' => $to, 'text' => $text, 'id_order' => $idOrder, 'label' => $label);
+        self::$queue[] = ['to' => $to, 'text' => $text, 'id_order' => $idOrder, 'label' => $label, 'status' => $statusName];
         if (!self::$shutdownRegistered) {
             self::$shutdownRegistered = true;
-            register_shutdown_function(array(__CLASS__, 'flush'));
+            register_shutdown_function([__CLASS__, 'flush']);
         }
     }
 
@@ -203,7 +213,7 @@ class TextMeFlowService
         }
         $client = TextMeFlowClient::fromConfiguration();
         $queue = self::$queue;
-        self::$queue = array();
+        self::$queue = [];
         foreach ($queue as $item) {
             try {
                 if (!$client) {
@@ -220,10 +230,10 @@ class TextMeFlowService
                         (int) $item['id_order']
                     );
                     if ($item['label'] === 'status') {
-                        self::addPrivateOrderMessage((int) $item['id_order'], 'TextMeFlow: WhatsApp message not sent (' . $reason . ')');
+                        self::addPrivateOrderMessage((int) $item['id_order'], 'TextMeFlow: WhatsApp message "' . $item['status'] . '" not sent (' . $reason . ')');
                     }
                 } elseif ($item['label'] === 'status') {
-                    self::addPrivateOrderMessage((int) $item['id_order'], 'TextMeFlow: WhatsApp message sent to ' . $item['to']);
+                    self::addPrivateOrderMessage((int) $item['id_order'], 'TextMeFlow: WhatsApp message "' . $item['status'] . '" sent to ' . $item['to']);
                 }
             } catch (Throwable $e) {
                 PrestaShopLogger::addLog('TextMeFlow: ' . $e->getMessage(), 3);
@@ -246,9 +256,9 @@ class TextMeFlowService
     }
 
     /**
-     * @param Order    $order
+     * @param Order $order
      * @param Customer $customer
-     * @param string   $statusName
+     * @param string $statusName
      *
      * @return array<string,string>
      */
@@ -258,19 +268,19 @@ class TextMeFlowService
         $currency = new Currency((int) $order->id_currency);
         $total = (float) $order->total_paid;
         try {
-            $totalText = $context->getCurrentLocale()->formatPrice($total, $currency->iso_code);
+            $totalText = Tools::getContextLocale($context)->formatPrice($total, $currency->iso_code);
         } catch (Throwable $e) {
             $totalText = number_format($total, 2, ',', '') . ' ' . $currency->iso_code;
         }
 
-        return array(
+        return [
             '{first_name}' => (string) $customer->firstname,
             '{order_number}' => (string) $order->reference,
             '{order_total}' => (string) $totalText,
             '{shop_name}' => (string) Configuration::get('PS_SHOP_NAME'),
             '{tracking_url}' => self::getTrackingUrl($order),
             '{status}' => $statusName,
-        );
+        ];
     }
 
     /**
@@ -296,13 +306,13 @@ class TextMeFlowService
      */
     private static function getCustomerNumber(Order $order)
     {
-        foreach (array((int) $order->id_address_delivery, (int) $order->id_address_invoice) as $idAddress) {
+        foreach ([(int) $order->id_address_delivery, (int) $order->id_address_invoice] as $idAddress) {
             if ($idAddress <= 0) {
                 continue;
             }
             $address = new Address($idAddress);
             $iso = Country::getIsoById((int) $address->id_country);
-            foreach (array($address->phone_mobile, $address->phone) as $raw) {
+            foreach ([$address->phone_mobile, $address->phone] as $raw) {
                 $number = TextMeFlowPhone::toE164((string) $raw, (string) $iso);
                 if ($number !== null) {
                     return $number;
@@ -336,9 +346,9 @@ class TextMeFlowService
     }
 
     /**
-     * @param Order  $order
+     * @param Order $order
      * @param string $message
-     * @param bool   $error
+     * @param bool $error
      */
     private static function logOrder(Order $order, $message, $error)
     {
@@ -346,17 +356,46 @@ class TextMeFlowService
     }
 
     /**
-     * Private (employee-only) message on the order, visible in the order detail page.
+     * Private (employee-only) message on the order, shown in the "Messages" card of the
+     * order page. Since PrestaShop 1.7.7 that card only lists customer-thread messages
+     * (the legacy Message table is no longer displayed), so the note goes into the
+     * order's customer thread, as the core does for a private employee message.
      *
-     * @param int    $idOrder
+     * @param int $idOrder
      * @param string $text
      */
     private static function addPrivateOrderMessage($idOrder, $text)
     {
-        $message = new Message();
+        $order = new Order((int) $idOrder);
+        if (!Validate::isLoadedObject($order)) {
+            return;
+        }
+        $customer = new Customer((int) $order->id_customer);
+        if (!Validate::isLoadedObject($customer) || !Validate::isEmail($customer->email)) {
+            return;
+        }
+        $idThread = (int) CustomerThread::getIdCustomerThreadByEmailAndIdOrder($customer->email, (int) $order->id);
+        if (!$idThread) {
+            $thread = new CustomerThread();
+            $thread->id_contact = 0;
+            $thread->id_customer = (int) $order->id_customer;
+            $thread->id_shop = (int) $order->id_shop;
+            $thread->id_order = (int) $order->id;
+            $thread->id_lang = (int) $order->id_lang;
+            $thread->email = $customer->email;
+            // Closed: a note from the module is not a customer request in the service inbox.
+            $thread->status = 'closed';
+            $thread->token = Tools::passwdGen(12);
+            if (!$thread->add()) {
+                return;
+            }
+            $idThread = (int) $thread->id;
+        }
+        $message = new CustomerMessage();
+        $message->id_customer_thread = $idThread;
+        $message->id_employee = 0;
         $message->message = $text;
-        $message->id_order = (int) $idOrder;
-        $message->private = 1;
+        $message->private = true;
         $message->add();
     }
 }

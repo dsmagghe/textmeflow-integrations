@@ -6,7 +6,7 @@
  * This source file is subject to the Academic Free License (AFL 3.0)
  * https://opensource.org/licenses/AFL-3.0
  *
- * @author    TextMeFlow <support@textmeflow.eu>
+ * @author    TextMeFlow <info@fades.tech>
  * @copyright Fades Management EOOD
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  */
@@ -18,4 +18,7 @@
 .tmf .tmf-status.is-ok { color: #1d7a3a; font-weight: 600; }
 .tmf .tmf-pair img { display: block; border: 1px solid #ddd; padding: 6px; background: #fff; }
 .tmf .tmf-table textarea { min-width: 260px; }
-.tmf .tmf-test-msg { margin-left: 12px; }
+/* Bootstrap's .btn/img display rules would otherwise override the hidden attribute. */
+.tmf [hidden] { display: none !important; }
+.tmf .tmf-own-number { max-width: 520px; }
+.tmf .tmf-test-msg { display: inline-block; margin-top: 6px; font-weight: 600; }

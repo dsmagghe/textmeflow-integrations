@@ -60,7 +60,7 @@
       </trans-unit>
       <trans-unit id="1d3d1145f48ecc613fd125eca780187d">
         <source>When you connect, the phone number and message text of the messages you send are processed by TextMeFlow (EU-hosted, Fades Management EOOD, Bulgaria).</source>
-        <target>Une fois connecté, le numéro de téléphone et le texte des messages envoyés sont traites par TextMeFlow (hébergé dans l'UE, Fades Management EOOD, Bulgarie).</target>
+        <target>Une fois connecté, le numéro de téléphone et le texte des messages envoyés sont traités par TextMeFlow (hébergé dans l'UE, Fades Management EOOD, Bulgarie).</target>
       </trans-unit>
       <trans-unit id="56c34c6410dd45c5cec44149ad0ce037">
         <source>Privacy policy</source>
@@ -96,7 +96,7 @@
       </trans-unit>
       <trans-unit id="027ef0f2f76deecb4e4f31ee781d6471">
         <source>Customers only receive a message when they ticked the WhatsApp box when ordering. Leave a text empty to use the ready-made text in the language of the customer. You can use these placeholders:</source>
-        <target>Les clients ne reçoivent un message que s'ils ont coché la case WhatsApp lors de la commande. Laissez un texte vide pour utilisér le texte prêt à l'emploi dans la langue du client. Vous pouvez utilisér ces variables :</target>
+        <target>Les clients ne reçoivent un message que s'ils ont coché la case WhatsApp lors de la commande. Laissez un texte vide pour utiliser le texte prêt à l'emploi dans la langue du client. Vous pouvez utiliser ces variables :</target>
       </trans-unit>
       <trans-unit id="57297718fdb439175177cf6b196172d1">
         <source>Order status</source>
@@ -116,11 +116,11 @@
       </trans-unit>
       <trans-unit id="39dd0bd2a8900b5fbe613d985bcbbb1d">
         <source>Used for the test message and, if you tick the box below, for new-order messages to you.</source>
-        <target>Utilisé pour le message de test et, si vous cochéz la case ci-dessous, pour les messages de nouvelles commandes.</target>
+        <target>Utilisé pour le message de test et, si vous cochez la case ci-dessous, pour les messages de nouvelles commandes.</target>
       </trans-unit>
       <trans-unit id="ebe724e1b08135d66145b3619f609069">
         <source>Send me a WhatsApp message for every new order</source>
-        <target>M'envoyér un message WhatsApp pour chaque nouvelle commande</target>
+        <target>M'envoyer un message WhatsApp pour chaque nouvelle commande</target>
       </trans-unit>
       <trans-unit id="c9cc8cce247e49bae79f15173ce97354">
         <source>Save</source>
@@ -128,7 +128,7 @@
       </trans-unit>
       <trans-unit id="e1122084842d5d043a4df488ad1166c3">
         <source>Send me a test message</source>
-        <target>M'envoyér un message de test</target>
+        <target>M'envoyer un message de test</target>
       </trans-unit>
       <trans-unit id="8631ddb931b3d15c58a665b6fcc4d9ac">
         <source>Remove the connection with TextMeFlow?</source>
@@ -152,7 +152,7 @@
       </trans-unit>
       <trans-unit id="a92a5e26063301d443824b395eb77ea8">
         <source>Open WhatsApp on your phone, go to Settings &gt; Linked devices &gt; Link a device and scan this code.</source>
-        <target>Ouvrez WhatsApp sur votre téléphone, allez dans Paramètres &gt; Appareils connectés &gt; Connectér un appareil et scannez ce code.</target>
+        <target>Ouvrez WhatsApp sur votre téléphone, allez dans Paramètres &gt; Appareils connectés &gt; Connecter un appareil et scannez ce code.</target>
       </trans-unit>
       <trans-unit id="4b18f6c1fed86ac32102317e978a7fa4">
         <source>New code</source>
@@ -164,7 +164,7 @@
       </trans-unit>
       <trans-unit id="8cc3e89bf4a2d9d2059c0671657e1ded">
         <source>WhatsApp connected</source>
-        <target>WhatsApp connecte</target>
+        <target>WhatsApp connecté</target>
       </trans-unit>
       <trans-unit id="8eb52419c381c774901cc6dc71c5c1c1">
         <source>The code expired.</source>
