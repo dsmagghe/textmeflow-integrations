@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="textmeflow_settings_view" model="ir.ui.view">
+        <field name="name">textmeflow.settings.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <form string="TextMeFlow" class="oe_form_configuration" create="false" delete="false">
+                <header>
+                    <button string="Save" type="object" name="execute" class="btn-primary" data-hotkey="s"/>
+                    <button string="Discard" special="cancel" data-hotkey="z"/>
+                </header>
+                <sheet>
+                    <field name="textmeflow_connected" invisible="1"/>
+                    <h2>TextMeFlow</h2>
+
+                    <div invisible="textmeflow_connected" class="o_textmeflow_connect py-3">
+                        <p>Send WhatsApp messages to your customers from your own number. Connecting takes three clicks: approve on textmeflow.eu, scan the QR code with WhatsApp, done.</p>
+                        <button string="Connect with TextMeFlow" type="object" name="action_textmeflow_connect" class="btn btn-primary btn-lg"/>
+                        <p class="text-muted mt-3">You will be sent to textmeflow.eu to create an account or log in. Phone numbers and message texts are sent to TextMeFlow (EU-hosted). <a href="https://textmeflow.eu/legal/privacy" target="_blank">Privacy</a> - <a href="https://textmeflow.eu/legal/terms" target="_blank">Terms</a></p>
+                    </div>
+
+                    <div invisible="not textmeflow_connected">
+                        <group string="Connection">
+                            <field name="textmeflow_account_email" string="TextMeFlow account" readonly="1"/>
+                            <field name="textmeflow_phone" string="WhatsApp number" readonly="1" placeholder="Not linked yet"/>
+                        </group>
+                        <div class="mb-3">
+                            <button string="Link WhatsApp (QR code)" type="object" name="action_textmeflow_pair" class="btn btn-primary me-2"/>
+                            <button string="Check status" type="object" name="action_textmeflow_check" class="btn btn-secondary me-2"/>
+                            <button string="Send me a test message" type="object" name="action_textmeflow_test" class="btn btn-secondary me-2"/>
+                            <button string="Disconnect" type="object" name="action_textmeflow_disconnect" class="btn btn-link text-danger"
+                                    confirm="Disconnect TextMeFlow? No more WhatsApp messages will be sent from Odoo."/>
+                        </div>
+                        <group string="Automatic messages">
+                            <div colspan="2" class="text-muted">Only sent to contacts who agreed to WhatsApp messages (tick 'WhatsApp messages allowed' on the contact). Texts can be edited under TextMeFlow &gt; Message templates.</div>
+                            <field name="textmeflow_auto_order"/>
+                            <field name="textmeflow_auto_delivery"/>
+                            <field name="textmeflow_auto_invoice"/>
+                        </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_textmeflow_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="textmeflow_settings_view"/>
+        <field name="target">inline</field>
+    </record>
+</odoo>

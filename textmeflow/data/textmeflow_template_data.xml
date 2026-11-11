@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="template_manual_en" model="textmeflow.template">
+        <field name="event">manual</field>
+        <field name="lang">en</field>
+        <field name="body">Hi {first_name}, this is {shop_name}. </field>
+    </record>
+    <record id="template_manual_nl" model="textmeflow.template">
+        <field name="event">manual</field>
+        <field name="lang">nl</field>
+        <field name="body">Hallo {first_name}, dit is {shop_name}. </field>
+    </record>
+    <record id="template_manual_fr" model="textmeflow.template">
+        <field name="event">manual</field>
+        <field name="lang">fr</field>
+        <field name="body">Bonjour {first_name}, ici {shop_name}. </field>
+    </record>
+    <record id="template_manual_de" model="textmeflow.template">
+        <field name="event">manual</field>
+        <field name="lang">de</field>
+        <field name="body">Hallo {first_name}, hier ist {shop_name}. </field>
+    </record>
+    <record id="template_order_en" model="textmeflow.template">
+        <field name="event">order</field>
+        <field name="lang">en</field>
+        <field name="body">Hi {first_name}, here is the link to {order_number} ({order_total}): {portal_url}</field>
+    </record>
+    <record id="template_order_nl" model="textmeflow.template">
+        <field name="event">order</field>
+        <field name="lang">nl</field>
+        <field name="body">Hallo {first_name}, hier is de link naar {order_number} ({order_total}): {portal_url}</field>
+    </record>
+    <record id="template_order_fr" model="textmeflow.template">
+        <field name="event">order</field>
+        <field name="lang">fr</field>
+        <field name="body">Bonjour {first_name}, voici le lien vers {order_number} ({order_total}) : {portal_url}</field>
+    </record>
+    <record id="template_order_de" model="textmeflow.template">
+        <field name="event">order</field>
+        <field name="lang">de</field>
+        <field name="body">Hallo {first_name}, hier ist der Link zu {order_number} ({order_total}): {portal_url}</field>
+    </record>
+    <record id="template_order_confirmed_en" model="textmeflow.template">
+        <field name="event">order_confirmed</field>
+        <field name="lang">en</field>
+        <field name="body">Hi {first_name}, thanks for your order {order_number} ({order_total}) at {shop_name}. You can follow it here: {portal_url}</field>
+    </record>
+    <record id="template_order_confirmed_nl" model="textmeflow.template">
+        <field name="event">order_confirmed</field>
+        <field name="lang">nl</field>
+        <field name="body">Hallo {first_name}, bedankt voor je bestelling {order_number} ({order_total}) bij {shop_name}. Bekijk ze hier: {portal_url}</field>
+    </record>
+    <record id="template_order_confirmed_fr" model="textmeflow.template">
+        <field name="event">order_confirmed</field>
+        <field name="lang">fr</field>
+        <field name="body">Bonjour {first_name}, merci pour votre commande {order_number} ({order_total}) chez {shop_name}. Consultez-la ici : {portal_url}</field>
+    </record>
+    <record id="template_order_confirmed_de" model="textmeflow.template">
+        <field name="event">order_confirmed</field>
+        <field name="lang">de</field>
+        <field name="body">Hallo {first_name}, danke für Ihre Bestellung {order_number} ({order_total}) bei {shop_name}. Hier ansehen: {portal_url}</field>
+    </record>
+    <record id="template_delivery_done_en" model="textmeflow.template">
+        <field name="event">delivery_done</field>
+        <field name="lang">en</field>
+        <field name="body">Hi {first_name}, your order {order_number} from {shop_name} has been shipped and is on its way. {tracking_url}</field>
+    </record>
+    <record id="template_delivery_done_nl" model="textmeflow.template">
+        <field name="event">delivery_done</field>
+        <field name="lang">nl</field>
+        <field name="body">Hallo {first_name}, je bestelling {order_number} van {shop_name} is verzonden en onderweg. {tracking_url}</field>
+    </record>
+    <record id="template_delivery_done_fr" model="textmeflow.template">
+        <field name="event">delivery_done</field>
+        <field name="lang">fr</field>
+        <field name="body">Bonjour {first_name}, votre commande {order_number} de {shop_name} a été expédiée et est en route. {tracking_url}</field>
+    </record>
+    <record id="template_delivery_done_de" model="textmeflow.template">
+        <field name="event">delivery_done</field>
+        <field name="lang">de</field>
+        <field name="body">Hallo {first_name}, Ihre Bestellung {order_number} von {shop_name} wurde versendet und ist unterwegs. {tracking_url}</field>
+    </record>
+    <record id="template_invoice_en" model="textmeflow.template">
+        <field name="event">invoice</field>
+        <field name="lang">en</field>
+        <field name="body">Hi {first_name}, here is invoice {invoice_number} ({invoice_total}), due {due_date}: {portal_url}</field>
+    </record>
+    <record id="template_invoice_nl" model="textmeflow.template">
+        <field name="event">invoice</field>
+        <field name="lang">nl</field>
+        <field name="body">Hallo {first_name}, hier is factuur {invoice_number} ({invoice_total}), te betalen voor {due_date}: {portal_url}</field>
+    </record>
+    <record id="template_invoice_fr" model="textmeflow.template">
+        <field name="event">invoice</field>
+        <field name="lang">fr</field>
+        <field name="body">Bonjour {first_name}, voici la facture {invoice_number} ({invoice_total}), à payer avant le {due_date} : {portal_url}</field>
+    </record>
+    <record id="template_invoice_de" model="textmeflow.template">
+        <field name="event">invoice</field>
+        <field name="lang">de</field>
+        <field name="body">Hallo {first_name}, hier ist Rechnung {invoice_number} ({invoice_total}), fällig am {due_date}: {portal_url}</field>
+    </record>
+    <record id="template_invoice_posted_en" model="textmeflow.template">
+        <field name="event">invoice_posted</field>
+        <field name="lang">en</field>
+        <field name="body">Hi {first_name}, invoice {invoice_number} ({invoice_total}) from {shop_name} is ready. View it here: {portal_url}</field>
+    </record>
+    <record id="template_invoice_posted_nl" model="textmeflow.template">
+        <field name="event">invoice_posted</field>
+        <field name="lang">nl</field>
+        <field name="body">Hallo {first_name}, factuur {invoice_number} ({invoice_total}) van {shop_name} staat klaar. Bekijk ze hier: {portal_url}</field>
+    </record>
+    <record id="template_invoice_posted_fr" model="textmeflow.template">
+        <field name="event">invoice_posted</field>
+        <field name="lang">fr</field>
+        <field name="body">Bonjour {first_name}, la facture {invoice_number} ({invoice_total}) de {shop_name} est disponible. Consultez-la ici : {portal_url}</field>
+    </record>
+    <record id="template_invoice_posted_de" model="textmeflow.template">
+        <field name="event">invoice_posted</field>
+        <field name="lang">de</field>
+        <field name="body">Hallo {first_name}, die Rechnung {invoice_number} ({invoice_total}) von {shop_name} liegt bereit. Hier ansehen: {portal_url}</field>
+    </record>
+</odoo>

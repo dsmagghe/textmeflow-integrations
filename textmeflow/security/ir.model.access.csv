@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_textmeflow_template_user,textmeflow.template user,model_textmeflow_template,base.group_user,1,0,0,0
+access_textmeflow_template_admin,textmeflow.template admin,model_textmeflow_template,base.group_system,1,1,1,1
+access_textmeflow_message_user,textmeflow.message user,model_textmeflow_message,base.group_user,1,0,0,0
+access_textmeflow_message_admin,textmeflow.message admin,model_textmeflow_message,base.group_system,1,1,1,1
+access_textmeflow_send_wizard,textmeflow.send.wizard,model_textmeflow_send_wizard,base.group_user,1,1,1,1
