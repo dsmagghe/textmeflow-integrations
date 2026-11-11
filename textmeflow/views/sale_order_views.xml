@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_textmeflow" model="ir.ui.view">
+        <field name="name">sale.order.form.textmeflow</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_textmeflow_send" type="object" string="Send via WhatsApp" invisible="not id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

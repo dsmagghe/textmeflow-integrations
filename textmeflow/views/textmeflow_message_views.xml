@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="textmeflow_message_view_tree" model="ir.ui.view">
+        <field name="name">textmeflow.message.tree</field>
+        <field name="model">textmeflow.message</field>
+        <field name="arch" type="xml">
+            <tree string="Messages" create="false" decoration-danger="state == 'failed'" decoration-muted="state == 'skipped'" decoration-success="state == 'sent'">
+                <field name="create_date"/>
+                <field name="partner_id"/>
+                <field name="phone"/>
+                <field name="body"/>
+                <field name="state"/>
+                <field name="error"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="textmeflow_message_view_form" model="ir.ui.view">
+        <field name="name">textmeflow.message.form</field>
+        <field name="model">textmeflow.message</field>
+        <field name="arch" type="xml">
+            <form string="Message" create="false">
+                <header>
+                    <button name="action_retry" type="object" string="Try again" invisible="state != 'failed'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="pending,sent"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="partner_id" readonly="1"/>
+                        <field name="phone" readonly="1"/>
+                        <field name="body" readonly="1"/>
+                        <field name="error" readonly="1" invisible="not error"/>
+                        <field name="remote_id" readonly="1" invisible="not remote_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="textmeflow_message_view_search" model="ir.ui.view">
+        <field name="name">textmeflow.message.search</field>
+        <field name="model">textmeflow.message</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner_id"/>
+                <field name="phone"/>
+                <filter name="failed" string="Failed" domain="[('state', '=', 'failed')]"/>
+                <filter name="pending" string="Queued" domain="[('state', '=', 'pending')]"/>
+                <filter name="sent" string="Sent" domain="[('state', '=', 'sent')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_textmeflow_message" model="ir.actions.act_window">
+        <field name="name">Messages</field>
+        <field name="res_model">textmeflow.message</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

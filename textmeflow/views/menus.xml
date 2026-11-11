@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_textmeflow_root" name="TextMeFlow" sequence="95"
+              web_icon="textmeflow,static/description/icon.png" groups="base.group_user"/>
+    <menuitem id="menu_textmeflow_messages" name="Messages" parent="menu_textmeflow_root"
+              action="action_textmeflow_message" sequence="10"/>
+    <menuitem id="menu_textmeflow_templates" name="Message templates" parent="menu_textmeflow_root"
+              action="action_textmeflow_template" sequence="20" groups="base.group_system"/>
+    <menuitem id="menu_textmeflow_settings" name="Settings" parent="menu_textmeflow_root"
+              action="action_textmeflow_settings" sequence="30" groups="base.group_system"/>
+</odoo>
