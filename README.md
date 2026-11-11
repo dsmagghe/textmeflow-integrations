@@ -20,6 +20,7 @@ Most plugins connect in three steps, without copying API keys:
 | [`n8n/`](n8n/) | n8n community node | [textmeflow.eu/integrations/n8n](https://textmeflow.eu/en/integrations/n8n) |
 | [`zapier/`](zapier/) | Zapier app | [textmeflow.eu/integrations/zapier](https://textmeflow.eu/en/integrations/zapier) |
 | [`make/`](make/) | Make.com custom app | [textmeflow.eu/integrations/make](https://textmeflow.eu/en/integrations/make) |
+| [`shopify/`](shopify/) | Shopify (hosted app by TextMeFlow — app config and docs) | [textmeflow.eu/integrations/shopify](https://textmeflow.eu/en/integrations/shopify) |
 | [`teamleader/`](teamleader/) | Teamleader Focus (hosted by TextMeFlow — docs only) | [textmeflow.eu/integrations/teamleader](https://textmeflow.eu/en/integrations/teamleader) |
 
 Everything else talks to the plain REST API: one `POST /v1/messages` call.

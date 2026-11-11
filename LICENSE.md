@@ -12,6 +12,7 @@ Copyright (c) 2026 Fades Management EOOD (TextMeFlow), info@fades.tech.
 | `n8n/` | MIT |
 | `zapier/` | MIT |
 | `make/` | MIT |
+| `shopify/` | Documentation and app configuration, MIT |
 | `teamleader/` | Documentation only, MIT |
 
 The full license texts are available at https://opensource.org/licenses.
