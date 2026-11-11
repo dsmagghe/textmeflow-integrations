@@ -4,7 +4,7 @@ Tags: whatsapp, woocommerce, notifications, contact form 7, order notifications
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,10 +110,17 @@ Yes, on WooCommerce 8.6 and newer the opt-in appears as an extra checkbox in the
 
 == Changelog ==
 
+= 1.0.1 =
+* Sites in Belgian Dutch/French, Swiss or Austrian German now show the plugin in Dutch, French or German instead of English.
+* The "Get a new code" and "Upgrade your plan" buttons only appear when they apply.
+
 = 1.0.0 =
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Shows the plugin in your language on regional sites (nl_BE, fr_BE, de_AT, ...) and hides buttons that do not apply.
 
 = 1.0.0 =
 First release.
