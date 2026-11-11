@@ -23,7 +23,9 @@
         "connection": "textmeflow",
         "codeFiles": {
           "communication": "./webhooks/incoming/communication.iml.json",
-          "params": "./webhooks/incoming/params.iml.json"
+          "params": "./webhooks/incoming/params.iml.json",
+          "attach": "./webhooks/incoming/attach.iml.json",
+          "detach": "./webhooks/incoming/detach.iml.json"
         }
       }
     },

@@ -1,0 +1,7 @@
+{
+  "url": "https://api.textmeflow.eu/v1/webhooks/{{webhook.externalHookId}}",
+  "method": "DELETE",
+  "headers": {
+    "Authorization": "Bearer {{connection.apiKey}}"
+  }
+}

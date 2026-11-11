@@ -1,23 +1,4 @@
 {
-  "url": "",
-  "method": "POST",
-  "attach": {
-    "url": "/webhooks",
-    "method": "POST",
-    "body": {
-      "url": "{{webhook.url}}",
-      "event": "message.inbound"
-    },
-    "response": {
-      "data": {
-        "id": "{{body.id}}"
-      }
-    }
-  },
-  "detach": {
-    "url": "/webhooks/{{webhook.data.id}}",
-    "method": "DELETE"
-  },
   "output": {
     "type": "{{body.type}}",
     "from": "{{body.from}}",

@@ -1,23 +1,16 @@
 {
-  "type": "basic",
-  "authorization": {
-    "headers": {
-      "Authorization": "Bearer {{parameters.apiKey}}"
-    }
+  "url": "https://api.textmeflow.eu/v1/accounts/me",
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer {{parameters.apiKey}}",
+    "Accept": "application/json"
   },
   "log": {
     "sanitize": ["request.headers.authorization"]
   },
-  "validate": {
-    "url": "/accounts/me",
-    "method": "GET",
-    "headers": {
-      "Authorization": "Bearer {{parameters.apiKey}}"
-    },
-    "response": {
-      "error": {
-        "message": "[{{statusCode}}] Invalid API key or TextMeFlow is unreachable."
-      }
+  "response": {
+    "error": {
+      "message": "[{{statusCode}}] Invalid API key or TextMeFlow is unreachable."
     }
   }
 }

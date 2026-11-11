@@ -6,11 +6,13 @@
     "Accept": "application/json"
   },
   "log": {
-    "sanitize": ["request.headers.authorization"]
+    "sanitize": [
+      "request.headers.authorization"
+    ]
   },
   "response": {
     "error": {
-      "message": "[{{statusCode}}] {{ifempty(body.error, 'TextMeFlow request failed')}}"
+      "message": "[{{statusCode}}] {{ifempty(body.error; 'TextMeFlow request failed')}}"
     }
   }
 }

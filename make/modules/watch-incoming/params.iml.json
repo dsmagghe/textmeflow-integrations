@@ -1,9 +1,1 @@
-[
-  {
-    "name": "__IMTHOOK__",
-    "type": "hook",
-    "label": "Webhook",
-    "required": true,
-    "help": "Pick or create a webhook. Make registers it with TextMeFlow automatically; nothing to paste."
-  }
-]
+[]

@@ -1,0 +1,18 @@
+{
+  "url": "https://api.textmeflow.eu/v1/webhooks",
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {{connection.apiKey}}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "body": {
+    "url": "{{webhook.url}}",
+    "event": "message.inbound"
+  },
+  "response": {
+    "data": {
+      "externalHookId": "{{body.id}}"
+    }
+  }
+}
